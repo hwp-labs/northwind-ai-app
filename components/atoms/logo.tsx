@@ -12,7 +12,7 @@ interface Props {
 
 export const Logo = ({ path, iconOnly, darkMode }: Props) => {
   const renderLogo = (
-    <div className="flex-center-start gap-2.5 border">
+    <div className="flex-center-start border_ gap-2.5">
       <span
         className={clsx(
           "flex-center-center size-[24px] rounded-full",
