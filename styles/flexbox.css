@@ -36,4 +36,8 @@
   .flex-col-end-between {
     @apply flex flex-col items-end justify-between;
   }
+
+  .flex-col-center-center {
+    @apply flex flex-col items-center justify-center;
+  }
 }

@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
@@ -9,7 +10,7 @@ export const Nav = () => {
   const pathname = usePathname();
   //
   return (
-    <nav className="flex-center-start hidden gap-8 lg:flex">
+    <nav className="flex-center-center hidden gap-8 lg:flex">
       {MENU.map((item, i) => {
         const active =
           item.path === "/"
