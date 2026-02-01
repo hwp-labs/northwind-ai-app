@@ -2,9 +2,10 @@ export const APP = {
   name: "Northwind AI",
   slug: "northwind-ai",
   title: "AI Automation Web Services",
-  description: `Automate internal business processes and Point-of-Sale (POS) systems
-          with Northwind AI <br />- transform virtual workflows and workloads
-          into smart, autonomous AI agents.`,
+  description:
+    "Automate your SME's virtual workflows and Point-of-Sale (POS) systems with Northwind AI-transform repetitive business processes into smart, autonomous AI agents.",
+  descriptionRichtext:
+    "Automate your SME's virtual workflows and Point-of-Sale (POS) systems with Northwind AI<br/>-transform repetitive business processes into smart, autonomous AI agents.",
   url: "https://northwindai.org",
   domain: "northwindai.org",
   owner: "HWP Labs&reg;",

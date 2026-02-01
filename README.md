@@ -6,7 +6,7 @@ AI Automation Web Services
 ![React](https://img.shields.io/badge/React-18.x-58c4dc.svg)
 ![Next](https://img.shields.io/badge/Next-14.x-000.svg)
 
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white) 
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
 ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
 ## Setup
@@ -14,7 +14,7 @@ AI Automation Web Services
 ```sh
 mkdir northwind-ai && cd northwind-ai
 
-npx create-next-app@latest
+npx shadcn@latest init
 npm run dev
 
 # http://127.0.0.1:3000
@@ -25,11 +25,8 @@ npm run dev
 ## Cheatsheet
 
 ```sh
+# 
 rm -rf .next package-lock.json node_modules
 npm install
 npm run dev
-
-
-npm install tailwindcss@3.4.1 postcss autoprefixer react@18 react-dom@18 next@14
-npm install lucide-react clsx zod
 ```

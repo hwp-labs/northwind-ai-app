@@ -21,7 +21,7 @@ export const Logo = ({ path, iconOnly, darkMode }: Props) => {
       >
         <GpuIcon size={14} color={darkMode ? "black" : "white"} />
       </span>
-      {!iconOnly && <p className="font-[Raleway] font-semibold">{APP.name}</p>}
+      {!iconOnly && <p className="font-[Raleway] font-semibold text-nowrap">{APP.name}</p>}
     </div>
   );
 
