@@ -1,11 +1,11 @@
-import { GpuIcon, UserRoundPlusIcon, ZapIcon } from "lucide-react";
+import { UserRoundPlusIcon } from "lucide-react";
 import { Button } from "../shadcn/ui/button";
 import { Logo } from "../atoms/logo";
 
 export const Header = () => {
   return (
-    <header className="flex-center-between mx-auto w-[1280px] border rounded-2xl my-8 p-8">
-      <Logo />
+    <header className="flex-center-between mx-auto my-8 w-[1280px] rounded-2xl border p-8">
+      <Logo darkMode />
       <nav className="flex-center-start gap-8">
         <div>Home</div>
         <div>About</div>

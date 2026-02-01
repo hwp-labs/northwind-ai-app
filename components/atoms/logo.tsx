@@ -1,29 +1,35 @@
+import Link from "next/link";
 import { GpuIcon } from "lucide-react";
 import clsx from "clsx";
 //
 import { APP } from "@/constants/APP";
 
 interface Props {
+  path?: string;
   iconOnly?: boolean;
   darkMode?: boolean;
 }
 
-export const Logo = ({ iconOnly, darkMode = true }: Props) => {
-  return (
-    <div className="flex-center-start gap-3">
+export const Logo = ({ path, iconOnly, darkMode }: Props) => {
+  const renderLogo = (
+    <div className="flex-center-start gap-2.5 border">
       <span
         className={clsx(
           "flex-center-center size-[24px] rounded-full",
           darkMode ? "bg-white" : "bg-black",
         )}
       >
-        <GpuIcon
-          size={16}
-          color={darkMode ? "black" : "white"}
-          strokeWidth={2.5}
-        />
+        <GpuIcon size={14} color={darkMode ? "black" : "white"} />
       </span>
       {!iconOnly && <p className="font-[Raleway] font-semibold">{APP.name}</p>}
     </div>
+  );
+
+  return path ? (
+    <Link href={path}>{renderLogo}</Link>
+  ) : (
+    <a href="" title="Reload">
+      {renderLogo}
+    </a>
   );
 };
