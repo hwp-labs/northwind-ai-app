@@ -1,0 +1,19 @@
+@tailwind utilities;
+
+@layer utilities {
+  .debug {
+    @apply border border-red-600;
+  }
+
+  .debug2 {
+    @apply border border-green-600;
+  }
+
+  .debug3 {
+    @apply border border-blue-600;
+  }
+
+  .debug4 {
+    @apply border border-yellow-600;
+  }
+}

@@ -8,15 +8,6 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./features/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {
-    extend: {
-      // fontFamily: {
-      //   Raleway: ["var(--font-Raleway)"],
-      //   Poppins: ["var(--font-Poppins)"],
-      //   Montserrat: ["var(--font-Montserrat)"],
-      // },
-    },
-  },
   plugins: [require("tailwindcss-animate")],
 };
 export default config;
