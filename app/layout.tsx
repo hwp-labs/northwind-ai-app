@@ -1,16 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Raleway, Poppins, Montserrat } from "next/font/google";
+import clsx from "clsx";
+// 
+import "@/styles/globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fontPoppins = Poppins({
+  variable: "--font-Poppins",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const fontMontserrat = Montserrat({
+  variable: "--font-Montserrat",
   subsets: ["latin"],
+  display: "swap",
 });
+
+const fontRaleway = Raleway({
+  variable: "--font-Raleway",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,9 +35,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={clsx(
+          fontPoppins.variable,
+          fontMontserrat.variable,
+          fontRaleway.variable,
+          "antialiased font-[Poppins]"
+        )}
       >
         {children}
       </body>
