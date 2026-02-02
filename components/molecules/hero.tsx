@@ -6,7 +6,7 @@ export const Hero = () => {
       <h1 className="font-[Raleway] text-4xl leading-10 font-semibold lg:text-6xl lg:leading-18">
         {APP.title}
       </h1>
-      <div className="lg:leading-8 text-sm lg:text-md leading-6">
+      <div className="lg:leading-8 text-sm lg:text-md leading-7">
         <p>{APP.tagline1}</p>
         <p className="text-muted-foreground">{APP.tagline2}</p>
       </div>
