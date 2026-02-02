@@ -20,7 +20,7 @@ export const CTA = () => {
   };
   //
   return (
-    <Flex.Responsive classNames="mt-10 flex gap-4 px-8">
+    <Flex.Responsive classNames="mt-10 flex gap-4 px-6">
       <Button size="lg" onClick={() => router.push(PATH.demo)}>
         Book a demo
       </Button>

@@ -22,7 +22,7 @@ const Responsive2 = ({ children, classNames}: Props) => {
   return (
     <div
       className={clsx(
-        "flex flex-col justify-center lg:flex-row items-center",
+        "flex flex-row justify-center lg:flex-row items-center",
         classNames
       )}
     >
