@@ -2,22 +2,21 @@
 
 import { useRouter } from "next/navigation";
 //
-import { Button } from "@/components/shadcn/ui/button";
-import { Flex } from "@/components/atoms/flex";
-import { PATH } from "@/constants/PATH";
+import { Button } from "../shadcn/ui/button";
+import { Flex } from "../atoms/flex";
 import { APP } from "@/constants/APP";
+import { PATH } from "@/constants/PATH";
 
 export const CTA = () => {
   const router = useRouter();
   const handleTalkToSales = () => {
     if (typeof window === "undefined") return;
 
-    const url = process.env.NEXT_PUBLIC_CONTACT_SALES_URL;
     const text = encodeURIComponent(
-      `Hi, uhm so how can ${APP.name} help automate my business exactly?`,
+      `Hi, how can ${APP.name} help automate my business?`,
     );
 
-    window.open(`${url}?text=${text}`, "_blank");
+    window.open(`${APP.whatsappUrl}?text=${text}`, "_blank");
   };
   //
   return (
