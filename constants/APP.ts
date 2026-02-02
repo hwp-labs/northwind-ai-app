@@ -6,7 +6,7 @@ export const APP = {
   description:
     "Automate your SME's virtual workflows and Point-of-Sale (POS) systems with Northwind AI-transform repetitive business processes into smart, autonomous AI agents.",
   tagline1:
-    "Automate your SME's virtual workflows and Point-of-Sale (POS) systems with NorthwindAI",
+    "Automate your SME's virtual workflows and Point-of-Sale (POS) systems with Northwind AI",
   tagline2:
     "-transform repetitive business processes into smart, autonomous AI agents.",
   url: "https://northwindai.org",
