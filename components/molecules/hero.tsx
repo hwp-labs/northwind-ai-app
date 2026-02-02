@@ -7,14 +7,8 @@ export const Hero = () => {
         {APP.title}
       </h1>
       <div className="leading-8">
-        <p>
-          Automate your SME's virtual workflows and Point-of-Sale (POS) systems
-          with Northwind AI
-        </p>
-        <p className="text-muted-foreground">
-          -transform repetitive business processes into smart, autonomous AI
-          agents.
-        </p>
+        <p>{APP.tagline1}</p>
+        <p className="text-muted-foreground">{APP.tagline2}</p>
       </div>
     </section>
   );
