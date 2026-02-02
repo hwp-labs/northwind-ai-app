@@ -14,7 +14,7 @@ export const Footer = () => {
         />
         {/* All rights reserved.*/}
       </address>
-      <Flex.Responsive2 classNames="text-muted-foreground lg:gap-4 gap-2 text-xs">
+      <Flex.Responsive2 classNames="text-muted-foreground lg:gap-4 gap-4 text-xs">
         {["Privacy Policy", "Terms & Conditions", "Cookie Preferences"].map(
           (item, i) => (
             <div
