@@ -2,7 +2,7 @@ import { APP } from "@/constants/APP";
 
 export const Footer = () => {
   return (
-    <footer className="px-4 lg:px-8 text-xs">
+    <footer className="px-4 text-xs lg:px-8">
       <div className="flex-col-center-center gap-6 border-t pt-6 pb-4">
         <ul className="flex-center-center text-muted-foreground gap-4">
           {["Privacy Policy", "Terms & Conditions", "Manage Cookies"].map(
@@ -16,14 +16,9 @@ export const Footer = () => {
             ),
           )}
         </ul>
-        <address
-          className="not-italic"
-        >
+        <address className="not-italic">
           Copyright &copy; {new Date().getFullYear()}{" "}
-          <span
-            className="font-medium"
-            dangerouslySetInnerHTML={{ __html: APP.owner }}
-          />
+          <span className="font-medium">{APP.owner}&reg;</span>
         </address>
       </div>
     </footer>
