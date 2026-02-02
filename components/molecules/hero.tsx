@@ -3,10 +3,10 @@ import { APP } from "@/constants/APP";
 export const Hero = () => {
   return (
     <section className="mt-10 space-y-4 px-6 text-center">
-      <h1 className="font-[Raleway] text-4xl leading-12 font-semibold lg:text-6xl lg:leading-18">
+      <h1 className="font-[Raleway] text-4xl leading-10 font-semibold lg:text-6xl lg:leading-18">
         {APP.title}
       </h1>
-      <div className="leading-8">
+      <div className="leading-8 text-sm lg:text-md">
         <p>{APP.tagline1}</p>
         <p className="text-muted-foreground">{APP.tagline2}</p>
       </div>
