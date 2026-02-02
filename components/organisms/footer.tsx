@@ -1,5 +1,4 @@
 import { Logo } from "../atoms/logo";
-import { Flex } from "../atoms/flex";
 import { APP } from "@/constants/APP";
 
 export const Footer = () => {
@@ -14,18 +13,18 @@ export const Footer = () => {
         />
         {/* All rights reserved.*/}
       </address>
-      <Flex.Responsive2 classNames="text-muted-foreground gap-4 text-sm">
-        {["Privacy Policy", "Terms & Conditions", "Cookie Preferences"].map(
+      <ul className="flex-center-center text-muted-foreground gap-4 text-xs">
+        {["Privacy Policy", "Terms & Conditions", "Manage Cookies"].map(
           (item, i) => (
-            <div
+            <li
               key={i}
               className="underline underline-offset-2 hover:cursor-default hover:font-medium hover:text-primary"
             >
               {item}
-            </div>
+            </li>
           ),
         )}
-      </Flex.Responsive2>
+      </ul>
     </footer>
   );
 };

@@ -13,7 +13,7 @@ export default function HomePage() {
       <StatusBar />
       <Hero />
       <CTA />
-      <figure className="flex-center-center my-20">
+      <figure className="flex-center-center my-16 px-4 lg:px-0">
         <Image
           className="dark:invert"
           src="/social-preview.png"

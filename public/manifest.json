@@ -1,0 +1,25 @@
+{
+  "id": "https://northwindai.org/v1",
+  "name": "Northwind AI",
+  "short_name": "NorthwindAI",
+  "description": "AI Automation Web Services",
+  "background_color": "#120e0d",
+  "theme_color": "#120e0d",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "dir": "rtl",
+  "lang": "en-US",
+  "shortcuts": [
+    {
+      "name": "Book a demo",
+      "short_name": "Demo",
+      "url": "/demo"
+    },
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "url": "/admin/dashboard"
+    }
+  ]
+}
