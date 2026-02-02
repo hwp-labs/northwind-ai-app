@@ -48,7 +48,7 @@ export default function RootLayout({
 // https://nextjs.org/docs/app/api-reference/functions/generate-metadata
 export const metadata: Metadata = {
   title: {
-    default: `${APP.name}: ${APP.title}`,
+    default: APP.titleVerbose,
     template: `%s | ${APP.name}`,
   },
   description: APP.description,
@@ -91,13 +91,17 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Next.js",
-    description: "The React Framework for the Web",
-    siteId: "1467726470533754880",
-    creator: "@nextjs",
-    creatorId: "1467726470533754880",
-    images: ["https://nextjs.org/og.png"], // Must be an absolute URL
+    title: APP.titleVerbose,
+    description: APP.description,
+    creator: "@2gbeh",
+    images: {
+      url: `${APP.website}/social-preview.png`,
+      alt: 'Next.js Logo',
+    }
   },
+  /**
+  <meta name="twitter:url" content="https://2gbeh.github.io/odara-tv/" />
+   */
   // ROBOTS
   robots: {
     index: true,
