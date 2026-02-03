@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import clsx from "clsx";
 //
+import { Explorer } from "@/components/atoms/explorer";
 import { METADATA, VIEWPORT } from "@/constants/META";
 import { fontPoppins, fontMontserrat, fontRaleway } from "@/constants/FONT";
 import "@/styles/globals.css";
@@ -24,6 +25,7 @@ export default function RootLayout({
         )}
       >
         {children}
+        <Explorer />
       </body>
     </html>
   );

@@ -46,8 +46,8 @@ export const METADATA: Metadata = {
     type: "website",
     url: APP.website,
     siteName: APP.name,
-    title: APP.title,
-    description: APP.description,
+    title: APP.titleVerbose,
+    description: APP.tagline1,
     images: {
       url: `${APP.website}/social-preview.png`,
       alt: "",
@@ -59,7 +59,7 @@ export const METADATA: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: APP.titleVerbose,
-    description: APP.description,
+    description: APP.tagline1,
     creator: "@2gbeh",
     images: {
       url: `${APP.website}/social-preview.png`,

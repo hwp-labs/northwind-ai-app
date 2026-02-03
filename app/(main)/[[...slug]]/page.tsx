@@ -1,13 +1,12 @@
 import Image from "next/image";
 //
-import { MainLayout } from "@/components/layouts/main-layout";
 import { StatusBar } from "@/components/organisms/status-bar";
 import { Hero } from "@/components/molecules/hero";
 import { CTA } from "@/components/molecules/cta";
 
 export default function HomePage() {
   return (
-    <MainLayout>
+    <>
       <StatusBar />
       <Hero />
       <CTA />
@@ -21,6 +20,6 @@ export default function HomePage() {
           priority
         />
       </figure>
-    </MainLayout>
+    </>
   );
 }

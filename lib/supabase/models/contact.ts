@@ -6,7 +6,9 @@ export interface ContactModel extends BaseModel {
   telephone: string;
   // 
   businessName: string;
-  industryId?: string;
-  industryOtherText?: string;
-  location: string; // Ex. Sapele Road, Benin
+  industryId?: string | null;
+  industryOtherValue?: string;
+  location: string;
+  // 
+  subscribed?: boolean;
 }

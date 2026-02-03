@@ -3,7 +3,6 @@
 import { useRouter } from "next/navigation";
 //
 import { Button } from "../shadcn/ui/button";
-import { Flex } from "../atoms/flex";
 import { APP } from "@/constants/APP";
 import { PATH } from "@/constants/PATH";
 
@@ -20,13 +19,13 @@ export const CTA = () => {
   };
   //
   return (
-    <Flex.Responsive classNames="mt-10 flex gap-4 px-6">
+    <section className="mt-10 flex gap-4 px-6 flex flex-col justify-center lg:flex-row lg:items-center">
       <Button size="lg" onClick={() => router.push(PATH.demo)}>
         Book a demo
       </Button>
       <Button size="lg" variant="secondary" onClick={handleTalkToSales}>
         Talk to sales
       </Button>
-    </Flex.Responsive>
+    </section>
   );
 };
