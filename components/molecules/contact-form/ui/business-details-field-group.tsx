@@ -1,7 +1,7 @@
 import { FieldGroup } from "@/components/shadcn/ui/field";
-import { ControlledInputDatalistField } from "@/components/atoms/forms/controlled-input-datalist-field";
-import { ControlledInputField } from "@/components/atoms/forms/controlled-input-field";
-import { ControlledSelectField } from "@/components/atoms/forms/controlled-select-field";
+import { ControlledFieldInputDatalist } from "@/components/atoms/forms/controlled-field-input-datalist";
+import { ControlledFieldInput } from "@/components/atoms/forms/controlled-field-input";
+import { ControlledFieldSelect } from "@/components/atoms/forms/controlled-field-select";
 import { industrySeeder } from "@/lib/supabase/seeders/industry-seeder";
 
 interface Props {}
@@ -11,7 +11,7 @@ export const BusinessDetailsFieldGroup = ({}: Props) => {
   //
   return (
     <FieldGroup className="gap-5">
-      <ControlledInputField
+      <ControlledFieldInput
         label="Business Name"
         type="search"
         name="businessName"
@@ -19,8 +19,8 @@ export const BusinessDetailsFieldGroup = ({}: Props) => {
         required
         darkInvert
       />
-      <div className="grid lg:grid-cols-2 gap-5">
-        <ControlledSelectField
+      <div className="grid gap-5 lg:grid-cols-2">
+        <ControlledFieldSelect
           label="Select Industry"
           name="industryId"
           options={[
@@ -33,17 +33,17 @@ export const BusinessDetailsFieldGroup = ({}: Props) => {
           placeholder="Ex. Food & Drinks"
           darkInvert
         />
-          {showOtherField && (
-            <ControlledInputField
-              label="Other"
-              type="search"
-              name="industryOtherValue"
-              placeholder="Please specify"
-              darkInvert
-            />
-          )}
+        {showOtherField && (
+          <ControlledFieldInput
+            label="Other"
+            type="search"
+            name="industryOtherValue"
+            placeholder="Please specify"
+            darkInvert
+          />
+        )}
       </div>
-      <ControlledInputDatalistField
+      <ControlledFieldInputDatalist
         label="Business Location"
         name="location"
         options={["Apapa, Lagos"]}

@@ -18,7 +18,7 @@ import { PATH } from "@/constants/PATH";
 //
 import { PersonalDetailsFieldGroup } from "./ui/personal-details-field-group";
 import { BusinessDetailsFieldGroup } from "./ui/business-details-field-group";
-import { ControlledSwitchField } from "@/components/atoms/forms/controlled-switch-field";
+import { ControlledFieldSwitch } from "@/components/atoms/forms/controlled-field-switch";
 
 export const ContactForm = () => {
   const router = useRouter();
@@ -36,7 +36,7 @@ export const ContactForm = () => {
   //
   return (
     <form className="bg-foreground text-background rounded-t-4xl px-6 pt-10 pb-24 lg:rounded-2xl lg:px-10 lg:py-10">
-      <FieldLegend >Get started with {APP.name}</FieldLegend>
+      <FieldLegend>Get started with {APP.name}</FieldLegend>
       <FieldDescription className="lg:text-gray-500">
         {/* Required fields are labeled with asterisk (*) */}
         Enter your details below, and we'll reach out shortly to discuss how{" "}
@@ -46,7 +46,7 @@ export const ContactForm = () => {
         <PersonalDetailsFieldGroup />
         <BusinessDetailsFieldGroup />
         <section className="mt-4 grid gap-10 lg:grid-cols-2">
-          <ControlledSwitchField
+          <ControlledFieldSwitch
             name="subscribed"
             label="Subscribe for email updates"
             darkInvert

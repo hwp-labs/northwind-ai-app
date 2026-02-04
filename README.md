@@ -35,8 +35,11 @@ npm install
 npm run dev
 
 #
-npm i lodash
+npm i clsx lodash date-fns
 npm i --save-dev @types/lodash
+
+# 
+npm i react-hook-form @hookform/resolvers zod
 ```
 
 #### Shadcn/ui ... components.json
