@@ -39,7 +39,13 @@ export const ControlledInputDatalistField = ({
           {label}
         </ThemedLabel>
       ) : null}
-      <Input type="search" id={name} list={listName} {...props} />
+      <Input
+        type="search"
+        id={name}
+        list={listName}
+        {...props}
+        className={darkInvert ? "text-gray-300" : undefined}
+      />
       <datalist id={listName}>
         {options.map((item) => (
           <option key={item} value={item} />

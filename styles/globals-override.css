@@ -5,10 +5,13 @@
 
 :root {
   --background: #edf1f2 !important;
+  --input: oklch(1 0 0 / 15%) !important;
+
 }
 
 .dark {
   --background: #120e0d !important;
+  --input: oklch(1 0 0 / 15%) !important;
 }
 
 .custom-mono {

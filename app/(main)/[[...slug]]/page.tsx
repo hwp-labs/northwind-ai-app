@@ -29,7 +29,7 @@ export default function HomePage() {
           priority
         />
       </figure>
-      <div className="border_ px-4 lg:py-16">
+      <div className="border_ px-4 lg:py-16 pb-16">
         <ValueProposition.Heading classNames="text-center" />
         <ul className="mx-auto mt-10 space-y-10 lg:max-w-[70%]">
           {VALUE_PROPOSITION.map((item, i) => (
@@ -41,9 +41,7 @@ export default function HomePage() {
           ))}
         </ul>
       </div>
-      <section className="mx-auto flex max-w-lg flex-col px-6 pb-16 mt-16 lg:mt-0">
-        <GetStartedButton />
-      </section>
+   
     </main>
   );
 }

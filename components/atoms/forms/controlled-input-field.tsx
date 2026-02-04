@@ -37,7 +37,11 @@ export const ControlledInputField = ({
           {label}
         </ThemedLabel>
       ) : null}
-      <Input id={name} {...props} />
+      <Input
+        id={name}
+        {...props}
+        className={darkInvert ? "text-gray-300" : undefined}
+      />
       {description ? <FieldDescription>{description}</FieldDescription> : null}
       {error ? <FieldError>{error}</FieldError> : null}
     </Field>

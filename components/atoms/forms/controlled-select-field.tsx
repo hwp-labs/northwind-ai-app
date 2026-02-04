@@ -11,8 +11,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/shadcn/ui/select";
-import { OptionType } from "@/types/common";
+import { ScrollArea } from "@/components/shadcn/ui/scroll-area";
 import { ThemedLabel } from "./themed-label";
+import { OptionType } from "@/types/common";
 
 interface Props {
   label?: string;
@@ -49,15 +50,20 @@ export const ControlledSelectField = ({
         </ThemedLabel>
       ) : null}
       <Select defaultValue={defaultValue}>
-        <SelectTrigger id={name}>
+        <SelectTrigger
+          id={name}
+          className={darkInvert ? "text-gray-300" : undefined}
+        >
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
         <SelectContent>
-          {options.map(({ value, label }) => (
-            <SelectItem key={value} value={value}>
-              {label}
-            </SelectItem>
-          ))}
+          <ScrollArea className="h-[320px]">
+            {options.map(({ value, label }) => (
+              <SelectItem key={value} value={value}>
+                {label}
+              </SelectItem>
+            ))}
+          </ScrollArea>
         </SelectContent>
       </Select>
       {description ? <FieldDescription>{description}</FieldDescription> : null}

@@ -31,13 +31,13 @@ export const ContactForm = () => {
     setSuccess(true);
     await sleep(1.5);
     setSuccess(false);
-    router.replace(PATH.home)
+    router.replace(PATH.home);
   };
   //
   return (
     <form className="bg-foreground text-background rounded-t-4xl px-6 pt-10 pb-24 lg:rounded-2xl lg:px-10 lg:py-10">
-      <FieldLegend>Get started with {APP.name}</FieldLegend>
-      <FieldDescription>
+      <FieldLegend >Get started with {APP.name}</FieldLegend>
+      <FieldDescription className="lg:text-gray-500">
         {/* Required fields are labeled with asterisk (*) */}
         Enter your details below, and we'll reach out shortly to discuss how{" "}
         {APP.name} can help automate your business. Cool?

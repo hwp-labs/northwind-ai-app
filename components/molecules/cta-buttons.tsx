@@ -20,7 +20,7 @@ export const CTAButtons = () => {
   //
   return (
     <>
-      <Button size="lg" onClick={() => router.push(PATH.demo)}>
+      <Button size="lg" onClick={() => router.push(PATH.demo)} className="bg-white">
         Book a demo
       </Button>
       <Button size="lg" variant="secondary" onClick={handleTalkToSales}>
