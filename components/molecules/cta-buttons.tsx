@@ -9,7 +9,7 @@ import { PATH } from "@/constants/PATH";
 export const CTAButtons = () => {
   const router = useRouter();
   const handleTalkToSales = () => {
-    if (typeof window === "undefined") return;
+    // if (typeof window === "undefined") return;
 
     const text = encodeURIComponent(
       `Hi, how can ${APP.name} help automate my business?`,

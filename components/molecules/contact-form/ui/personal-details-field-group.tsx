@@ -11,22 +11,27 @@ export const PersonalDetailsFieldGroup = ({}: Props) => {
         type="search"
         name="name"
         placeholder="Full name"
+        required
         darkInvert
       />
-      <ControlledInputField
-        label="Email"
-        type="email"
-        name="email"
-        placeholder="Ex. person@dmain.com"
-        darkInvert
-      />
-      <ControlledInputField
-        label="Telephone"
-        type="tel"
-        name="telephone"
-        placeholder="+234"
-        darkInvert
-      />
+      <div className="grid lg:grid-cols-2 gap-5">
+        <ControlledInputField
+          label="Contact Email"
+          type="email"
+          name="email"
+          placeholder="Ex. person@dmain.com"
+          required
+          darkInvert
+        />
+        <ControlledInputField
+          label="Contact Telephone"
+          type="tel"
+          name="telephone"
+          placeholder="+234"
+          required
+          darkInvert
+        />
+      </div>
     </FieldGroup>
   );
 };

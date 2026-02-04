@@ -1,19 +1,27 @@
 "use client";
 
 import { useState } from "react";
-import { CheckIcon, ChevronLeftIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { CheckIcon } from "lucide-react";
 //
-import { Field, FieldSet } from "@/components/shadcn/ui/field";
+import {
+  Field,
+  FieldDescription,
+  FieldLegend,
+  FieldSet,
+} from "@/components/shadcn/ui/field";
 import { Button } from "@/components/shadcn/ui/button";
 import { Spinner } from "@/components/shadcn/ui/spinner";
-import { PromptTerminal } from "../prompt-terminal";
 import { sleep } from "@/utils";
+import { APP } from "@/constants/APP";
+import { PATH } from "@/constants/PATH";
 //
 import { PersonalDetailsFieldGroup } from "./ui/personal-details-field-group";
 import { BusinessDetailsFieldGroup } from "./ui/business-details-field-group";
+import { ControlledSwitchField } from "@/components/atoms/forms/controlled-switch-field";
 
 export const ContactForm = () => {
-  const [stepper, setStepper] = useState(0);
+  const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const handleSubmit = async () => {
@@ -22,53 +30,41 @@ export const ContactForm = () => {
     setSubmitting(false);
     setSuccess(true);
     await sleep(1.5);
-    setStepper(0);
     setSuccess(false);
+    router.replace(PATH.home)
   };
   //
   return (
-    <form className="bg-foreground text-background w-full max-w-lg rounded-2xl px-0 pt-10 pb-8">
-      <PromptTerminal>
-        Enter your {stepper ? "business" : "personal"} details
-      </PromptTerminal>
-      <FieldSet disabled={false} className="mt-6 px-6 lg:px-16 dark:invert">
-        {stepper ? (
-          <BusinessDetailsFieldGroup />
-        ) : (
-          <PersonalDetailsFieldGroup />
-        )}
-        <Field orientation="horizontal" className="flex-center-between gap-4 mt-4 lg:mt-0">
-          {stepper ? (
+    <form className="bg-foreground text-background rounded-t-4xl px-6 pt-10 pb-24 lg:rounded-2xl lg:px-10 lg:py-10">
+      <FieldLegend>Get started with {APP.name}</FieldLegend>
+      <FieldDescription>
+        {/* Required fields are labeled with asterisk (*) */}
+        Enter your details below, and we'll reach out shortly to discuss how{" "}
+        {APP.name} can help automate your business. Cool?
+      </FieldDescription>
+      <FieldSet disabled={false} className="mt-8 dark:invert">
+        <PersonalDetailsFieldGroup />
+        <BusinessDetailsFieldGroup />
+        <section className="mt-4 grid gap-10 lg:grid-cols-2">
+          <ControlledSwitchField
+            name="subscribed"
+            label="Subscribe for email updates"
+            darkInvert
+          />
+          <div className="flex flex-col justify-end lg:flex-row">
             <Button
               type="button"
-              onClick={() => setStepper(0)}
-              variant="link"
-              className="px-0"
-            >
-              <ChevronLeftIcon />
-              Back
-            </Button>
-          ) : (
-            <div />
-          )}
-          {stepper ? (
-            <Button
-              type="button"
+              size="lg"
               onClick={handleSubmit}
               className={
                 success ? "bg-emerald-600 text-white dark:invert" : undefined
               }
             >
-              {submitting && <Spinner />}
-              {success && <CheckIcon />}
-              Save
+              {submitting ? <Spinner /> : success ? <CheckIcon /> : null}
+              {submitting ? "Going..." : success ? "Gone!" : "Let's go"}
             </Button>
-          ) : (
-            <Button type="button" onClick={() => setStepper(1)}>
-              Continue
-            </Button>
-          )}
-        </Field>
+          </div>
+        </section>
       </FieldSet>
     </form>
   );

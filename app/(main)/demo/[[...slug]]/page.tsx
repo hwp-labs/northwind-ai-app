@@ -10,21 +10,27 @@ export const metadata: Metadata = {
 
 export default function DemoPage() {
   return (
-    <main className="flex min-h-[75vh] flex-col-reverse gap-16 px-4 pt-4 pb-16 lg:grid lg:grid-cols-2 lg:gap-0 lg:px-0 lg:pt-8">
-      <section className="flex-row-cc border_ px-2">
-        {renderValueProposition}
-      </section>
-      <section className="flex-row-cc border_">
-        <ContactForm />
-      </section>
-    </main>
+    <div className="mx-auto max-w-2xl lg:pb-24 lg:mt-6">
+      <ContactForm />
+    </div>
   );
 }
+
+const renderDemoPage = (
+  <main className="flex min-h-[75vh] flex-col-reverse gap-16 px-4 pt-4 pb-16 lg:grid lg:grid-cols-2 lg:gap-0 lg:px-0 lg:pt-8">
+    <section className="flex-row-cc border_ px-2">
+      <ContactForm />
+    </section>
+    <section className="flex-row-cc border_">
+      <ContactForm />
+    </section>
+  </main>
+);
 
 const renderValueProposition = (
   <div className="w-full max-w-lg">
     <ValueProposition.Heading />
-    <ul className="mt-8 lg:mt-6 space-y-6">
+    <ul className="mt-8 space-y-6 lg:mt-6">
       {VALUE_PROPOSITION.map((item, i) => (
         <ValueProposition.ListItem key={i} {...item} />
       ))}
