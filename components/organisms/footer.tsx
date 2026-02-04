@@ -1,4 +1,4 @@
-import { APP } from "@/constants/APP";
+import { Copyright } from "./copyright";
 
 export const Footer = () => {
   return (
@@ -16,10 +16,7 @@ export const Footer = () => {
             ),
           )}
         </ul>
-        <address className="not-italic">
-          Copyright &copy; {new Date().getFullYear()}{" "}
-          <span className="font-medium">{APP.owner}&reg;</span>
-        </address>
+        <Copyright />
       </div>
     </footer>
   );

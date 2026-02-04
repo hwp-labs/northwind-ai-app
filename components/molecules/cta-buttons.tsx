@@ -6,7 +6,7 @@ import { Button } from "../shadcn/ui/button";
 import { APP } from "@/constants/APP";
 import { PATH } from "@/constants/PATH";
 
-export const CTA = () => {
+export const CTAButtons = () => {
   const router = useRouter();
   const handleTalkToSales = () => {
     if (typeof window === "undefined") return;
@@ -19,13 +19,23 @@ export const CTA = () => {
   };
   //
   return (
-    <section className="mt-10 flex flex-col justify-center gap-4 px-6 lg:flex-row lg:items-center">
+    <>
       <Button size="lg" onClick={() => router.push(PATH.demo)}>
         Book a demo
       </Button>
       <Button size="lg" variant="secondary" onClick={handleTalkToSales}>
         Talk to sales
       </Button>
-    </section>
+    </>
+  );
+};
+
+export const GetStartedButton = () => {
+  const router = useRouter();
+  //
+  return (
+    <Button size="lg" onClick={() => router.push(PATH.demo)}>
+      Get started
+    </Button>
   );
 };

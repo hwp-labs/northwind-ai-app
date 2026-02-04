@@ -1,6 +1,8 @@
+import { PiggyBankIcon, SmileIcon, StarIcon } from "lucide-react";
+
 export const NAIRA = "₦";
 export const DOLLAR = "$";
-// 
+//
 export const ZERO = "0";
 export const EMPTY_STRING = "";
 export const HYPHENS = "---";
@@ -11,3 +13,32 @@ export const CUR_DATE = new Date().toISOString().slice(0, 10);
 export const FILE_SIZE = 1024 * 1024 * 20; // 20MB
 export const IMAGE_FILE_SIZE = 1024 * 1024 * 5; // 5MB
 export const IMAGE_MIME_TYPE = ["image/jpeg", "image/png"];
+//
+export const COPY = {
+  prompt: "How can Northwind AI help automate my business?",
+  automate:
+    "Automate your SME's virtual workflows and Point-of-Sale (POS) systems with Northwind AI",
+  transform:
+    "-transform repetitive business processes into smart, autonomous AI agents.",
+};
+
+export const VALUE_PROPOSITION = [
+  {
+    Icon: PiggyBankIcon,
+    title: "Save Time & Money",
+    description: `Instantly reduce operational costs by up to 40% and save hours on repetitive tasks and virtual workflows. 
+            AI agents run 24/7, and free up time for you and your team to focus on innovation and leads generation.`,
+  },
+  {
+    Icon: SmileIcon,
+    title: "Improve Quality of Service",
+    description: `Autonomously deliver professional and reliable service.
+            AI-powered automation ensures 99% accuracy across internal business processes, learning and adapting as your business grows.`,
+  },
+  {
+    Icon: StarIcon,
+    title: "Satisfy Your Customers",
+    description: `Continuously convert 10x more sales leads. 
+          AI agents provide seamless multi-channel integration and scenario-based engagement that exceed customer expectations, build trust and nurtures loyalty.`,
+  },
+];

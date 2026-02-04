@@ -1,31 +1,48 @@
 import Image from "next/image";
 //
-import { Hero } from "@/components/molecules/hero";
-import { CTA } from "@/components/molecules/cta";
 import { PromptTerminal } from "@/components/molecules/prompt-terminal";
+import { Hero } from "@/components/molecules/hero";
+import {
+  CTAButtons,
+  GetStartedButton,
+} from "@/components/molecules/cta-buttons";
 import { ValueProposition } from "@/components/molecules/value-proposition";
-import { APP } from "@/constants/APP";
+import { COPY, VALUE_PROPOSITION } from "@/constants/LOCALE";
 
 export default function HomePage() {
   return (
     <main>
       <section className="flex-row-cc mt-0 px-4 lg:mt-6">
-        <PromptTerminal rounded>{APP.tagline3}</PromptTerminal>
+        <PromptTerminal rounded>{COPY.prompt}</PromptTerminal>
       </section>
       <Hero />
-      <CTA />
+      <section className="mt-10 flex flex-col justify-center gap-4 px-6 lg:flex-row lg:items-center">
+        <CTAButtons />
+      </section>
       <figure className="flex-center-center my-16 px-4 lg:px-0">
         <Image
           className="dark:invert"
           src="/social-preview.png"
           alt=""
-          width={1028}
+          width={1280}
           height={640}
           priority
         />
       </figure>
-      <section className="border">
-        <ValueProposition />
+      <section className="border_ px-4 lg:py-16">
+        <ValueProposition.Heading classNames="text-center" />
+        <ul className="mx-auto mt-10 space-y-10 lg:max-w-[70%]">
+          {VALUE_PROPOSITION.map((item, i) => (
+            <ValueProposition.ListItem
+              key={i}
+              {...item}
+              classNames="border p-8 lg:p-10 text-left rounded-xl"
+            />
+          ))}
+        </ul>
+      </section>
+      <section className="mx-auto flex max-w-lg flex-col px-6 pb-16 mt-16 lg:mt-0">
+        <GetStartedButton />
       </section>
     </main>
   );

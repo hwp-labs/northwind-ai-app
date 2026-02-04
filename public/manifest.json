@@ -1,5 +1,5 @@
 {
-  "id": "https://northwindai.org/v1",
+  "id": "/v1",
   "name": "Northwind AI",
   "short_name": "NorthwindAI",
   "description": "AI Automation Web Services",
@@ -8,7 +8,7 @@
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "dir": "rtl",
+  "dir": "ltr",
   "lang": "en-US",
   "shortcuts": [
     {
@@ -19,7 +19,7 @@
     {
       "name": "Dashboard",
       "short_name": "Dashboard",
-      "url": "/admin/dashboard"
+      "url": "/dashboard"
     }
   ]
 }

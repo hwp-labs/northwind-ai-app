@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { APP } from "./APP";
+import { COPY } from "./LOCALE";
 
 export const VIEWPORT: Viewport = {
   colorScheme: "dark",
@@ -8,7 +9,6 @@ export const VIEWPORT: Viewport = {
     { media: "(prefers-color-scheme: dark)", color: APP.colors.backgroundDark },
   ],
 };
-
 
 // https://nextjs.org/docs/app/api-reference/functions/generate-metadata
 export const METADATA: Metadata = {
@@ -40,14 +40,14 @@ export const METADATA: Metadata = {
     },
   },
   // https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Manifest
-  manifest: `${APP.website}/manifest.json`,
+  manifest: `/manifest.json`,
   // OPEN GRAPH
   openGraph: {
     type: "website",
     url: APP.website,
     siteName: APP.name,
     title: APP.titleVerbose,
-    description: APP.tagline1,
+    description: COPY.automate,
     images: {
       url: `${APP.website}/social-preview.png`,
       alt: "",
@@ -59,7 +59,7 @@ export const METADATA: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: APP.titleVerbose,
-    description: APP.tagline1,
+    description: COPY.automate,
     creator: "@2gbeh",
     images: {
       url: `${APP.website}/social-preview.png`,
