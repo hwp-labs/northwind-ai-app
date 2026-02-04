@@ -1,13 +1,17 @@
 import Image from "next/image";
 //
-import { StatusBar } from "@/components/organisms/status-bar";
 import { Hero } from "@/components/molecules/hero";
 import { CTA } from "@/components/molecules/cta";
+import { PromptTerminal } from "@/components/molecules/prompt-terminal";
+import { ValueProposition } from "@/components/molecules/value-proposition";
+import { APP } from "@/constants/APP";
 
 export default function HomePage() {
   return (
-    <>
-      <StatusBar />
+    <main>
+      <section className="flex-row-cc mt-0 px-4 lg:mt-6">
+        <PromptTerminal rounded>{APP.tagline3}</PromptTerminal>
+      </section>
       <Hero />
       <CTA />
       <figure className="flex-center-center my-16 px-4 lg:px-0">
@@ -20,6 +24,9 @@ export default function HomePage() {
           priority
         />
       </figure>
-    </>
+      <section className="border">
+        <ValueProposition />
+      </section>
+    </main>
   );
 }

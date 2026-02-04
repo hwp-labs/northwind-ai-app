@@ -38,7 +38,7 @@ export const ControlledSelectField = ({
   ...props
 }: Props) => {
   return (
-    <Field>
+    <Field className="gap-2">
       {label ? (
         <ThemedLabel
           name={name}

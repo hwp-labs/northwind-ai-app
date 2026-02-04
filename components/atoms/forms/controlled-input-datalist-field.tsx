@@ -29,7 +29,7 @@ export const ControlledInputDatalistField = ({
   const listName = `${name}-datalist`;
   //
   return (
-    <Field>
+    <Field className="gap-2">
       {label ? (
         <ThemedLabel
           name={name}

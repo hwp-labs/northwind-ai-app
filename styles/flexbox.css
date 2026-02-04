@@ -5,7 +5,12 @@
     @apply flex min-h-svh w-full items-center justify-center;
   }
 
+  /* ROW */
   .flex-center-start {
+    @apply flex items-center justify-start;
+  }
+
+  .flex-row-cs {
     @apply flex items-center justify-start;
   }
 
@@ -13,7 +18,15 @@
     @apply flex items-center justify-end;
   }
 
+  .flex-row-ce {
+    @apply flex items-center justify-end;
+  }
+
   .flex-center-center {
+    @apply flex items-center justify-center;
+  }
+
+  .flex-row-cc {
     @apply flex items-center justify-center;
   }
 
@@ -21,7 +34,16 @@
     @apply flex items-center justify-between;
   }
 
+  .flex-row-cb {
+    @apply flex items-center justify-between;
+  }
+
+  /* COLUMN */
   .flex-col-start-center {
+    @apply flex flex-col items-start justify-center;
+  }
+
+  .flex-col-sc {
     @apply flex flex-col items-start justify-center;
   }
 
@@ -29,7 +51,23 @@
     @apply flex flex-col items-end justify-center;
   }
 
+  .flex-col-ec {
+    @apply flex flex-col items-end justify-center;
+  }
+
+  .flex-col-center-center {
+    @apply flex flex-col items-center justify-center;
+  }
+
+  .flex-col-cc {
+    @apply flex flex-col items-center justify-center;
+  }
+  
   .flex-col-start-between {
+    @apply flex flex-col items-start justify-between;
+  }
+
+  .flex-col-sb {
     @apply flex flex-col items-start justify-between;
   }
 
@@ -37,7 +75,8 @@
     @apply flex flex-col items-end justify-between;
   }
 
-  .flex-col-center-center {
-    @apply flex flex-col items-center justify-center;
+  .flex-col-eb {
+    @apply flex flex-col items-end justify-between;
   }
+
 }

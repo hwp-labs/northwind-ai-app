@@ -10,3 +10,7 @@
 .dark {
   --background: #120e0d !important;
 }
+
+.custom-mono {
+  @apply font-mono leading-4 font-semibold;
+}

@@ -1,4 +1,6 @@
 import { PropsWithChildren } from "react";
+import clsx from "clsx";
+// 
 import { FieldLabel } from "@/components/shadcn/ui/field";
 
 interface Props extends PropsWithChildren {
@@ -16,7 +18,7 @@ export const ThemedLabel = ({
   return (
     <FieldLabel
       htmlFor={name}
-      className={darkInvert ? "dark:invert" : undefined}
+      className={clsx("lg:font-normal font-medium", darkInvert && "dark:invert")}
     >
       {children} {required && <span className="text-rose-600">*</span>}
     </FieldLabel>

@@ -27,7 +27,7 @@ export const ControlledInputField = ({
   ...props
 }: Props) => {
   return (
-    <Field>
+    <Field className="gap-2">
       {label ? (
         <ThemedLabel
           name={name}
