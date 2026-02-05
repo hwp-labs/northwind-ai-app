@@ -1,18 +1,29 @@
-import { Control, FieldValues } from "react-hook-form";
+"use client";
+
+import { useFormContext, useWatch } from "react-hook-form";
+import clsx from "clsx";
 //
 import { FieldGroup } from "@/components/shadcn/ui/field";
 import { ControlledFieldInputDatalist } from "@/components/atoms/forms/controlled-field-input-datalist";
 import { ControlledFieldInput } from "@/components/atoms/forms/controlled-field-input";
 import { ControlledFieldSelect } from "@/components/atoms/forms/controlled-field-select";
 import { industrySeeder } from "@/lib/supabase/seeders/industry-seeder";
-import { ContactModel } from "@/lib/supabase/models/contact";
+//
+import { FormSchema } from "../hook";
 
-interface Props {
-  control: Control<ContactModel>;
-}
+interface Props {}
 
-export const BusinessDetailsFieldGroup = ({ control }: Props) => {
-  const showOtherField = true;
+export const BusinessDetailsFieldGroup = ({}: Props) => {
+  const { control } = useFormContext<FormSchema>();
+  const watchedIndustryId = useWatch({ control, name: "industryId" });
+  const showIndustryOtherValueField = watchedIndustryId === "other";
+  const industryIdOptions = [
+    ...industrySeeder.map((label, i) => ({
+      label,
+      value: String(i + 1),
+    })),
+    { label: "Other", value: "other" },
+  ];
   //
   return (
     <FieldGroup className="gap-5">
@@ -25,22 +36,20 @@ export const BusinessDetailsFieldGroup = ({ control }: Props) => {
         required
         darkInvert
       />
-      <div className="grid gap-5 lg:grid-cols-2">
+      <div
+        className={
+          showIndustryOtherValueField ? "grid gap-5 lg:grid-cols-2" : undefined
+        }
+      >
         <ControlledFieldSelect
           control={control}
           label="Select Industry"
           name="industryId"
-          options={[
-            ...industrySeeder.map((label, i) => ({
-              label,
-              value: String(i + 1),
-            })),
-            { label: "Other", value: "other" },
-          ]}
+          options={industryIdOptions}
           placeholder="Ex. Food & Drinks"
           darkInvert
         />
-        {showOtherField && (
+        {showIndustryOtherValueField && (
           <ControlledFieldInput
             control={control}
             label="Other"

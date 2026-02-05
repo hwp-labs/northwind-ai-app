@@ -40,7 +40,7 @@ export const ControlledFieldInputDatalist = <T extends FieldValues>({
               <option key={item} value={item} />
             ))}
           </datalist>
-          <CustomFieldError options={{ fieldState, description }} />
+          <CustomFieldError options={{ fieldState, description, darkInvert}} />
         </Field>
       )}
     />

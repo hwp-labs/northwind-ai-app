@@ -2,7 +2,6 @@
 
 import { Controller, FieldValues } from "react-hook-form";
 //
-import { Field } from "@/components/shadcn/ui/field";
 import { Switch } from "@/components/shadcn/ui/switch";
 import { CustomFieldLabel } from "./custom-field-label";
 import { CustomFieldError } from "./custom-field-error";
@@ -24,7 +23,7 @@ export const ControlledFieldSwitch = <T extends FieldValues>({
       name={name}
       control={control}
       render={({ field, fieldState }) => (
-        <div className="flex gap-4 _border">
+        <div className="_border flex gap-4">
           <Switch
             id={name}
             checked={field.value}
@@ -32,7 +31,13 @@ export const ControlledFieldSwitch = <T extends FieldValues>({
           />
           <div className="grid gap-0">
             <CustomFieldLabel options={{ ...props, name }} />
-            <CustomFieldError options={{ fieldState, description }} />
+            <CustomFieldError
+              options={{
+                fieldState,
+                description,
+                darkInvert: props.darkInvert,
+              }}
+            />
           </div>
         </div>
       )}

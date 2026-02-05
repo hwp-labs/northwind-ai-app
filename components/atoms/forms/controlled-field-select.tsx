@@ -33,10 +33,9 @@ export const ControlledFieldSelect = <T extends FieldValues>({
       render={({ field, fieldState }) => (
         <Field className="gap-2">
           <CustomFieldLabel options={{ ...props, name, darkInvert }} />
-          <Select>
+          <Select value={field.value} onValueChange={field.onChange}>
             <SelectTrigger
               id={name}
-              {...field}
               className={darkInvert ? "text-gray-300" : undefined}
             >
               <SelectValue placeholder={placeholder} />
@@ -51,7 +50,7 @@ export const ControlledFieldSelect = <T extends FieldValues>({
               </ScrollArea>
             </SelectContent>
           </Select>
-          <CustomFieldError options={{ fieldState, description }} />
+          <CustomFieldError options={{ fieldState, description, darkInvert }} />
         </Field>
       )}
     />

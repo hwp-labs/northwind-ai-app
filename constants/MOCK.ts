@@ -13,7 +13,6 @@ export const MOCK = {
     portal: 0,
   },
   demo: {
-    loader: 1,
     formData: 1,
     action: 1,
   },

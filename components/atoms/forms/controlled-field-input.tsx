@@ -31,7 +31,7 @@ export const ControlledFieldInput = <T extends FieldValues>({
             {...field}
             className={darkInvert ? "text-gray-300" : undefined}
           />
-          <CustomFieldError options={{ fieldState, description }} />
+          <CustomFieldError options={{ fieldState, description, darkInvert }} />
         </Field>
       )}
     />

@@ -1,14 +1,17 @@
-import { Control, FieldValues } from "react-hook-form";
+"use client";
+
+import { useFormContext } from "react-hook-form";
 //
 import { FieldGroup } from "@/components/shadcn/ui/field";
 import { ControlledFieldInput } from "@/components/atoms/forms/controlled-field-input";
-import { ContactModel } from "@/lib/supabase/models/contact";
+//
+import { FormSchema } from "../hook";
 
-interface Props {
-  control: Control<ContactModel>;
-}
+interface Props {}
 
-export const PersonalDetailsFieldGroup = ({ control }: Props) => {
+export const PersonalDetailsFieldGroup = ({}: Props) => {
+  const { control } = useFormContext<FormSchema>();
+  //
   return (
     <FieldGroup className="gap-5">
       <ControlledFieldInput

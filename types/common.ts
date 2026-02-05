@@ -1,5 +1,11 @@
+import type { LucideIcon } from "lucide-react";
 import { Control, FieldValues, Path } from "react-hook-form";
 
+export interface MenuItem {
+  label: string;
+  path: string;
+  Icon?: LucideIcon;
+}
 export interface OptionItem {
   label: string;
   value: string;
