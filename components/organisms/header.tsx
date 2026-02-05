@@ -1,6 +1,6 @@
 import { IconBrandGithubFilled } from "@tabler/icons-react";
 //
-import { Logo } from "../../atoms/logo";
+import { Logo } from "../atoms/logo";
 import { APP } from "@/constants/APP";
 import { PATH } from "@/constants/PATH";
 
