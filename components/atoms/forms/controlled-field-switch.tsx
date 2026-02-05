@@ -1,3 +1,5 @@
+"use client";
+
 import { Controller, FieldValues } from "react-hook-form";
 //
 import { Field } from "@/components/shadcn/ui/field";
@@ -8,12 +10,13 @@ import { ControlledInput } from "@/types/common";
 
 interface Props<T extends FieldValues> extends Omit<
   ControlledInput<T>,
-  "placeholder" | "description"
+  "placeholder"
 > {}
 
 export const ControlledFieldSwitch = <T extends FieldValues>({
   control,
   name,
+  description,
   ...props
 }: Props<T>) => {
   return (
@@ -21,17 +24,17 @@ export const ControlledFieldSwitch = <T extends FieldValues>({
       name={name}
       control={control}
       render={({ field, fieldState }) => (
-        <Field orientation="horizontal">
+        <div className="flex gap-4 _border">
           <Switch
             id={name}
             checked={field.value}
             onCheckedChange={field.onChange}
           />
-          <div className="grid gap-2">
+          <div className="grid gap-0">
             <CustomFieldLabel options={{ ...props, name }} />
-            <CustomFieldError options={{ fieldState }} />
+            <CustomFieldError options={{ fieldState, description }} />
           </div>
-        </Field>
+        </div>
       )}
     />
   );

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { CheckIcon } from "lucide-react";
+import { useForm } from "react-hook-form";
 //
 import {
   Field,
@@ -19,12 +20,16 @@ import { PATH } from "@/constants/PATH";
 import { PersonalDetailsFieldGroup } from "./ui/personal-details-field-group";
 import { BusinessDetailsFieldGroup } from "./ui/business-details-field-group";
 import { ControlledFieldSwitch } from "@/components/atoms/forms/controlled-field-switch";
+import { ContactModel } from "@/lib/supabase/models/contact";
 
 export const ContactForm = () => {
   const router = useRouter();
+  const { control, handleSubmit } = useForm<ContactModel>();
+
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
-  const handleSubmit = async () => {
+
+  const handleSubmitAsync = async () => {
     setSubmitting(true);
     await sleep();
     setSubmitting(false);
@@ -33,9 +38,16 @@ export const ContactForm = () => {
     setSuccess(false);
     router.replace(PATH.home);
   };
+
+  const onSubmit = async (data: any) => {
+    console.log("🚀 ~ onSubmit ~ data:", data);
+  };
   //
   return (
-    <form className="bg-foreground text-background rounded-t-4xl px-6 pt-10 pb-24 lg:rounded-2xl lg:px-10 lg:py-10">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="bg-foreground text-background rounded-t-4xl px-6 pt-10 pb-24 lg:rounded-2xl lg:px-10 lg:py-10"
+    >
       <FieldLegend>Get started with {APP.name}</FieldLegend>
       <FieldDescription className="lg:text-gray-500">
         {/* Required fields are labeled with asterisk (*) */}
@@ -43,19 +55,21 @@ export const ContactForm = () => {
         {APP.name} can help automate your business. Cool?
       </FieldDescription>
       <FieldSet disabled={false} className="mt-8 dark:invert">
-        <PersonalDetailsFieldGroup />
-        <BusinessDetailsFieldGroup />
-        <section className="mt-4 grid gap-10 lg:grid-cols-2">
+        <PersonalDetailsFieldGroup control={control} />
+        <BusinessDetailsFieldGroup control={control} />
+        <section className="mt-4 grid gap-10 lg:grid-cols-2 lg:gap-0 items-center">
           <ControlledFieldSwitch
+            control={control}
             name="subscribed"
             label="Subscribe for email updates"
+            // description="Required fields are labeled with asterisk"
             darkInvert
           />
-          <div className="flex flex-col justify-end lg:flex-row">
+          <div className="flex flex-col justify-end _border lg:flex-row">
             <Button
               type="button"
               size="lg"
-              onClick={handleSubmit}
+              onClick={handleSubmitAsync}
               className={
                 success ? "bg-emerald-600 text-white dark:invert" : undefined
               }

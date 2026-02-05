@@ -1,17 +1,23 @@
+import { Control, FieldValues } from "react-hook-form";
+//
 import { FieldGroup } from "@/components/shadcn/ui/field";
 import { ControlledFieldInputDatalist } from "@/components/atoms/forms/controlled-field-input-datalist";
 import { ControlledFieldInput } from "@/components/atoms/forms/controlled-field-input";
 import { ControlledFieldSelect } from "@/components/atoms/forms/controlled-field-select";
 import { industrySeeder } from "@/lib/supabase/seeders/industry-seeder";
+import { ContactModel } from "@/lib/supabase/models/contact";
 
-interface Props {}
+interface Props {
+  control: Control<ContactModel>;
+}
 
-export const BusinessDetailsFieldGroup = ({}: Props) => {
+export const BusinessDetailsFieldGroup = ({ control }: Props) => {
   const showOtherField = true;
   //
   return (
     <FieldGroup className="gap-5">
       <ControlledFieldInput
+        control={control}
         label="Business Name"
         type="search"
         name="businessName"
@@ -21,6 +27,7 @@ export const BusinessDetailsFieldGroup = ({}: Props) => {
       />
       <div className="grid gap-5 lg:grid-cols-2">
         <ControlledFieldSelect
+          control={control}
           label="Select Industry"
           name="industryId"
           options={[
@@ -35,6 +42,7 @@ export const BusinessDetailsFieldGroup = ({}: Props) => {
         />
         {showOtherField && (
           <ControlledFieldInput
+            control={control}
             label="Other"
             type="search"
             name="industryOtherValue"
@@ -44,6 +52,7 @@ export const BusinessDetailsFieldGroup = ({}: Props) => {
         )}
       </div>
       <ControlledFieldInputDatalist
+        control={control}
         label="Business Location"
         name="location"
         options={["Apapa, Lagos"]}
