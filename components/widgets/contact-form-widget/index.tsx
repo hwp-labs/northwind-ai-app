@@ -13,11 +13,11 @@ import { APP } from "@/constants/APP";
 //
 import { PersonalDetailsFieldGroup } from "./ui/personal-details-field-group";
 import { BusinessDetailsFieldGroup } from "./ui/business-details-field-group";
-import { useContactForm } from "./hook";
 import { SubmitButton } from "./ui/submit-button";
+import { useContactFormWidget } from "./hook";
 
-export const ContactForm = () => {
-  const { form, onSubmit, submitting, success } = useContactForm();
+export const ContactFormWidget = () => {
+  const { form, onSubmit, submitting, success } = useContactFormWidget();
   //
   return (
     <FormProvider {...form}>
@@ -30,10 +30,7 @@ export const ContactForm = () => {
           Enter your details below, and we'll reach out shortly to discuss how{" "}
           {APP.name} can help automate your business. Cool?
         </FieldDescription>
-        <FieldSet
-          disabled={submitting}
-          className="mt-8 dark:invert"
-        >
+        <FieldSet disabled={submitting} className="mt-8 dark:invert">
           <PersonalDetailsFieldGroup />
           <BusinessDetailsFieldGroup />
           <section className="mt-4 grid items-center gap-10 lg:grid-cols-2 lg:gap-0">
@@ -43,9 +40,7 @@ export const ContactForm = () => {
               label="Subscribe for email updates"
               darkInvert
             />
-            <SubmitButton
-              options={{ submitting, success }}
-            />
+            <SubmitButton options={{ submitting, success }} />
           </section>
         </FieldSet>
       </form>

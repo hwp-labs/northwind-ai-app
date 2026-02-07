@@ -12,7 +12,7 @@ export const MOCK = {
   home: {
     portal: 0,
   },
-  demo: {
+  getStarted: {
     formData: 1,
     action: 1,
   },

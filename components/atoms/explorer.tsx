@@ -12,7 +12,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/shadcn/ui/dropdown-menu";
-import { PATH } from "@/constants/PATH";
+import { PATH, PROTECTED_PATH } from "@/constants/PATH";
 
 export const Explorer = () => {
   const router = useRouter();
@@ -30,7 +30,7 @@ export const Explorer = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="" align="end">
-        {Object.entries(PATH).map(([name, path]) => (
+        {Object.entries({ ...PATH, ...PROTECTED_PATH }).map(([name, path]) => (
           <DropdownMenuItem key={name} onClick={() => router.push(path)}>
             {startCase(name)}
           </DropdownMenuItem>

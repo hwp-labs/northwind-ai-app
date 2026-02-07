@@ -7,7 +7,7 @@ interface Props extends PropsWithChildren {
   rounded?: boolean;
 }
 
-export const PromptTerminal = ({ children, rounded }: Props) => {
+export const PromptTerminal = ({ children, rounded = true }: Props) => {
   return (
     <div
       className={clsx(

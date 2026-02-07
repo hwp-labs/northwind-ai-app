@@ -1,95 +1,63 @@
 import { useEffect, useState } from "react";
-import { VisitorModel } from "@/lib/supabase/models/visitor";
+import { usePathname } from "next/navigation";
+import { BaseEntity } from "@/lib/supabase/types";
+import {
+  DeviceEnum,
+  VisitorEntity,
+} from "@/lib/supabase/services/visitors/types";
+//
 
-type DeviceDetails = Pick<
-  VisitorModel,
-  "screen" | "platform" | "userAgent" | "geolocation" | "ipAddress"
+export type DeviceDetails = Omit<
+  VisitorEntity,
+  keyof BaseEntity | "visited_on" | "visits"
 >;
 
 export function useDeviceDetails() {
-  const [data, setData] = useState<Partial<DeviceDetails>>();
-  const [loadingGeolocation, setLoadingGeolocation] = useState<boolean>(false);
-  const [loadingIpAddress, setLoadingIpAddress] = useState<boolean>(false);
+  const pathname = usePathname();
+  const [fetching, setFetching] = useState<boolean>(false);
+  const [data, setData] = useState<DeviceDetails>();
+  const [error, setError] = useState<string | undefined>();
 
-  const getWindowDetails = () => {
-    const { platform, userAgent } = navigator;
+  const onload = () => {
+    const { platform, userAgent: user_agent } = navigator;
     const { width, height } = window.screen;
     const device =
       width < 768
-        ? "mobile"
+        ? DeviceEnum.MOBILE
         : width >= 768 && width < 1024
-          ? "tablet"
-          : "desktop";
+          ? DeviceEnum.TABLET
+          : DeviceEnum.DESKTOP;
 
-    setData((prev) => ({
-      ...prev,
-      screen: { width, height, device },
-      platform,
-      userAgent,
-    }));
-  };
-
-  const fetchGeolocation = () => {
-    setLoadingGeolocation(true);
-    
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        const { latitude, longitude, accuracy } = pos.coords;
-        setData((prev) => ({
-          ...prev,
-          geolocation: { latitude, longitude, accuracy },
-        }));
-        setLoadingGeolocation(false);
-      },
-      (err) => {
-        console.error(
-          "🚀 ~ useDeviceDetails ~ fetchGeolocation ~ err:",
-          err.message
-        );
-        setLoadingGeolocation(false);
-      },
-      {
-        enableHighAccuracy: true,
-        maximumAge: Infinity,
-        timeout: 10000,
-      }
-    );
-  };
-
-  const fetchIpAddress = () => {
-    setLoadingIpAddress(true);
-
-    fetch("https://api.ipify.org")
-      .then((res) => res.json())
-      .then((ipAddress) => {
-        setData((prev) => ({
-          ...prev,
-          ipAddress,
-        }));
+    setFetching(true);
+    fetch("https://ipwho.is/")
+      .then((raw) => raw.json())
+      .then((res: IpWhoIsResponse) => {
+        const data = {
+          pathname,
+          platform,
+          user_agent,
+          screen: { width, height, device },
+          ip_address: res.ip,
+          geolocation: res,
+        };
+        setData(data);
+        console.log("🚀 ~ onload ~ data:", data);
       })
       .catch((err) => {
-        console.error("🚀 ~ useDeviceDetails ~ fetchIpAddress ~ err:", err);
+        setError(`IpWhoIsError: ${err}`);
       })
       .finally(() => {
-        setLoadingIpAddress(false);
+        setFetching(false);
       });
   };
 
   useEffect(() => {
-    fetchIpAddress();
-
-    if (typeof window === "undefined") return;
-    
-    getWindowDetails();
-
-    if ("geolocation" in navigator) fetchGeolocation();
-  }, []);
+    onload();
+  }, [pathname]);
 
   return {
+    fetching,
     data,
-    loadingGeolocation,
-    loadingIpAddress,
+    error,
   };
 }
-
-

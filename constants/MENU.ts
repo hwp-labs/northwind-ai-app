@@ -8,7 +8,7 @@ import {
   LogOutIcon,
   ChartCandlestickIcon,
 } from "lucide-react";
-// 
+//
 import { PATH } from "./PATH";
 
 interface MenuParams {
@@ -19,7 +19,7 @@ interface MenuParams {
 
 export const MENU = [
   { label: "Home", path: PATH.home },
-  { label: "Book a demo", path: PATH.demo },
+  { label: "Book a demo", path: PATH.getStarted },
 ] as const satisfies MenuParams[];
 
 export const DASHBOARD_MENU = {

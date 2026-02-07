@@ -4,13 +4,13 @@ import { useFormContext } from "react-hook-form";
 //
 import { FieldGroup } from "@/components/shadcn/ui/field";
 import { ControlledFieldInput } from "@/components/atoms/forms/controlled-field-input";
-//
-import { FormSchema } from "../hook";
+// 
+import { ContactSchema } from "@/lib/supabase/services/contacts/types";
 
 interface Props {}
 
 export const PersonalDetailsFieldGroup = ({}: Props) => {
-  const { control } = useFormContext<FormSchema>();
+  const { control } = useFormContext<ContactSchema>();
   //
   return (
     <FieldGroup className="gap-5">

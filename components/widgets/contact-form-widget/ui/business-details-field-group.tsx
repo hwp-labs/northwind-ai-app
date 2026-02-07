@@ -1,25 +1,25 @@
 "use client";
 
 import { useFormContext, useWatch } from "react-hook-form";
-import clsx from "clsx";
 //
 import { FieldGroup } from "@/components/shadcn/ui/field";
 import { ControlledFieldInputDatalist } from "@/components/atoms/forms/controlled-field-input-datalist";
 import { ControlledFieldInput } from "@/components/atoms/forms/controlled-field-input";
 import { ControlledFieldSelect } from "@/components/atoms/forms/controlled-field-select";
-import { industrySeeder } from "@/lib/supabase/seeders/industry-seeder";
+import { StateLookup } from "@/constants/LOOKUP";
+import industrySeeder from "@/lib/supabase/services/industries/seeder.json";
 //
-import { FormSchema } from "../hook";
+import { ContactSchema } from "@/lib/supabase/services/contacts/types";
 
 interface Props {}
 
 export const BusinessDetailsFieldGroup = ({}: Props) => {
-  const { control } = useFormContext<FormSchema>();
+  const { control } = useFormContext<ContactSchema>();
   const watchedIndustryId = useWatch({ control, name: "industryId" });
-  const showIndustryOtherValueField = watchedIndustryId === "other";
+  const showIndustryOtherField = watchedIndustryId === "other";
   const industryIdOptions = [
-    ...industrySeeder.map((label, i) => ({
-      label,
+    ...industrySeeder.map(({ name }, i) => ({
+      label: name,
       value: String(i + 1),
     })),
     { label: "Other", value: "other" },
@@ -38,7 +38,7 @@ export const BusinessDetailsFieldGroup = ({}: Props) => {
       />
       <div
         className={
-          showIndustryOtherValueField ? "grid gap-5 lg:grid-cols-2" : undefined
+          showIndustryOtherField ? "grid gap-5 lg:grid-cols-2" : undefined
         }
       >
         <ControlledFieldSelect
@@ -49,26 +49,36 @@ export const BusinessDetailsFieldGroup = ({}: Props) => {
           placeholder="Ex. Food & Drinks"
           darkInvert
         />
-        {showIndustryOtherValueField && (
+        {showIndustryOtherField && (
           <ControlledFieldInput
             control={control}
             label="Other"
             type="search"
-            name="industryOtherValue"
+            name="industryOther"
             placeholder="Please specify"
             darkInvert
           />
         )}
       </div>
-      <ControlledFieldInputDatalist
-        control={control}
-        label="Business Location"
-        name="location"
-        options={["Apapa, Lagos"]}
-        placeholder="Ex. Sapele Road, Benin"
-        required
-        darkInvert
-      />
+      <div className="grid gap-5 lg:grid-cols-2">
+        <ControlledFieldInputDatalist
+          control={control}
+          label="Business Location"
+          name="location"
+          placeholder="Ex. Sapele Road, Benin"
+          required
+          darkInvert
+        />
+        <ControlledFieldSelect
+          control={control}
+          label="Select State"
+          name="stateId"
+          options={StateLookup}
+          placeholder="Ex. Edo"
+          required
+          darkInvert
+        />
+      </div>
     </FieldGroup>
   );
 };

@@ -40,6 +40,11 @@ npm i --save-dev @types/lodash
 
 # 
 npm i react-hook-form @hookform/resolvers zod
+
+#
+
+npm install @supabase/supabase-js @supabase/auth-helpers-nextjs @supabase/ssr 
+npm install --save-dev supabase
 ```
 
 #### Shadcn/ui ... components.json

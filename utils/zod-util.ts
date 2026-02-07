@@ -31,6 +31,19 @@ export const zodUtil = {
         /[^A-Za-z0-9]/,
         "Password must contain at least one special character.",
       ),
+  ip: () => {
+    const validate = (ip: string): boolean => {
+      const ipv4Regex =
+        /^(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)){3}$/;
+      const ipv6Regex =
+        /^([a-fA-F0-9]{1,4}:){7}[a-fA-F0-9]{1,4}$|^((?:[a-fA-F0-9]{1,4}:){1,7}:|:(?::[a-fA-F0-9]{1,4}){1,7})$/;
+      return ipv4Regex.test(ip) || ipv6Regex.test(ip);
+    };
+
+    return z.string().refine((val) => validate(val), {
+      message: "Invalid IP address",
+    });
+  },
   imageFile: () =>
     z
       .instanceof(File)
