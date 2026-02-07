@@ -1,6 +1,6 @@
 'use client'
 
-import { supabase } from '@/lib/supabase/actions/client'
+import { supabase } from "@/lib/supabase/client"
 
 export default function LoginPage() {
   const signIn = async () => {

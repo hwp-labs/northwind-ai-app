@@ -6,24 +6,23 @@ import { FieldGroup } from "@/components/shadcn/ui/field";
 import { ControlledFieldInputDatalist } from "@/components/atoms/forms/controlled-field-input-datalist";
 import { ControlledFieldInput } from "@/components/atoms/forms/controlled-field-input";
 import { ControlledFieldSelect } from "@/components/atoms/forms/controlled-field-select";
-import { StateLookup } from "@/constants/LOOKUP";
-import industrySeeder from "@/lib/supabase/services/industries/seeder.json";
+import { IndustryLookup, StateLookup } from "@/constants/LOOKUP";
 //
 import { ContactSchema } from "@/lib/supabase/services/contacts/types";
+import { useBusinessDetailsFieldGroup } from "./hook";
 
 interface Props {}
 
 export const BusinessDetailsFieldGroup = ({}: Props) => {
+  const {
+    fetchingIndustries,
+    fetchingLocations,
+    industryIdOptions,
+    locationOptions,
+  } = useBusinessDetailsFieldGroup();
   const { control } = useFormContext<ContactSchema>();
-  const watchedIndustryId = useWatch({ control, name: "industryId" });
+  const watchedIndustryId = useWatch({ control, name: "industry_id" });
   const showIndustryOtherField = watchedIndustryId === "other";
-  const industryIdOptions = [
-    ...industrySeeder.map(({ name }, i) => ({
-      label: name,
-      value: String(i + 1),
-    })),
-    { label: "Other", value: "other" },
-  ];
   //
   return (
     <FieldGroup className="gap-5">
@@ -31,7 +30,7 @@ export const BusinessDetailsFieldGroup = ({}: Props) => {
         control={control}
         label="Business Name"
         type="search"
-        name="businessName"
+        name="business_name"
         placeholder="Ex. VIVID Frozen Food & Drinks"
         required
         darkInvert
@@ -44,9 +43,12 @@ export const BusinessDetailsFieldGroup = ({}: Props) => {
         <ControlledFieldSelect
           control={control}
           label="Select Industry"
-          name="industryId"
-          options={industryIdOptions}
-          placeholder="Ex. Food & Drinks"
+          name="industry_id"
+          placeholder={
+            fetchingIndustries ? "Please wait..." : "Ex. Food & Drinks"
+          }
+          options={[...industryIdOptions, ...IndustryLookup]}
+          disabled={fetchingIndustries}
           darkInvert
         />
         {showIndustryOtherField && (
@@ -54,7 +56,7 @@ export const BusinessDetailsFieldGroup = ({}: Props) => {
             control={control}
             label="Other"
             type="search"
-            name="industryOther"
+            name="industry_other"
             placeholder="Please specify"
             darkInvert
           />
@@ -65,14 +67,18 @@ export const BusinessDetailsFieldGroup = ({}: Props) => {
           control={control}
           label="Business Location"
           name="location"
-          placeholder="Ex. Sapele Road, Benin"
+          placeholder={
+            fetchingLocations ? "Please wait..." : "Ex. Sapele Road, Benin"
+          }
+          options={locationOptions}
+          disabled={fetchingLocations}
           required
           darkInvert
         />
         <ControlledFieldSelect
           control={control}
           label="Select State"
-          name="stateId"
+          name="state_id"
           options={StateLookup}
           placeholder="Ex. Edo"
           required

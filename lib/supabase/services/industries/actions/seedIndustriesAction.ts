@@ -1,6 +1,9 @@
+"use server";
+
 import { supabase } from "@/lib/supabase/client";
 import { ApiResponse } from "@/lib/supabase/types";
 //
+import { truncateTableAction } from "../../base/actions/truncateTableAction";
 import { TABLE } from "../types";
 import seedData from "../seeder.json";
 
@@ -11,18 +14,15 @@ export async function seedIndustriesAction({
   reset,
 }: RequestDto): Promise<ApiResponse<ResponseDto>> {
   if (reset) {
-    const { error: deleteError } = await supabase
-      .from(TABLE)
-      .delete()
-      .neq("id", 0);
+    const { error: deleteError } = await truncateTableAction(TABLE);
 
-    if (deleteError) return { data: null, error: deleteError?.message };
+    if (deleteError) return { data: null, error: deleteError };
 
     const { count, error } = await supabase
       .from(TABLE)
       .insert(seedData, { count: "exact" });
 
-    return { data: `${count} rows inserted`, error: error?.message };
+    return { data: `${count || 0} rows inserted`, error: error?.message };
   }
 
   const { data: selectData, error: selectError } = await supabase
@@ -40,5 +40,5 @@ export async function seedIndustriesAction({
     .from(TABLE)
     .insert(seedDataFiltered, { count: "exact" });
 
-  return { data: `${count} rows inserted`, error: error?.message };
+  return { data: `${count || 0} rows inserted`, error: error?.message };
 }

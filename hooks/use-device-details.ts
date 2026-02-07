@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { BaseEntity } from "@/lib/supabase/types";
+import { BaseEntity } from "@/lib/supabase/services/base/types";
 import {
   DeviceEnum,
   VisitorEntity,
@@ -41,7 +41,7 @@ export function useDeviceDetails() {
           geolocation: res,
         };
         setData(data);
-        console.log("🚀 ~ onload ~ data:", data);
+        // console.log("🚀 ~ onload ~ data:", data);
       })
       .catch((err) => {
         setError(`IpWhoIsError: ${err}`);

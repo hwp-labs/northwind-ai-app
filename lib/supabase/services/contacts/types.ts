@@ -1,5 +1,5 @@
 import { z, zodUtil } from "@/utils/zod-util";
-import { BaseEntity, PrimaryKeyType } from "../../types";
+import { BaseEntity, PrimaryKeyType } from "../base/types";
 
 export const TABLE = "contacts";
 
@@ -8,28 +8,30 @@ export interface ContactEntity extends BaseEntity {
   email: string;
   telephone?: string;
   //
-  businessName?: string;
-  industryId?: PrimaryKeyType | null;
-  industryOther?: string | null;
+  business_name?: string;
+  industry_id?: PrimaryKeyType | null;
+  industry_other?: string | null;
   location?: string;
-  stateId?: PrimaryKeyType;
+  state_id?: PrimaryKeyType;
   //
   subscribed?: boolean;
 }
+
+export type CreateContactDto = Required<Omit<ContactEntity, keyof BaseEntity>>;
 
 export const contactSchema = z
   .object({
     name: zodUtil.text({ msg: "Contact name is required" }),
     email: zodUtil.email(),
     telephone: zodUtil.tel(),
-    businessName: zodUtil.text({ min: 3, msg: "Business name is required" }),
-    industryId: z.string().nullable().optional(),
-    industryOther: z.string().nullable().optional(),
-    location: z.string().min(2, "Location is required"),
-    stateId: z.string(),
+    business_name: zodUtil.text({ min: 3, msg: "Business name is required" }),
+    industry_id: z.string().nullable().optional(),
+    industry_other: z.string().nullable().optional(),
+    location: zodUtil.text({ msg: "Location is required" }),
+    state_id: z.string(),
     subscribed: z.boolean().optional(),
   })
-  .refine((v) => v.industryId !== "other" || !!v.industryOther, {
+  .refine((v) => v.industry_id !== "other" || !!v.industry_other, {
     message: "Please specify your industry",
     path: ["industryOther"],
   });

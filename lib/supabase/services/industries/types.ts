@@ -1,5 +1,5 @@
 import { z, zodUtil } from "@/utils/zod-util";
-import { LookupEntity } from "../../types";
+import { LookupEntity } from "../base/types";
 
 export const TABLE = "industries";
 

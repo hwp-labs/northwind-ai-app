@@ -1,8 +1,12 @@
 interface LookupParams {
   label: string;
   value: string;
-  item: unknown;
+  item?: unknown;
 }
+
+export const IndustryLookup = [
+  { value: "other", label: "Other" },
+] as const satisfies LookupParams[];
 
 export const StateLookup = [
   { value: "1", label: "Abia", item: { capital: "Umuahia" } },

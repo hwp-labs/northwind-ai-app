@@ -42,9 +42,12 @@ npm i --save-dev @types/lodash
 npm i react-hook-form @hookform/resolvers zod
 
 #
-
 npm install @supabase/supabase-js @supabase/auth-helpers-nextjs @supabase/ssr 
 npm install --save-dev supabase
+
+#
+npm install -D ts-node typescript
+npx ts-node lib/supabase/seed.ts
 ```
 
 #### Shadcn/ui ... components.json

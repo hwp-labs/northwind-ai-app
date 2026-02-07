@@ -2,8 +2,9 @@ import { seedIndustriesAction } from "./services/industries/actions/seedIndustri
 
 (async () => {
   console.info("🚀 ~ seed ~ started");
-  // 
-  await seedIndustriesAction({});
-  // 
+  //
+  const { data, error } = await seedIndustriesAction({});
+  console.log("🚀 ~ seedIndustriesAction ~ data:", data, error)
+  //
   console.info("🚀 ~ seed ~ ended");
 })();

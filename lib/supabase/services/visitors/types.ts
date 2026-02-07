@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { isValidIp } from "@/utils";
-import { BaseEntity } from "@/lib/supabase/types";
+import { BaseEntity } from "../base/types";
 
 export const TABLE = "visitors";
 

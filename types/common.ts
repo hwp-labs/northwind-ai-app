@@ -16,6 +16,7 @@ export interface BaseInput {
   name: string;
   label?: React.ReactNode;
   required?: boolean;
+  disabled?: boolean;
   darkInvert?: boolean;
 }
 export interface ControlledInput<T extends FieldValues> extends BaseInput {

@@ -23,6 +23,7 @@ export const ContactFormWidget = () => {
     <FormProvider {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
+        autoComplete="off"
         className="bg-foreground text-background rounded-t-4xl px-6 pt-10 pb-24 lg:rounded-2xl lg:px-10 lg:py-10"
       >
         <FieldLegend>Get started with {APP.name}</FieldLegend>

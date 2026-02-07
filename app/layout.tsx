@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import clsx from "clsx";
 //
+import { ThemedToaster } from "@/components/atoms/themed-toaster";
 import { Explorer } from "@/components/atoms/explorer";
 import { METADATA, VIEWPORT } from "@/constants/META";
 import { fontPoppins, fontMontserrat, fontRaleway } from "@/constants/FONT";
@@ -26,6 +27,7 @@ export default function RootLayout({
       >
         {children}
         <Explorer />
+        <ThemedToaster />
       </body>
     </html>
   );
