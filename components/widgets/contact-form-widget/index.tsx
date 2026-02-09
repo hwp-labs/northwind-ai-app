@@ -8,12 +8,16 @@ import {
   FieldLegend,
   FieldSet,
 } from "@/components/shadcn/ui/field";
+import {
+  SubmitButtonGrid,
+  SubmitButton,
+} from "@/components/atoms/submit-button";
+import { ControlledFormFieldset } from "@/components/atoms/forms/controlled-form-fieldset";
 import { ControlledFieldSwitch } from "@/components/atoms/forms/controlled-field-switch";
 import { APP } from "@/constants/APP";
 //
 import { PersonalDetailsFieldGroup } from "./ui/personal-details-field-group";
 import { BusinessDetailsFieldGroup } from "./ui/business-details-field-group";
-import { SubmitButton } from "./ui/submit-button";
 import { SuccessModal } from "./ui/success-modal";
 import { useContactFormWidget } from "./hook";
 
@@ -23,31 +27,32 @@ export const ContactFormWidget = () => {
   //
   return (
     <>
-      <FormProvider {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          autoComplete="off"
-          className="bg-white text-background rounded-t-4xl px-6 pt-10 pb-24 lg:rounded-2xl lg:px-10 lg:py-10"
-        >
-          <FieldLegend>Get started with {APP.name}</FieldLegend>
-          <FieldDescription className="text-muted">
-            We'll reach out shortly to discuss how {APP.name} can help automate
-            your business. Cool?
-          </FieldDescription>
-          <FieldSet disabled={submitting} className="mt-8">
-            <PersonalDetailsFieldGroup />
-            <BusinessDetailsFieldGroup />
-            <section className="mt-4 grid items-center gap-10 lg:grid-cols-2 lg:gap-0">
-              <ControlledFieldSwitch
-                control={form.control}
-                name="subscribed"
-                label="Subscribe for email updates"
-              />
-              <SubmitButton options={{ submitting, success }} />
-            </section>
-          </FieldSet>
-        </form>
-      </FormProvider>
+      <ControlledFormFieldset
+        form={form}
+        onSubmit={form.handleSubmit(onSubmit)}
+        disabled={submitting}
+        h1={`Get started with ${APP.name}`}
+        p={`We'll reach out shortly to discuss how ${APP.name} can help automate
+            your business. Cool?`}
+      >
+        <PersonalDetailsFieldGroup />
+        <BusinessDetailsFieldGroup />
+        <SubmitButtonGrid>
+          <ControlledFieldSwitch
+            control={form.control}
+            name="subscribed"
+            label="Subscribe for email updates"
+          />
+          <SubmitButton
+            submitting={submitting}
+            submittingText="Going..."
+            success={success}
+            successText="Gone!"
+          >
+            Let's go
+          </SubmitButton>
+        </SubmitButtonGrid>
+      </ControlledFormFieldset>
       <SuccessModal open={success} onClose={onSubmitted} />
     </>
   );

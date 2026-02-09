@@ -24,7 +24,7 @@ export const MOCK = {
     portal: 0,
   },
   login: {
-    formData: 0,
+    formData: 1,
     action: 1,
     router: 1,
   },

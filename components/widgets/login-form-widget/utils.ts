@@ -6,7 +6,7 @@ export const M = MOCK.login;
 export const defaultValues: LoginSchema = M.formData
   ? {
       username: "dehphantom@yahoo.com",
-      password: "+2348169960927",
+      password: "$Strongo@ssw0rd",
       remember_me: true,
     }
   : {
@@ -16,5 +16,5 @@ export const defaultValues: LoginSchema = M.formData
 
 export const prepareLoginPayload = (formData: LoginSchema) => ({
     ...formData,
-    subscribed: formData.remember_me || false,
+    remember_me: formData.remember_me || false,
   })

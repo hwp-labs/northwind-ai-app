@@ -9,6 +9,7 @@ import { loginSchema, LoginSchema } from "@/lib/supabase/services/auth/types";
 import { PROTECTED_PATH } from "@/constants/PATH";
 //
 import { M, defaultValues, prepareLoginPayload } from "./utils";
+import { signInWithGitHubAction } from "@/lib/supabase/services/auth/actions/signInWithOAuthAction";
 
 export function useLoginFormWidget() {
   const router = useRouter();
@@ -30,13 +31,18 @@ export function useLoginFormWidget() {
       await sleep();
     } else {
       const payload = prepareLoginPayload(formData);
-      // const { data, error } = await createContactAction(payload);
+      const { data, error } = await signInWithGitHubAction(payload);
 
-      // if (error) {
-      //   toast.error(error);
-      //   setSubmitting(false);
-      //   return;
-      // }
+      if (error) {
+        toast.error(error);
+        setSubmitting(false);
+        return;
+      }
+
+      if (data) {
+        window.location.href = data;
+        return;
+      }
     }
 
     setSubmitting(false);
