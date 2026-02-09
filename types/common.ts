@@ -17,7 +17,6 @@ export interface BaseInput {
   label?: React.ReactNode;
   required?: boolean;
   disabled?: boolean;
-  darkInvert?: boolean;
 }
 export interface ControlledInput<T extends FieldValues> extends BaseInput {
   name: Path<T>;

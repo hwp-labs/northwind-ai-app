@@ -21,13 +21,13 @@ interface Props<T extends FieldValues> extends ControlledInput<T> {
 export const ControlledFieldSelect = <T extends FieldValues>({
   control,
   name,
-  options = [],
+  label,
   placeholder,
+  options = [],
   required,
+  disabled,
   loading,
-  darkInvert,
   description,
-  ...props
 }: Props<T>) => {
   return (
     <Controller
@@ -35,15 +35,16 @@ export const ControlledFieldSelect = <T extends FieldValues>({
       control={control}
       render={({ field, fieldState }) => (
         <Field className="gap-2">
-          <CustomFieldLabel options={{ ...props, name, required, darkInvert }} />
-          <Select value={field.value} onValueChange={field.onChange}>
+          <CustomFieldLabel options={{ name, label, required }} />
+          <Select
+            value={field.value}
+            onValueChange={field.onChange}
+            disabled={disabled}
+          >
             {loading ? (
               <InputSkeleton />
             ) : (
-              <SelectTrigger
-                id={name}
-                className={darkInvert ? "text-sm text-gray-300" : undefined}
-              >
+              <SelectTrigger id={name}>
                 <SelectValue placeholder={placeholder} />
               </SelectTrigger>
             )}
@@ -57,7 +58,7 @@ export const ControlledFieldSelect = <T extends FieldValues>({
               </ScrollArea>
             </SelectContent>
           </Select>
-          <CustomFieldError options={{ fieldState, description, darkInvert }} />
+          <CustomFieldError options={{ fieldState, description }} />
         </Field>
       )}
     />

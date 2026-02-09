@@ -2,6 +2,7 @@
 
 import { Controller, FieldValues } from "react-hook-form";
 //
+import { Spinner } from "@/components/shadcn/ui/spinner";
 import { Switch } from "@/components/shadcn/ui/switch";
 import { CustomFieldLabel } from "./custom-field-label";
 import { CustomFieldError } from "./custom-field-error";
@@ -15,8 +16,11 @@ interface Props<T extends FieldValues> extends Omit<
 export const ControlledFieldSwitch = <T extends FieldValues>({
   control,
   name,
+  label,
+  required,
+  disabled,
+  loading,
   description,
-  ...props
 }: Props<T>) => {
   return (
     <Controller
@@ -24,20 +28,19 @@ export const ControlledFieldSwitch = <T extends FieldValues>({
       control={control}
       render={({ field, fieldState }) => (
         <div className="_border flex gap-2.5">
-          <Switch
-            id={name}
-            checked={field.value}
-            onCheckedChange={field.onChange}
-          />
-          <div className="grid gap-0">
-            <CustomFieldLabel options={{ ...props, name }} />
-            <CustomFieldError
-              options={{
-                fieldState,
-                description,
-                darkInvert: props.darkInvert,
-              }}
+          {loading ? (
+            <Spinner />
+          ) : (
+            <Switch
+              id={name}
+              checked={field.value}
+              onCheckedChange={field.onChange}
+              disabled={disabled}
             />
+          )}
+          <div className="grid gap-0">
+            <CustomFieldLabel options={{ name, label, required }} />
+            <CustomFieldError options={{ fieldState, description }} />
           </div>
         </div>
       )}

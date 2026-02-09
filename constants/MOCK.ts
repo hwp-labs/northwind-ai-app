@@ -11,7 +11,10 @@ export const MOCK = {
   explorer: {
     display: 0,
   },
-  visitorTrackerWidget: {
+  useDeviceDetails: {
+    loader: 1,
+  },
+  VisitorTrackerWidget: {
     display: 0,
   },
   splash: {
@@ -20,8 +23,13 @@ export const MOCK = {
   home: {
     portal: 0,
   },
+  login: {
+    formData: 0,
+    action: 1,
+    router: 1,
+  },
   getStarted: {
-    formData: 1,
+    formData: 0,
     action: 1,
     router: 1,
   },

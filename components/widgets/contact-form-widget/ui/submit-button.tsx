@@ -18,7 +18,7 @@ export const SubmitButton = ({ options: { submitting, success } }: Props) => {
         type="submit"
         className={clsx(
           "h-10 lg:h-9",
-          success && "bg-emerald-600 text-white dark:invert",
+          success && "bg-emerald-600",
         )}
       >
         {submitting ? <Spinner /> : success ? <CheckIcon /> : null}

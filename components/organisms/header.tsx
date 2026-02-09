@@ -16,7 +16,7 @@ export const Header = () => {
         className="flex-row-cs border_ gap-4"
       >
         <VisitorTrackerWidget />
-        <IconBrandGithubFilled size={20} color="white" />
+        <IconBrandGithubFilled size={20} />
       </a>
     </header>
   );

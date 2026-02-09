@@ -1,14 +1,14 @@
 "use client";
 
-import { MOCK } from "@/constants/MOCK";
 import { useVisitTracker } from "@/hooks/use-visit-tracker";
+import { MOCK } from "@/constants/MOCK";
 
 export const VisitorTrackerWidget = () => {
   const { deviceDetails, error, fetching, creating, updating } =
     useVisitTracker();
   //
-  return MOCK.visitorTrackerWidget.display ? (
-    <span className="text-xs text-indigo-300">
+  return MOCK.VisitorTrackerWidget.display ? (
+    <span className="text-xs text-indigo-600">
       {deviceDetails.error
         ? deviceDetails.error
         : error

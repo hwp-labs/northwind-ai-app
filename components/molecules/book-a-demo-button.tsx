@@ -10,8 +10,9 @@ export const BookADemoButton = () => {
   return (
     <Button
       size="lg"
+      variant="secondary"
       onClick={() => router.push(PATH.getStarted)}
-      className="bg-white"
+      // className="bg-white"
     >
       Book a demo
     </Button>

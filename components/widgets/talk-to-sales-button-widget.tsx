@@ -11,7 +11,7 @@ export const TalkToSalesButtonWidget = () => {
   };
   //
   return (
-    <Button size="lg" variant="secondary" onClick={handleClick}>
+    <Button size="lg" variant="default" onClick={handleClick}>
       Talk to sales
     </Button>
   );

@@ -14,12 +14,13 @@ interface Props<T extends FieldValues> extends ControlledInput<T> {
 export const ControlledFieldInput = <T extends FieldValues>({
   control,
   name,
+  label,
   type = "text",
+  placeholder,
   required,
+  disabled,
   loading,
-  darkInvert,
   description,
-  ...props
 }: Props<T>) => {
   return (
     <Controller
@@ -27,18 +28,19 @@ export const ControlledFieldInput = <T extends FieldValues>({
       control={control}
       render={({ field, fieldState }) => (
         <Field className="gap-2">
-          <CustomFieldLabel options={{ ...props, name, required, darkInvert }} />
+          <CustomFieldLabel options={{ name, label, required }} />
           {loading ? (
             <InputSkeleton />
           ) : (
             <Input
               id={name}
-              {...props}
+              type={type}
+              placeholder={placeholder}
+              disabled={disabled}
               {...field}
-              className={darkInvert ? "text-sm text-gray-900" : "text-sm"}
             />
           )}
-          <CustomFieldError options={{ fieldState, description, darkInvert }} />
+          <CustomFieldError options={{ fieldState, description }} />
         </Field>
       )}
     />

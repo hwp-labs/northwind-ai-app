@@ -14,12 +14,13 @@ interface Props<T extends FieldValues> extends ControlledInput<T> {
 export const ControlledFieldInputDatalist = <T extends FieldValues>({
   control,
   name,
+  label,
+  placeholder,
   options = [],
-  darkInvert,
   required,
+  disabled,
   loading,
   description,
-  ...props
 }: Props<T>) => {
   const listName = `${name}-datalist`;
   //
@@ -29,17 +30,17 @@ export const ControlledFieldInputDatalist = <T extends FieldValues>({
       control={control}
       render={({ field, fieldState }) => (
         <Field className="gap-2">
-          <CustomFieldLabel options={{ ...props, name, required, darkInvert }} />
+          <CustomFieldLabel options={{ name, label, required }} />
           {loading ? (
             <InputSkeleton />
           ) : (
             <Input
               id={name}
               type="search"
+              placeholder={placeholder}
+              disabled={disabled}
               list={listName}
-              {...props}
               {...field}
-              className={darkInvert ? "text-sm text-gray-300" : undefined}
             />
           )}
           <datalist id={listName}>
@@ -47,7 +48,7 @@ export const ControlledFieldInputDatalist = <T extends FieldValues>({
               <option key={item} value={item} />
             ))}
           </datalist>
-          <CustomFieldError options={{ fieldState, description, darkInvert }} />
+          <CustomFieldError options={{ fieldState, description }} />
         </Field>
       )}
     />

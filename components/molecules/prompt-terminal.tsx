@@ -1,21 +1,11 @@
 import { PropsWithChildren } from "react";
-import clsx from "clsx";
-//
-import { ThemedTerminalIcon } from "../icons/themed-terminal-icon";
+import { TerminalIcon } from "lucide-react";
+import { APP } from "@/constants/APP";
 
-interface Props extends PropsWithChildren {
-  rounded?: boolean;
-}
-
-export const PromptTerminal = ({ children, rounded = true }: Props) => {
+export const PromptTerminal = ({ children }: PropsWithChildren) => {
   return (
-    <div
-      className={clsx(
-        "flex-row-cs custom-mono bg-background text-foreground gap-2.5 border px-4 py-3 text-xs",
-        rounded && "rounded-lg",
-      )}
-    >
-      <ThemedTerminalIcon />
+    <div className="flex-row-cs custom-mono gap-2.5 rounded-lg border px-4 py-3 text-xs">
+      <TerminalIcon color={APP.colors.contrast} size={16} strokeWidth={2.5} />
       {children}
     </div>
   );

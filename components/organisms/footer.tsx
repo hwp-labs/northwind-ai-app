@@ -9,7 +9,7 @@ export const Footer = () => {
             (item, i) => (
               <li
                 key={i}
-                className="hover:text-primary underline underline-offset-2 hover:cursor-default hover:font-medium"
+                className="hover:text-white underline underline-offset-2 hover:cursor-default hover:font-medium"
               >
                 {item}
               </li>

@@ -11,7 +11,7 @@ const Heading = ({ classNames }: HeadingProps) => {
   return (
     <h1
       className={clsx(
-        "font-[Raleway] text-[28px] leading-10 font-medium lg:text-4xl lg:leading-12",
+        "font-[Raleway] text-[28px] leading-10 font-medium lg:text-4xl lg:leading-12 text-white",
         classNames,
       )}
     >

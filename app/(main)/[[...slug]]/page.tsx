@@ -20,7 +20,7 @@ export default function HomePage() {
       </section>
       <figure className="flex-center-center my-16 px-4 lg:px-0">
         <Image
-          className="dark:invert"
+          className="invert"
           src="/social-preview.png"
           alt=""
           width={1280}

@@ -5,6 +5,7 @@ import {
   DeviceEnum,
   VisitorEntity,
 } from "@/lib/supabase/services/visitors/types";
+import { MOCK } from "@/constants/MOCK";
 //
 
 export type DeviceDetails = Omit<
@@ -52,7 +53,7 @@ export function useDeviceDetails() {
   };
 
   useEffect(() => {
-    onload();
+    !MOCK.useDeviceDetails.loader && onload();
   }, [pathname]);
 
   return {

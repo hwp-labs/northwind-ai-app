@@ -4,14 +4,13 @@
 }
 
 :root {
-  --background: #edf1f2 !important;
-  --input: oklch(1 0 0 / 15%) !important;
-
-}
-
-.dark {
   --background: #120e0d !important;
-  --input: oklch(1 0 0 / 15%) !important;
+  --foreground: #edf1f2 !important;
+  --muted: oklch(0.556 0 0) !important;
+  --muted-foreground: oklch(0.708 0 0) !important;
+  --border: oklch(1 0 0 / 10%) !important;
+  /* --input: oklch(1 0 0 / 15%) !important; */
+
 }
 
 .custom-mono {
