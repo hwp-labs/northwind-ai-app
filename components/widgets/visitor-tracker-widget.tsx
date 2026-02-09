@@ -7,7 +7,7 @@ export const VisitorTrackerWidget = () => {
   const { deviceDetails, error, fetching, creating, updating } =
     useVisitTracker();
   //
-  return MOCK.visitorTrackerWidget.loader ? (
+  return MOCK.visitorTrackerWidget.display ? (
     <span className="text-xs text-indigo-300">
       {deviceDetails.error
         ? deviceDetails.error

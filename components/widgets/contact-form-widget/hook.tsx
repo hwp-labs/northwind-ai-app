@@ -11,7 +11,8 @@ import {
   ContactSchema,
 } from "@/lib/supabase/services/contacts/types";
 import { PATH } from "@/constants/PATH";
-import { MOCK } from "@/constants/MOCK";
+//
+import { M, defaultValues, prepareCreateContactPayload } from "./utils";
 
 export function useContactFormWidget() {
   const router = useRouter();
@@ -23,56 +24,38 @@ export function useContactFormWidget() {
 
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [error, setError] = useState<string | undefined>();
+
+  const onSubmitted = async () => {
+    setSuccess(false);
+    M.router ? null : router.replace(PATH.home);
+  };
 
   const onSubmit = async (formData: ContactSchema) => {
     // console.log("🚀 ~ onSubmit ~ formData:", formData);
     setSubmitting(true);
-    const { data, error } = await createContactAction({
-      ...formData,
-      industry_id:
-        formData.industry_id === "other" ? null : Number(formData.industry_id),
-      industry_other: formData.industry_other || null,
-      state_id: Number(formData.state_id),
-      subscribed: formData.subscribed || false,
-    });
+    if (M.action) {
+      await sleep();
+    } else {
+      const payload = prepareCreateContactPayload(formData);
+      const { data, error } = await createContactAction(payload);
 
-    if (error) {
-      toast.error(error);
-      setSubmitting(false);
-      return;
+      if (error) {
+        toast.error(error);
+        setSubmitting(false);
+        return;
+      }
     }
 
     setSubmitting(false);
     setSuccess(true);
-    await sleep(1.5);
-    setSuccess(false);
-
-    MOCK.getStarted.router
-      ? toast.success("Contact created!")
-      : router.replace(PATH.home);
   };
 
-  return { form, onSubmit, submitting, success };
+  return {
+    form,
+    submitting,
+    success,
+    setSuccess,
+    onSubmit,
+    onSubmitted,
+  };
 }
-
-const defaultValues: ContactSchema = MOCK.getStarted.formData
-  ? {
-      name: "Emmanuel Tugbeh",
-      email: "dehphantom@yahoo.com",
-      telephone: "+2348169960927",
-      business_name: "HWP Labs",
-      industry_id: "other", // 38
-      industry_other: "AI Automation",
-      location: "Sapele Road, Benin",
-      state_id: "12",
-      subscribed: true,
-    }
-  : {
-      name: "",
-      email: "",
-      telephone: "",
-      business_name: "",
-      location: "",
-      state_id: "",
-    };

@@ -2,6 +2,7 @@ import { Controller, FieldValues } from "react-hook-form";
 //
 import { Field } from "@/components/shadcn/ui/field";
 import { Input } from "@/components/shadcn/ui/input";
+import { InputSkeleton } from "./input-skeleton";
 import { CustomFieldLabel } from "./custom-field-label";
 import { CustomFieldError } from "./custom-field-error";
 import { ControlledInput } from "@/types/common";
@@ -14,6 +15,8 @@ export const ControlledFieldInput = <T extends FieldValues>({
   control,
   name,
   type = "text",
+  required,
+  loading,
   darkInvert,
   description,
   ...props
@@ -24,13 +27,17 @@ export const ControlledFieldInput = <T extends FieldValues>({
       control={control}
       render={({ field, fieldState }) => (
         <Field className="gap-2">
-          <CustomFieldLabel options={{ ...props, name, darkInvert }} />
-          <Input
-            id={name}
-            {...props}
-            {...field}
-            className={darkInvert ? "text-gray-300" : undefined}
-          />
+          <CustomFieldLabel options={{ ...props, name, required, darkInvert }} />
+          {loading ? (
+            <InputSkeleton />
+          ) : (
+            <Input
+              id={name}
+              {...props}
+              {...field}
+              className={darkInvert ? "text-sm text-gray-900" : "text-sm"}
+            />
+          )}
           <CustomFieldError options={{ fieldState, description, darkInvert }} />
         </Field>
       )}

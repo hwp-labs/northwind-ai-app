@@ -6,6 +6,7 @@ import { Explorer } from "@/components/atoms/explorer";
 import { METADATA, VIEWPORT } from "@/constants/META";
 import { fontPoppins, fontMontserrat, fontRaleway } from "@/constants/FONT";
 import "@/styles/globals.css";
+import { MOCK } from "@/constants/MOCK";
 
 export const metadata: Metadata = METADATA;
 export const viewport: Viewport = VIEWPORT;
@@ -26,7 +27,7 @@ export default function RootLayout({
         )}
       >
         {children}
-        <Explorer />
+        {MOCK.explorer.display && <Explorer />}
         <ThemedToaster />
       </body>
     </html>

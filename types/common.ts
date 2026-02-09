@@ -23,5 +23,6 @@ export interface ControlledInput<T extends FieldValues> extends BaseInput {
   name: Path<T>;
   control?: Control<T>;
   placeholder?: string;
+  loading?: boolean;
   description?: string;
 }

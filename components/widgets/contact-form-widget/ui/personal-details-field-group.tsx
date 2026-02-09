@@ -29,7 +29,7 @@ export const PersonalDetailsFieldGroup = ({}: Props) => {
           label="Contact Email"
           type="email"
           name="email"
-          placeholder="Ex. person@dmain.com"
+          placeholder="Ex. person@domain.com"
           required
           darkInvert
         />

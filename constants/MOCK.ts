@@ -1,4 +1,5 @@
 interface MockParams {
+  display?: number | boolean;
   loader?: number | boolean;
   portal?: number | boolean;
   formData?: number | boolean;
@@ -7,8 +8,11 @@ interface MockParams {
 }
 
 export const MOCK = {
+  explorer: {
+    display: 0,
+  },
   visitorTrackerWidget: {
-    loader: 0,
+    display: 0,
   },
   splash: {
     loader: 0,
@@ -17,8 +21,8 @@ export const MOCK = {
     portal: 0,
   },
   getStarted: {
-    formData: 0,
-    action: 0,
-    router: 0,
+    formData: 1,
+    action: 1,
+    router: 1,
   },
 } as const satisfies Record<string, MockParams>;

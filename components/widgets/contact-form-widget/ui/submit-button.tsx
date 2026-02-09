@@ -1,4 +1,5 @@
 import { CheckIcon } from "lucide-react";
+import clsx from "clsx";
 //
 import { Button } from "@/components/shadcn/ui/button";
 import { Spinner } from "@/components/shadcn/ui/spinner";
@@ -10,26 +11,18 @@ interface Props {
   };
 }
 
-export const SubmitButton = ({ options }: Props) => {
+export const SubmitButton = ({ options: { submitting, success } }: Props) => {
   return (
     <div className="_border flex flex-col justify-end lg:flex-row">
       <Button
         type="submit"
-        size="lg"
-        className={
-          options.success ? "bg-emerald-600 text-white dark:invert" : undefined
-        }
+        className={clsx(
+          "h-10 lg:h-9",
+          success && "bg-emerald-600 text-white dark:invert",
+        )}
       >
-        {options.submitting ? (
-          <Spinner />
-        ) : options.success ? (
-          <CheckIcon />
-        ) : null}
-        {options.submitting
-          ? "Going..."
-          : options.success
-            ? "Gone!"
-            : "Let's go"}
+        {submitting ? <Spinner /> : success ? <CheckIcon /> : null}
+        {submitting ? "Going..." : success ? "Gone!" : "Let's go"}
       </Button>
     </div>
   );

@@ -9,6 +9,7 @@ import {
   SelectValue,
 } from "@/components/shadcn/ui/select";
 import { ScrollArea } from "@/components/shadcn/ui/scroll-area";
+import { InputSkeleton } from "./input-skeleton";
 import { CustomFieldLabel } from "./custom-field-label";
 import { CustomFieldError } from "./custom-field-error";
 import { ControlledInput, OptionItem } from "@/types/common";
@@ -22,6 +23,8 @@ export const ControlledFieldSelect = <T extends FieldValues>({
   name,
   options = [],
   placeholder,
+  required,
+  loading,
   darkInvert,
   description,
   ...props
@@ -32,14 +35,18 @@ export const ControlledFieldSelect = <T extends FieldValues>({
       control={control}
       render={({ field, fieldState }) => (
         <Field className="gap-2">
-          <CustomFieldLabel options={{ ...props, name, darkInvert }} />
+          <CustomFieldLabel options={{ ...props, name, required, darkInvert }} />
           <Select value={field.value} onValueChange={field.onChange}>
-            <SelectTrigger
-              id={name}
-              className={darkInvert ? "text-gray-300" : undefined}
-            >
-              <SelectValue placeholder={placeholder} />
-            </SelectTrigger>
+            {loading ? (
+              <InputSkeleton />
+            ) : (
+              <SelectTrigger
+                id={name}
+                className={darkInvert ? "text-sm text-gray-300" : undefined}
+              >
+                <SelectValue placeholder={placeholder} />
+              </SelectTrigger>
+            )}
             <SelectContent>
               <ScrollArea className="h-[320px]">
                 {options.map(({ value, label }) => (

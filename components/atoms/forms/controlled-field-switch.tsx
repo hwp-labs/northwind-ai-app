@@ -23,7 +23,7 @@ export const ControlledFieldSwitch = <T extends FieldValues>({
       name={name}
       control={control}
       render={({ field, fieldState }) => (
-        <div className="_border flex gap-4">
+        <div className="_border flex gap-2.5">
           <Switch
             id={name}
             checked={field.value}

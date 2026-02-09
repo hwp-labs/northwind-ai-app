@@ -35,6 +35,28 @@ export const BusinessDetailsFieldGroup = ({}: Props) => {
         required
         darkInvert
       />
+      <div className="grid gap-5 lg:grid-cols-2">
+        <ControlledFieldInputDatalist
+          control={control}
+          label="Business Location"
+          name="location"
+          placeholder="Ex. Sapele Road, Benin"
+          options={locationOptions}
+          required
+          disabled={fetchingLocations}
+          loading={fetchingLocations}
+          darkInvert
+        />
+        <ControlledFieldSelect
+          control={control}
+          label="Select State"
+          name="state_id"
+          options={StateLookup}
+          placeholder="Ex. Edo"
+          required
+          darkInvert
+        />
+      </div>
       <div
         className={
           showIndustryOtherField ? "grid gap-5 lg:grid-cols-2" : undefined
@@ -44,11 +66,10 @@ export const BusinessDetailsFieldGroup = ({}: Props) => {
           control={control}
           label="Select Industry"
           name="industry_id"
-          placeholder={
-            fetchingIndustries ? "Please wait..." : "Ex. Food & Drinks"
-          }
+          placeholder= "Ex. Food & Drinks"
           options={[...industryIdOptions, ...IndustryLookup]}
           disabled={fetchingIndustries}
+          loading={fetchingIndustries}
           darkInvert
         />
         {showIndustryOtherField && (
@@ -61,29 +82,6 @@ export const BusinessDetailsFieldGroup = ({}: Props) => {
             darkInvert
           />
         )}
-      </div>
-      <div className="grid gap-5 lg:grid-cols-2">
-        <ControlledFieldInputDatalist
-          control={control}
-          label="Business Location"
-          name="location"
-          placeholder={
-            fetchingLocations ? "Please wait..." : "Ex. Sapele Road, Benin"
-          }
-          options={locationOptions}
-          disabled={fetchingLocations}
-          required
-          darkInvert
-        />
-        <ControlledFieldSelect
-          control={control}
-          label="Select State"
-          name="state_id"
-          options={StateLookup}
-          placeholder="Ex. Edo"
-          required
-          darkInvert
-        />
       </div>
     </FieldGroup>
   );
