@@ -32,8 +32,7 @@ export const ContactFormWidget = () => {
         onSubmit={form.handleSubmit(onSubmit)}
         disabled={submitting}
         h1={`Get started with ${APP.name}`}
-        p={`We'll reach out shortly to discuss how ${APP.name} can help automate
-            your business. Cool?`}
+        p="Required fields are labelled with asterisk *"
       >
         <PersonalDetailsFieldGroup />
         <BusinessDetailsFieldGroup />

@@ -25,10 +25,10 @@ export const LoginFormWidget = () => {
     >
       <ControlledFieldInput
         control={form.control}
-        label="Username"
-        type="search"
-        name="username"
-        placeholder="Email or telephone"
+        label="Email"
+        type="email"
+        name="email"
+        placeholder="Ex. person@domain.com"
       />
       <ControlledFieldInputPassword control={form.control} name="password" />
       <SubmitButtonGrid>

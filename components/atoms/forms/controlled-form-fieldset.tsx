@@ -31,11 +31,11 @@ export const ControlledFormFieldset = <T extends FieldValues>({
       <form
         onSubmit={onSubmit}
         autoComplete="off"
-        className="text-background bg-foreground rounded-t-4xl px-6 pt-10 pb-24 lg:rounded-2xl lg:px-10 lg:py-10"
+        className="text-background bg-foreground rounded-t-4xl lg:rounded-2xl lg:px-10 px-6 py-10"
       >
         {h1 ? <FieldLegend>{h1}</FieldLegend> : null}
         {p ? (
-          <FieldDescription className="text-muted">{p}</FieldDescription>
+          <FieldDescription className="lg:text-muted">{p}</FieldDescription>
         ) : null}
         <FieldSet disabled={disabled} className="mt-8">
           {children}

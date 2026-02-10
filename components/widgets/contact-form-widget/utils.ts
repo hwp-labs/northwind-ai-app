@@ -22,6 +22,7 @@ export const defaultValues: ContactSchema = M.formData
       business_name: "",
       location: "",
       state_id: "",
+      industry_id: "",
     };
 
 export const prepareCreateContactPayload = (formData: ContactSchema) => ({

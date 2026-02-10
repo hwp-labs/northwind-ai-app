@@ -40,7 +40,9 @@ export function useContactFormWidget() {
       const { data, error } = await createContactAction(payload);
 
       if (error) {
-        toast.error(error);
+        toast.warning(error, {
+          style: { background: "oklch(0.577 0.245 27.325)" },
+        });
         setSubmitting(false);
         return;
       }

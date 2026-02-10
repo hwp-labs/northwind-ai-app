@@ -5,11 +5,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 //
 import { sleep } from "@/utils";
+import { signInAction } from "@/lib/supabase/services/auth/actions/authActions";
 import { loginSchema, LoginSchema } from "@/lib/supabase/services/auth/types";
 import { PROTECTED_PATH } from "@/constants/PATH";
 //
 import { M, defaultValues, prepareLoginPayload } from "./utils";
-import { signInWithGitHubAction } from "@/lib/supabase/services/auth/actions/signInWithOAuthAction";
 
 export function useLoginFormWidget() {
   const router = useRouter();
@@ -31,16 +31,11 @@ export function useLoginFormWidget() {
       await sleep();
     } else {
       const payload = prepareLoginPayload(formData);
-      const { data, error } = await signInWithGitHubAction(payload);
+      const { error } = await signInAction(payload);
 
       if (error) {
         toast.error(error);
         setSubmitting(false);
-        return;
-      }
-
-      if (data) {
-        window.location.href = data;
         return;
       }
     }

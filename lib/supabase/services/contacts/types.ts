@@ -25,7 +25,7 @@ export const contactSchema = z
     email: zodUtil.email(),
     telephone: zodUtil.tel(),
     business_name: zodUtil.text({ min: 3, msg: "Business name is required" }),
-    industry_id: z.string().nullable().optional(),
+    industry_id: z.string(),
     industry_other: z.string().nullable().optional(),
     location: zodUtil.text({ msg: "Location is required" }),
     state_id: z.string(),

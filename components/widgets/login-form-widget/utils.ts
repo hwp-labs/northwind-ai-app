@@ -5,12 +5,12 @@ export const M = MOCK.login;
 
 export const defaultValues: LoginSchema = M.formData
   ? {
-      username: "dehphantom@yahoo.com",
-      password: "$Strongo@ssw0rd",
+      email: process.env.NEXT_PUBLIC_SUPABASE_AUTH_USER!,
+      password: process.env.NEXT_PUBLIC_SUPABASE_AUTH_PASSWORD!,
       remember_me: true,
     }
   : {
-      username: "",
+      email: "",
       password: "",
     };
 

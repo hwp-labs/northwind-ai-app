@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { getAuthUser } from "./lib/supabase/middleware";
+import { getAuthUserMiddlewareAction } from "./lib/supabase/services/auth/actions/getAuthUserAction";
 import { PATH, PROTECTED_PATH } from "./constants/PATH";
 
 export async function proxy(req: NextRequest) {
@@ -11,9 +11,9 @@ export async function proxy(req: NextRequest) {
   if (!pathnameIsProtected) return NextResponse.next();
 
   let res = NextResponse.next();
-  const { user } = await getAuthUser(req, res);
+  const data = await getAuthUserMiddlewareAction(req, res);
 
-  if (!user) {
+  if (!data) {
     const url = req.nextUrl.clone();
     url.pathname = PATH.login;
     return NextResponse.redirect(url);

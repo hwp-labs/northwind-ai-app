@@ -64,6 +64,7 @@ export const BusinessDetailsFieldGroup = ({}: Props) => {
           options={[...industryIdOptions, ...IndustryLookup]}
           disabled={fetchingIndustries}
           loading={fetchingIndustries}
+          required
         />
         {showIndustryOtherField && (
           <ControlledFieldInput

@@ -29,7 +29,7 @@ export const MOCK = {
     router: 1,
   },
   getStarted: {
-    formData: 0,
+    formData: 1,
     action: 1,
     router: 1,
   },
