@@ -1,3 +1,5 @@
+import { SignOutWidget } from "@/components/widgets/sign-out-widget";
+
 export default function DashboardLayout({
   children,
 }: {
@@ -5,8 +7,8 @@ export default function DashboardLayout({
 }) {
   return (
     <>
-      <h1>DashboardLayout</h1>
-      <main className="min-h-[75vh]">{children}</main>
+      <SignOutWidget />
+      {children}
     </>
   );
 }

@@ -5,7 +5,12 @@ export const metadata: Metadata = {
 };
 
 export default function DashboardPage() {
-  return <>DashboardPage</>;
+  return (
+    <main className="min-h-[75vh]">
+      <h1>DashboardPage</h1>
+      <p></p>
+    </main>
+  );
 }
 
 /*

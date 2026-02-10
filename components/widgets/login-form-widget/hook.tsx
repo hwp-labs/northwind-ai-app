@@ -2,17 +2,18 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { toast } from "sonner";
 //
-import { sleep } from "@/utils";
+import { useToast } from "@/hooks/use-toast";
 import { signInAction } from "@/lib/supabase/services/auth/actions/authActions";
 import { loginSchema, LoginSchema } from "@/lib/supabase/services/auth/types";
+import { sleep } from "@/utils";
 import { PROTECTED_PATH } from "@/constants/PATH";
 //
 import { M, defaultValues, prepareLoginPayload } from "./utils";
 
 export function useLoginFormWidget() {
   const router = useRouter();
+  const toast = useToast();
   const form = useForm<LoginSchema>({
     resolver: zodResolver(loginSchema),
     mode: "onBlur",

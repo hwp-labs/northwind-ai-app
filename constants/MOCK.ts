@@ -9,7 +9,7 @@ interface MockParams {
 
 export const MOCK = {
   explorer: {
-    display: 0,
+    display: 1,
   },
   useDeviceDetails: {
     loader: 1,

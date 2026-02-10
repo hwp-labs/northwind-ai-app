@@ -2,9 +2,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { toast } from "sonner";
 //
 import { createContactAction } from "@/lib/supabase/services/contacts/actions/createContactAction";
+import { useToast } from "@/hooks/use-toast";
 import { sleep } from "@/utils";
 import {
   contactSchema,
@@ -16,6 +16,7 @@ import { M, defaultValues, prepareCreateContactPayload } from "./utils";
 
 export function useContactFormWidget() {
   const router = useRouter();
+  const toast = useToast();
   const form = useForm<ContactSchema>({
     resolver: zodResolver(contactSchema),
     mode: "onBlur",
@@ -40,9 +41,7 @@ export function useContactFormWidget() {
       const { data, error } = await createContactAction(payload);
 
       if (error) {
-        toast.warning(error, {
-          style: { background: "oklch(0.577 0.245 27.325)" },
-        });
+        toast.error(error);
         setSubmitting(false);
         return;
       }
