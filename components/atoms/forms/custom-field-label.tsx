@@ -7,9 +7,9 @@ interface Props {
 
 export const CustomFieldLabel = ({ options }: Props) => {
   return options.label ? (
-    <FieldLabel htmlFor={options.name} className="font-medium lg:font-normal">
+    <FieldLabel htmlFor={options.name} className="font-medium">
       {options.label}{" "}
-      {options.required && <span className="text-rose-600">*</span>}
+      {options.required && <span className="text-destructive">*</span>}
     </FieldLabel>
   ) : null;
 };

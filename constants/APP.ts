@@ -7,7 +7,7 @@ export const APP = {
   titleVerbose: "Northwind AI - AI Automation Web Services",
   keywords: "northwind ai, northwind db, ai automation, ai agents",
   description:
-    "Automate your SME's virtual workflows and Point-of-Sale (POS) systems with Northwind AI-transform repetitive business processes into smart, autonomous AI agents.",
+    "Automate your SME's virtual workflows and Point-of-Sale (POS) systems with Northwind AI -transform repetitive business processes into smart, autonomous AI agents.",
   owner: "HWP Labs",
   creator: "Emmanuel Tugbeh",
   releaseData: "2026-02-02T00:09:00.000",

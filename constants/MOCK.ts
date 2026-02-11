@@ -11,7 +11,7 @@ interface MockParams {
 
 export const MOCK = {
   explorer: {
-    show: 1,
+    show: 0,
   },
   useDeviceDetails: {
     skip: 0,
@@ -23,12 +23,12 @@ export const MOCK = {
     portal: 0,
   },
   login: {
-    formData: 1,
+    formData: 0,
     action: 0,
     router: 0,
   },
   getStarted: {
-    formData: 1,
+    formData: 0,
     action: 0,
     router: 0,
   },

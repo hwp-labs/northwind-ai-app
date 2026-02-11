@@ -30,36 +30,53 @@ export const WelcomeEmail = ({ data }: Props) => {
       <Head />
       <Preview>{previewText}</Preview>
       <Tailwind>
-        <Body className="m-auto font-sans">
+        <Body className="bg-background text-foreground m-auto font-sans">
           <Container className="mx-auto mb-10 max-w-[465px] p-5">
-            <Heading className="_text-center mx-0 my-8 p-0 text-2xl font-normal text-white">
-              Welcome aboard {APP.name}
-              <strong className="font-semibold">, {displayName}!</strong>
+            <Heading
+              className="_text-center mx-0 my-8 p-0 font-normal text-white"
+              style={{ fontSize: 24 }}
+            >
+              Welcome aboard,{" "}
+              <strong className="font-semibold">{displayName}</strong>!
             </Heading>
-            <Text className="text-start text-sm leading-relaxed text-white">
+            <Text
+              className="text-start leading-relaxed"
+              style={{ fontSize: 16 }}
+            >
               {APP.description}
             </Text>
             <Section className="hidden_">
               <Img
                 src={APP.socialPreview}
                 alt=""
-                width="1280"
-                height="640"
-                className="mx-auto my-0 invert"
+                width="320"
+                height="160"
+                className="mx-auto my-4 invert"
               />
             </Section>
             <Section>
               {VALUE_PROPOSITION.map((item, i) => (
-                <Text key={i}>&gt;_&nbsp; {item.description}</Text>
+                <Text
+                  key={i}
+                  className="text-start leading-relaxed"
+                  style={{ fontSize: "16px" }}
+                >
+                  &gt;_&nbsp; {item.description}
+                </Text>
               ))}
             </Section>
             <Section className="">
-              <Text className="text-start text-sm text-white">
+              <Text
+                className="text-start leading-relaxed"
+                style={{ fontSize: "16px" }}
+              >
                 Cheers,
                 <br />
-                Emanuel
+                EMANUEL
                 <br />
-                Applied AI Engineer | {APP.owner}
+                AI Product Engineer, {APP.owner}
+                <br />
+                (+234)81 6996 0927
               </Text>
             </Section>
           </Container>

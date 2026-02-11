@@ -25,7 +25,7 @@ const sendWelcomeEmail = async (formData: ContactSchema) => {
 
   await sendEmailAction({
     to: formData.email,
-    subject: APP.title,
+    subject: `Welcome to ${APP.name}`,
     body,
   });
 };
