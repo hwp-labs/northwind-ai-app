@@ -53,7 +53,8 @@ export function useDeviceDetails() {
   };
 
   useEffect(() => {
-    !MOCK.useDeviceDetails.loader && onload();
+    if (MOCK.useDeviceDetails.skip) return;
+    onload();
   }, [pathname]);
 
   return {

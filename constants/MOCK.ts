@@ -1,36 +1,35 @@
 interface MockParams {
-  display?: number | boolean;
   loader?: number | boolean;
   portal?: number | boolean;
   formData?: number | boolean;
   action?: number | boolean;
   router?: number | boolean;
+  // 
+  display?: number | boolean;
+  skip?: number | boolean;
 }
 
 export const MOCK = {
   explorer: {
-    display: 1,
+    display: 0,
   },
   useDeviceDetails: {
-    loader: 1,
+    skip: 0,
   },
   VisitorTrackerWidget: {
     display: 0,
-  },
-  splash: {
-    loader: 0,
   },
   home: {
     portal: 0,
   },
   login: {
-    formData: 1,
-    action: 1,
-    router: 1,
+    formData: 0,
+    action: 0,
+    router: 0,
   },
   getStarted: {
-    formData: 1,
-    action: 1,
-    router: 1,
+    formData: 0,
+    action: 0,
+    router: 0,
   },
 } as const satisfies Record<string, MockParams>;

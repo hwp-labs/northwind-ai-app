@@ -49,7 +49,7 @@ export const METADATA: Metadata = {
     title: APP.titleVerbose,
     description: COPY.automate,
     images: {
-      url: `${APP.website}/social-preview.png`,
+      url: APP.socialPreview,
       alt: "",
       width: 1280,
       height: 640,
@@ -62,7 +62,7 @@ export const METADATA: Metadata = {
     description: COPY.automate,
     creator: "@2gbeh",
     images: {
-      url: `${APP.website}/social-preview.png`,
+      url: APP.socialPreview,
       alt: "",
     },
   },

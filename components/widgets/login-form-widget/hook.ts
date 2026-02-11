@@ -7,7 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 import { signInAction } from "@/lib/supabase/services/auth/actions/authActions";
 import { loginSchema, LoginSchema } from "@/lib/supabase/services/auth/types";
 import { sleep } from "@/utils";
-import { PROTECTED_PATH } from "@/constants/PATH";
+import { PROTECTED_PATH, PATH } from "@/constants/PATH";
 //
 import { M, defaultValues, prepareLoginPayload } from "./utils";
 
@@ -45,7 +45,7 @@ export function useLoginFormWidget() {
     setSuccess(true);
     await sleep(1.5);
     setSuccess(false);
-    M.router ? null : router.replace(PROTECTED_PATH.dashboard);
+    M.router ? null : router.replace(PATH.dashboard);
   };
 
   return {

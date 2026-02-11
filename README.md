@@ -48,6 +48,16 @@ npm install --save-dev supabase
 #
 npm install -D ts-node typescript
 npx ts-node lib/supabase/seed.ts
+
+# 
+npm install nodemailer
+npm i --save-dev @types/nodemailer
+> https://myaccount.google.com/apppasswords
+
+npm install @react-email/components -E
+npm install @react-email/render
+
+npm install resend
 ```
 
 #### Shadcn/ui ... components.json

@@ -12,8 +12,9 @@ export const APP = {
   creator: "Emmanuel Tugbeh",
   releaseData: "2026-02-02T00:09:00.000",
   //
-  website: "https://northwindai.org",
   domain: "northwindai.org",
+  website: "https://northwindai.org",
+  socialPreview: "https://northwindai.org/social-preview.png",
   email: "no-reply@northwindai.org",
   tel: "+2348169960927",
   telDisplayText: "+234(0) 816 996 0927",

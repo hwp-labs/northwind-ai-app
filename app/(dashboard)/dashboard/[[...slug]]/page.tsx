@@ -1,14 +1,17 @@
 import { Metadata } from "next";
+import { getAuthUserAction } from "@/lib/supabase/services/auth/actions/getAuthUserAction";
 
 export const metadata: Metadata = {
   title: "Dashboard",
 };
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
+  const { data, error } = await getAuthUserAction();
+
   return (
     <main className="min-h-[75vh]">
       <h1>DashboardPage</h1>
-      <p></p>
+      <p>{data?.email || error}</p>
     </main>
   );
 }

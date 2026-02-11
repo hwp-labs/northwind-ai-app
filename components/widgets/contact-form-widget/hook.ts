@@ -14,7 +14,11 @@ import { PATH } from "@/constants/PATH";
 //
 import { M, defaultValues, prepareCreateContactPayload } from "./utils";
 
-export function useContactFormWidget() {
+interface Params {
+  sendWelcomeEmail?: (formData: ContactSchema) => Promise<void>;
+}
+
+export function useContactFormWidget(params?: Params) {
   const router = useRouter();
   const toast = useToast();
   const form = useForm<ContactSchema>({
@@ -45,8 +49,11 @@ export function useContactFormWidget() {
         setSubmitting(false);
         return;
       }
+
+      if (params?.sendWelcomeEmail) await params.sendWelcomeEmail(formData);
     }
 
+    form.reset();
     setSubmitting(false);
     setSuccess(true);
   };

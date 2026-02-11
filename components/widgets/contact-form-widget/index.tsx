@@ -1,19 +1,16 @@
 "use client";
 
-import { FormProvider } from "react-hook-form";
+import { render, pretty } from "@react-email/render";
 //
-import {
-  Field,
-  FieldDescription,
-  FieldLegend,
-  FieldSet,
-} from "@/components/shadcn/ui/field";
 import {
   SubmitButtonGrid,
   SubmitButton,
 } from "@/components/atoms/submit-button";
 import { ControlledFormFieldset } from "@/components/atoms/forms/controlled-form-fieldset";
 import { ControlledFieldSwitch } from "@/components/atoms/forms/controlled-field-switch";
+import { WelcomeEmail } from "@/components/emails/welcome-email";
+import { sendEmailAction } from "@/lib/nodemailer";
+import { ContactSchema } from "@/lib/supabase/services/contacts/types";
 import { APP } from "@/constants/APP";
 //
 import { PersonalDetailsFieldGroup } from "./ui/personal-details-field-group";
@@ -21,9 +18,21 @@ import { BusinessDetailsFieldGroup } from "./ui/business-details-field-group";
 import { SuccessModal } from "./ui/success-modal";
 import { useContactFormWidget } from "./hook";
 
+const sendWelcomeEmail = async (formData: ContactSchema) => {
+  const body = await pretty(
+    await render(<WelcomeEmail username={formData.name} />),
+  );
+
+  await sendEmailAction({
+    to: formData.email,
+    subject: APP.title,
+    body,
+  });
+};
+
 export const ContactFormWidget = () => {
   const { form, submitting, success, setSuccess, onSubmit, onSubmitted } =
-    useContactFormWidget();
+    useContactFormWidget({ sendWelcomeEmail });
   //
   return (
     <>

@@ -46,7 +46,7 @@ export const ControlledFieldInputPassword = <T extends FieldValues>({
               <i
                 onClick={toggleShowPassword}
                 title={showPassword ? "Hide" : "Show"}
-                className="text-muted absolute top-1.5 right-2.5 cursor-pointer"
+                className="text-muted absolute top-2 right-3 cursor-pointer"
               >
                 {showPassword ? (
                   <IconEyeCancel size={20} />
