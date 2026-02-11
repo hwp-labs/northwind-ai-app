@@ -5,13 +5,10 @@ export const metadata: Metadata = {
   title: "Dashboard",
 };
 
-export default async function DashboardPage() {
-  const { data, error } = await getAuthUserAction();
-
+export default function DashboardPage() {
   return (
-    <main className="min-h-[75vh]">
+    <main className="min-h-[75vh] flex-col-cc gap-4">
       <h1>DashboardPage</h1>
-      <p>{data?.email || error}</p>
     </main>
   );
 }

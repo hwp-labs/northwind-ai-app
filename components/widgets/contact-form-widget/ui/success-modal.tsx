@@ -1,6 +1,5 @@
 "use client";
 
-import { Dispatch, SetStateAction } from "react";
 import { IconRocket } from "@tabler/icons-react";
 //
 import { Button } from "@/components/shadcn/ui/button";
@@ -9,14 +8,8 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogDescription,
 } from "@/components/shadcn/ui/dialog";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerFooter,
-} from "@/components/shadcn/ui/drawer";
+import { Drawer, DrawerContent } from "@/components/shadcn/ui/drawer";
 import {
   Empty,
   EmptyDescription,
@@ -30,7 +23,6 @@ import { APP } from "@/constants/APP";
 
 interface Props {
   open?: boolean;
-  // setOpen?: Dispatch<SetStateAction<boolean>>;
   onClose?: () => void;
 }
 
@@ -59,7 +51,7 @@ const renderModalContent = (onClose: Props["onClose"]) => (
       <EmptyMedia variant="icon">
         <IconRocket />
       </EmptyMedia>
-      <EmptyTitle>Congratulations!</EmptyTitle>
+      <EmptyTitle>Welcome aboard!</EmptyTitle>
       <EmptyDescription className="_border w-[340px]">
         We'll reach out shortly to discuss how{" "}
         <span className="text-white">{APP.name}</span> can help automate your

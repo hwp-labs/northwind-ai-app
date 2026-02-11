@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { FolderIcon, FolderOpenIcon } from "lucide-react";
-import { startCase } from "lodash";
 //
 import { Button } from "../shadcn/ui/button";
 import {
@@ -32,7 +31,7 @@ export const Explorer = () => {
       <DropdownMenuContent className="" align="end">
         {Object.entries({ ...PATH, ...PROTECTED_PATH }).map(([name, path]) => (
           <DropdownMenuItem key={name} onClick={() => router.push(path)}>
-            {startCase(name)}
+            {name}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

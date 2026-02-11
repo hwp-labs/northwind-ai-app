@@ -1,4 +1,4 @@
-interface IpWhoIsResponse {
+export interface IpWhoIsResponse {
   About_Us: string;
   ip: string;
   success: boolean;
@@ -37,3 +37,4 @@ interface IpWhoIsResponse {
     current_time: string;
   };
 }
+

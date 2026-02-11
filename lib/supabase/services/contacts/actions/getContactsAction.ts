@@ -2,12 +2,12 @@
 
 import { supabase } from "@/lib/supabase/client";
 import { ApiResponse } from "@/lib/supabase/types";
-import { TABLE, IndustryEntity } from "../types";
+import { TABLE, ContactEntity } from "../types";
 
 type RequestDto = never;
-type ResponseDto = IndustryEntity[];
+type ResponseDto = ContactEntity[];
 
-export async function getIndustriesAction(): Promise<ApiResponse<ResponseDto>> {
+export async function getContactsAction(): Promise<ApiResponse<ResponseDto>> {
   const { data, error } = await supabase.from(TABLE).select("*");
   return { data, error: error?.message };
 }

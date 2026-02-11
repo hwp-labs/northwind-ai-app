@@ -27,7 +27,7 @@ export default function RootLayout({
         )}
       >
         {children}
-        {MOCK.explorer.display ? <Explorer /> : null}
+        {MOCK.explorer.show ? <Explorer /> : null}
         <ThemedToaster />
       </body>
     </html>

@@ -4,12 +4,12 @@ import {
   SubmitButtonGrid,
   SubmitButton,
 } from "@/components/atoms/submit-button";
+import { ControlledFormFieldset } from "@/components/atoms/forms/controlled-form-fieldset";
 import { ControlledFieldInput } from "@/components/atoms/forms/controlled-field-input";
 import { ControlledFieldInputPassword } from "@/components/atoms/forms/controlled-field-input-password";
 import { ControlledFieldSwitch } from "@/components/atoms/forms/controlled-field-switch";
 //
 import { useLoginFormWidget } from "./hook";
-import { ControlledFormFieldset } from "@/components/atoms/forms/controlled-form-fieldset";
 
 export const LoginFormWidget = () => {
   const { form, submitting, success, setSuccess, onSubmit, onSubmitted } =

@@ -1,4 +1,4 @@
-import { SignOutWidget } from "@/components/widgets/sign-out-widget";
+import { AuthGuardWidget } from "@/components/widgets/auth-guard-widget";
 
 export default function DashboardLayout({
   children,
@@ -7,7 +7,7 @@ export default function DashboardLayout({
 }) {
   return (
     <>
-      <SignOutWidget />
+      <AuthGuardWidget />
       {children}
     </>
   );

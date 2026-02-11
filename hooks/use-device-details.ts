@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+// 
 import { BaseEntity } from "@/lib/supabase/services/base/types";
 import {
   DeviceEnum,
   VisitorEntity,
 } from "@/lib/supabase/services/visitors/types";
+import { IpWhoIsResponse } from "@/lib/ipwhois/interface";
 import { MOCK } from "@/constants/MOCK";
-//
 
 export type DeviceDetails = Omit<
   VisitorEntity,
@@ -53,7 +54,12 @@ export function useDeviceDetails() {
   };
 
   useEffect(() => {
-    if (MOCK.useDeviceDetails.skip) return;
+    if (
+      ["localhost", "127.0.0.1"].includes(window.location.hostname) ||
+      MOCK.useDeviceDetails.skip
+    )
+      return;
+
     onload();
   }, [pathname]);
 

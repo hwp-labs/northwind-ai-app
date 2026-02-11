@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { isValidIp } from "@/utils";
 import { BaseEntity } from "../base/types";
+import { IpWhoIsResponse } from "@/lib/ipwhois/interface";
 
 export const TABLE = "visitors";
 

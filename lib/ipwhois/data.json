@@ -1,0 +1,38 @@
+{
+  "ip": "102.89.69.153",
+  "success": true,
+  "type": "IPv4",
+  "continent": "Africa",
+  "continent_code": "AF",
+  "country": "Nigeria",
+  "country_code": "NG",
+  "region": "Oyo",
+  "region_code": "OY",
+  "city": "Ibadan",
+  "latitude": 7.3775355,
+  "longitude": 3.9470396,
+  "is_eu": false,
+  "postal": "23402",
+  "calling_code": "234",
+  "capital": "Abuja",
+  "borders": "BJ,CM,NE,TD",
+  "flag": {
+    "img": "https://cdn.ipwhois.io/flags/ng.svg",
+    "emoji": "🇳🇬",
+    "emoji_unicode": "U+1F1F3 U+1F1EC"
+  },
+  "connection": {
+    "asn": 29465,
+    "org": "Mtn Nigeria",
+    "isp": "Mtn Nigeria Communication Limited",
+    "domain": "mtnnigeria.net"
+  },
+  "timezone": {
+    "id": "Africa/Lagos",
+    "abbr": "WAT",
+    "is_dst": false,
+    "offset": 3600,
+    "utc": "+01:00",
+    "current_time": "2026-02-09T22:06:54+01:00"
+  }
+}

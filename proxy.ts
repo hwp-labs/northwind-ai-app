@@ -23,5 +23,6 @@ export async function proxy(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next|api|register|login).*)"],
+  // matcher: ["/((?!_next|api|register|login).*)"],
+  matcher: ["/((?!_next|api|register|login)[^.]*$)"],
 };

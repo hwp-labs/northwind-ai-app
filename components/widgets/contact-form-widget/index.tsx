@@ -9,7 +9,7 @@ import {
 import { ControlledFormFieldset } from "@/components/atoms/forms/controlled-form-fieldset";
 import { ControlledFieldSwitch } from "@/components/atoms/forms/controlled-field-switch";
 import { WelcomeEmail } from "@/components/emails/welcome-email";
-import { sendEmailAction } from "@/lib/nodemailer";
+import { sendEmailAction } from "@/lib/nodemailer/sendEmailAction";
 import { ContactSchema } from "@/lib/supabase/services/contacts/types";
 import { APP } from "@/constants/APP";
 //
@@ -20,7 +20,7 @@ import { useContactFormWidget } from "./hook";
 
 const sendWelcomeEmail = async (formData: ContactSchema) => {
   const body = await pretty(
-    await render(<WelcomeEmail username={formData.name} />),
+    await render(<WelcomeEmail data={formData} />),
   );
 
   await sendEmailAction({

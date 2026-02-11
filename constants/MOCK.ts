@@ -5,30 +5,30 @@ interface MockParams {
   action?: number | boolean;
   router?: number | boolean;
   // 
-  display?: number | boolean;
+  show?: number | boolean;
   skip?: number | boolean;
 }
 
 export const MOCK = {
   explorer: {
-    display: 0,
+    show: 1,
   },
   useDeviceDetails: {
     skip: 0,
   },
   VisitorTrackerWidget: {
-    display: 0,
+    show: 0,
   },
   home: {
     portal: 0,
   },
   login: {
-    formData: 0,
+    formData: 1,
     action: 0,
     router: 0,
   },
   getStarted: {
-    formData: 0,
+    formData: 1,
     action: 0,
     router: 0,
   },

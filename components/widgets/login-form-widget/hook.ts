@@ -45,7 +45,7 @@ export function useLoginFormWidget() {
     setSuccess(true);
     await sleep(1.5);
     setSuccess(false);
-    M.router ? null : router.replace(PATH.dashboard);
+    M.router ? null : router.replace(PROTECTED_PATH.dashboard);
   };
 
   return {

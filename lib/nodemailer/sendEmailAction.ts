@@ -1,11 +1,10 @@
-  "use server";
-  
+"use server";
+
 import nodemailer from "nodemailer";
-//
 import { ApiResponse } from "@/lib/supabase/types";
 import { APP } from "@/constants/APP";
 
-export const transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT),
   secure: process.env.SMTP_SECURE === "true", // true for 465
@@ -15,17 +14,22 @@ export const transporter = nodemailer.createTransport({
   },
 });
 
+// Optional: verify transporter on server start
+transporter
+  .verify()
+  .then(() => console.log("SMTP transporter ready"))
+  .catch((err) => console.error("SMTP transporter error:", err));
+
 export async function sendEmailAction(args: {
   to: string | string[];
   subject: string;
   body: string;
 }): Promise<ApiResponse<string>> {
-
   try {
     const info = await transporter.sendMail({
       from: `${APP.name} <${APP.email}>`,
       bcc: process.env.SMTP_BCC,
-      // 
+      //
       to: args.to,
       subject: args.subject,
       html: args.body,
@@ -37,8 +41,3 @@ export async function sendEmailAction(args: {
   }
 }
 
-// Optional: verify transporter on server start
-transporter
-  .verify()
-  .then(() => console.log("SMTP transporter ready"))
-  .catch((err) => console.error("SMTP transporter error:", err));
