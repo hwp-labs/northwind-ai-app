@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import clsx from "clsx";
 //
-import { Explorer } from "@/components/atoms/explorer";
-import { ToasterClient } from "@/components/atoms/toaster-client";
+import { Explorer } from "@/components/organisms/explorer";
+import { ToasterClient } from "@/components/organisms/toaster-client";
+import { ServiceWorker } from "@/components/organisms/service-worker";
 import { MOCK } from "@/constants/MOCK";
 import { METADATA, VIEWPORT } from "@/constants/META";
 import { fontPoppins, fontMontserrat, fontRaleway } from "@/constants/FONT";
@@ -29,6 +30,7 @@ export default function RootLayout({
         {children}
         {MOCK.explorer.show ? <Explorer /> : null}
         <ToasterClient />
+        <ServiceWorker />
       </body>
     </html>
   );

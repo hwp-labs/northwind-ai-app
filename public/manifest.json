@@ -12,9 +12,9 @@
   "lang": "en-US",
   "shortcuts": [
     {
-      "name": "Book a demo",
-      "short_name": "Demo",
-      "url": "/demo"
+      "name": "Get started",
+      "short_name": "Get started",
+      "url": "/get-started"
     },
     {
       "name": "Dashboard",

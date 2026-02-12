@@ -10,7 +10,8 @@ export const APP = {
     "Automate your SME's virtual workflows and Point-of-Sale (POS) systems with Northwind AI -transform repetitive business processes into smart, autonomous AI agents.",
   owner: "HWP Labs",
   creator: "Emmanuel Tugbeh",
-  releaseData: "2026-02-02T00:09:00.000",
+  startData: "2026-01-30T20:12:35.000",
+  launchData: "2026-02-14T09:00:00.000",
   //
   domain: "northwindai.org",
   website: "https://northwindai.org",
