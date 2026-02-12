@@ -31,7 +31,7 @@ export function useDeviceDetails() {
           : DeviceEnum.DESKTOP;
 
     setFetching(true);
-    fetch("https://ipwho.is")
+    fetch("https://ipapi.co/json/")
       .then((raw) => raw.json())
       .then((res: IpWhoIsResponse) => {
         const data = {

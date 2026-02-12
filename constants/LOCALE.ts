@@ -4,7 +4,7 @@ export const NAIRA = "₦";
 export const DOLLAR = "$";
 //
 export const ZERO = "0";
-export const EMPTY_STRING = "";
+export const EMPTY_STR = "";
 export const HYPHENS = "---";
 export const NOT_APPLICABLE = "N/A";
 export const UNKNOWN = "Unknown";
