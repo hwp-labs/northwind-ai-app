@@ -9,8 +9,8 @@ interface Props {
 
 export const Logo = ({ path, iconOnly }: Props) => {
   const renderLogo = (
-    <div className="flex-center-start border_ gap-2.5">
-      <span className="flex-center-center size-[24px] rounded-full bg-black">
+    <div className="flex-row-cs border_ gap-2.5">
+      <span className="flex-row-cc size-[24px] rounded-full bg-black text-white">
         <GpuIcon size={14} />
       </span>
       {!iconOnly && (

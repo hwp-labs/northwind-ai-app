@@ -22,9 +22,9 @@ export const APP = {
   repository: "https://github.com/hwp-labs/northwind-ai-app",
   //
   colors: {
+    white: "#edf1f2",
+    black: "#120e0d",
     brand: "#0092dd",
     contrast: "#dd4a00",
-    background: "#edf1f2",
-    backgroundDark: "#120e0d",
   },
 } as const;

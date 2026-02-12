@@ -1,5 +1,6 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
 import {
   Body,
   Button,
@@ -13,6 +14,7 @@ import {
   Tailwind,
   Text,
 } from "@react-email/components";
+//
 import { ContactSchema } from "@/lib/supabase/services/contacts/types";
 import { APP } from "@/constants/APP";
 import { VALUE_PROPOSITION } from "@/constants/LOCALE";
@@ -22,7 +24,8 @@ interface Props {
 }
 
 export const WelcomeEmail = ({ data }: Props) => {
-  const displayName = data.name.split(" ")[0];
+  const searchParams = useSearchParams();
+  const displayName = searchParams.get("displayName") || data.name.split(" ")[0];
   const previewText = `Welcome aboard ${APP.name}, ${displayName}!`;
   //
   return (

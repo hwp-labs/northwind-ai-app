@@ -5,8 +5,8 @@ import { COPY } from "./LOCALE";
 export const VIEWPORT: Viewport = {
   colorScheme: "dark",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: APP.colors.background },
-    { media: "(prefers-color-scheme: dark)", color: APP.colors.backgroundDark },
+    { media: "(prefers-color-scheme: light)", color: APP.colors.white },
+    { media: "(prefers-color-scheme: dark)", color: APP.colors.black },
   ],
 };
 

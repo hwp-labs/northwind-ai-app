@@ -39,6 +39,10 @@
   }
 
   /* COLUMN */
+  .flex-col-x {
+    @apply flex flex-col;
+  }
+
   .flex-col-start-center {
     @apply flex flex-col items-start justify-center;
   }

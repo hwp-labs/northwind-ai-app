@@ -1,6 +1,6 @@
 import Image from "next/image";
 //
-import { PromptTerminal } from "@/components/molecules/prompt-terminal";
+import { ThemedTerminalIcon } from "@/components/atoms/themed-terminal-icon";
 import { Hero } from "@/components/molecules/hero";
 import { BookADemoButton } from "@/components/molecules/book-a-demo-button";
 import { TalkToSalesButtonWidget } from "@/components/widgets/talk-to-sales-button-widget";
@@ -11,12 +11,15 @@ export default function HomePage() {
   return (
     <main>
       <section className="flex-row-cc mt-0 px-4 lg:mt-6">
-        <PromptTerminal>{COPY.prompt}</PromptTerminal>
+        <div className="flex-row-cs custom-mono gap-2.5 rounded-lg border px-4 py-3 text-xs lg:text-sm">
+          <ThemedTerminalIcon alt />
+          {COPY.prompt}
+        </div>
       </section>
       <Hero />
       <section className="mt-10 flex flex-col justify-center gap-4 px-6 lg:flex-row lg:items-center">
         <BookADemoButton />
-        <TalkToSalesButtonWidget/>
+        <TalkToSalesButtonWidget />
       </section>
       <figure className="flex-center-center my-16 px-4 lg:px-0">
         <Image

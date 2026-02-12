@@ -6,6 +6,6 @@ export const metadata: Metadata = {
   title: "Welcome Email",
 };
 
-export default function WelcomeEmailPreviewPage() {
+export default function PreviewWelcomeEmailPage() {
   return <WelcomeEmail data={mockData}/>;
 }

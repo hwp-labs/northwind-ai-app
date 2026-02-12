@@ -1,8 +1,9 @@
 export const PATH = {
   home: "/",
   login: "/login",
-  getStarted: "/get-started",
-  welcomeEmailPreview: "/email/welcome",
+  getStarted: "/get-started",  
+  previewWelcomeEmail: "/preview/emails/welcome",
+  previewPostCards: "/preview/posts",
 } as const;
 
 export const PROTECTED_PATH = {

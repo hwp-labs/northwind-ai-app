@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-// 
+//
 import { BaseEntity } from "@/lib/supabase/services/base/types";
 import {
   DeviceEnum,
@@ -31,7 +31,7 @@ export function useDeviceDetails() {
           : DeviceEnum.DESKTOP;
 
     setFetching(true);
-    fetch("https://ipwho.is/")
+    fetch("https://ipwho.is")
       .then((raw) => raw.json())
       .then((res: IpWhoIsResponse) => {
         const data = {
@@ -54,11 +54,7 @@ export function useDeviceDetails() {
   };
 
   useEffect(() => {
-    if (
-      ["localhost", "127.0.0.1"].includes(window.location.hostname) ||
-      MOCK.useDeviceDetails.skip
-    )
-      return;
+    if (MOCK.useDeviceDetails.skip) return;
 
     onload();
   }, [pathname]);

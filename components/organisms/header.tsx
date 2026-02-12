@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   IconBrandGithubFilled,
   IconUserScan,
@@ -8,11 +9,10 @@ import { Logo } from "../atoms/logo";
 import { VisitorTrackerWidget } from "../widgets/visitor-tracker-widget";
 import { APP } from "@/constants/APP";
 import { PATH } from "@/constants/PATH";
-import Link from "next/link";
 
 export const Header = () => {
   return (
-    <header className="border_ flex-center-between p-6 lg:p-8">
+    <header className="border_ flex-row-cb p-6 lg:p-8">
       <Logo path={PATH.home} />
       <div className="flex-row-cs border_ gap-4">
         <VisitorTrackerWidget />

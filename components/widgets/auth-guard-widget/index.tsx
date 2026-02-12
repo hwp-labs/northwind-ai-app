@@ -12,7 +12,7 @@ export const AuthGuardWidget = () => {
     useAuthGuardWidget();
   //
   return (
-    <section className="flex-row-cb gap-4 p-4">
+    <section className="flex-row-cb gap-4 p-6">
       {fetching ? (
         <Skeleton className="size-[32px] rounded-full bg-white/20" />
       ) : (

@@ -10,7 +10,10 @@
   --muted-foreground: oklch(0.708 0 0) !important;
   --border: oklch(1 0 0 / 10%) !important;
   --input: oklch(0 0 0 / 20%) !important;
+}
 
+.debug {
+  @apply border border-red-500;
 }
 
 .custom-mono {
