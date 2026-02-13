@@ -1,4 +1,4 @@
-import { Logo } from "@/components/atoms/logo";
+import { Logo } from "@/components/logo";
 
 export default function Loading() {
   return (

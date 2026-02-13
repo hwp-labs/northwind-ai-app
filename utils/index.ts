@@ -1,11 +1,11 @@
-export const isDev = () => process.env.NODE_ENV === "development"
+export const isDev = () => process.env.NODE_ENV === "development";
 
 export const isLocalhost = () => {
   if (!window) return;
   return ["localhost", "127.0.0.1"].includes(window.location.hostname);
 };
 
-export const sleep = (secs = 3) =>
+export const sleep = (secs: number = 3) =>
   new Promise((resolve) => setTimeout(resolve, secs * 1000));
 
 export const slugify = (s: string) =>

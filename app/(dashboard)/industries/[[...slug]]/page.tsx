@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { getIndustriesAction } from "@/lib/supabase/services/industries/actions/getIndustriesAction";
-import { Debug } from "@/components/atoms/debug";
+import { Debugger } from "@/components/debugger";
 
 export const metadata: Metadata = {
   title: "Manage Industries",
@@ -10,9 +10,9 @@ export default async function IndustriesPage() {
   const { data, error } = await getIndustriesAction();
 
   return (
-    <main className="min-h-[75vh] flex-col-cc gap-4">
+    <main className="flex-col-cc min-h-[75vh] gap-4">
       <h1>IndustriesPage</h1>
-      <Debug data={data}/>
+      <Debugger data={data} />
     </main>
   );
 }

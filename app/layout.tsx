@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import clsx from "clsx";
 //
-import { Explorer } from "@/components/organisms/explorer";
+import { Explorer } from "@/components/explorer";
 import { ToasterClient } from "@/components/organisms/toaster-client";
 import { ServiceWorker } from "@/components/organisms/service-worker";
 import { MOCK } from "@/constants/MOCK";

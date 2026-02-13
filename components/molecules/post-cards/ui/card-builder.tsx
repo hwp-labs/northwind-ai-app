@@ -1,5 +1,5 @@
 import { IconRocket } from "@tabler/icons-react";
-import { Logo } from "@/components/atoms/logo";
+import { Logo } from "@/components/logo";
 import { ThemedTerminalIcon } from "@/components/atoms/themed-terminal-icon";
 import { APP } from "@/constants/APP";
 
