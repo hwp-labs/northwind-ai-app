@@ -1,23 +1,29 @@
+import Link from "next/link";
+//
 import { Copyright } from "./copyright";
+import { PATH } from "@/constants/PATH";
 
 export const Footer = () => {
   return (
     <footer className="px-4 text-xs lg:px-12">
-      <div className="flex-col-cc gap-6 border-t py-8">
-        <ul className="flex-row-cc text-muted-foreground gap-4">
-          {["Privacy Policy", "Terms & Conditions", "Manage Cookies"].map(
-            (item, i) => (
-              <li
-                key={i}
-                className="hover:text-white underline underline-offset-2 hover:cursor-default hover:font-medium"
-              >
-                {item}
-              </li>
-            ),
-          )}
-        </ul>
+      <section className="flex-col-cc gap-6 border-t py-8">
+        <nav className="flex-row-cc text-muted-foreground gap-4">
+          {[
+            { label: "Privacy Policy", path: PATH.home },
+            { label: "Terms & Conditions", path: PATH.home },
+            { label: "Manage Cookies", path: PATH.login },
+          ].map(({ label, path }, i) => (
+            <Link
+              key={i}
+              href={path}
+              className="underline underline-offset-2 hover:cursor-default hover:font-medium hover:text-white"
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
         <Copyright />
-      </div>
+      </section>
     </footer>
   );
 };

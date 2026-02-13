@@ -28,6 +28,7 @@ export const MOCK = {
     router: 0,
   },
   getStarted: {
+    portal: 0,
     formData: 0,
     action: 0,
     router: 0,

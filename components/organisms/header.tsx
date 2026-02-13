@@ -1,9 +1,4 @@
-import Link from "next/link";
-import {
-  IconBrandGithubFilled,
-  IconUserScan,
-  IconUserShield,
-} from "@tabler/icons-react";
+import { IconBrandGithubFilled } from "@tabler/icons-react";
 //
 import { Logo } from "../atoms/logo";
 import { VisitorTrackerWidget } from "../widgets/visitor-tracker-widget";
@@ -14,15 +9,12 @@ export const Header = () => {
   return (
     <header className="border_ flex-row-cb p-6 lg:p-8">
       <Logo path={PATH.home} />
-      <div className="flex-row-cs border_ gap-4">
+      <section className="flex-row-cs border_ gap-4">
         <VisitorTrackerWidget />
-        <Link href={PATH.login} title="Log in">
-          <IconUserScan size={20} />
-        </Link>
         <a href={APP.repository} target="_blank" title="View Source">
           <IconBrandGithubFilled size={20} />
         </a>
-      </div>
+      </section>
     </header>
   );
 };

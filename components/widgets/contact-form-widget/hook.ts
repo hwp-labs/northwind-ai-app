@@ -29,7 +29,7 @@ export function useContactFormWidget(params?: Params) {
   });
 
   const [submitting, setSubmitting] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [success, setSuccess] = useState(Boolean(M.portal));
 
   const onSubmitted = async () => {
     setSuccess(false);

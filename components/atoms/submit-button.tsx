@@ -1,9 +1,8 @@
-import { CheckCheckIcon, CheckIcon } from "lucide-react";
-import clsx from "clsx";
+import { PropsWithChildren } from "react";
+import { IconSparkles } from "@tabler/icons-react";
 //
 import { Button } from "../shadcn/ui/button";
 import { Spinner } from "../shadcn/ui/spinner";
-import { PropsWithChildren } from "react";
 
 interface Props {
   children: string;
@@ -22,11 +21,8 @@ export const SubmitButton = ({
 }: Props) => {
   return (
     <div className="_border flex flex-col justify-end lg:flex-row">
-      <Button
-        type="submit"
-        className={clsx("h-10 lg:h-9", success && "bg-emerald-600")}
-      >
-        {submitting ? <Spinner /> : success ? <CheckCheckIcon /> : null}
+      <Button type="submit" className={success ? "bg-emerald-600" : undefined}>
+        {submitting ? <Spinner /> : success ? <IconSparkles /> : null}
         {submitting
           ? submittingText || children
           : success

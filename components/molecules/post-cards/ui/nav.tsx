@@ -8,18 +8,19 @@ export const Nav = () => {
   const tabIndex = Number(searchParams.get("tabIndex") || "0");
   //
   return (
-    <ul className="flex-row-cs gap-6">
+    <nav className="flex-row-cs gap-6">
       {["Default", "Generic", "Blog"].map((item, i) => {
         const active = i === tabIndex;
         return (
-          <li
+          <Link
             key={i}
+            href={`?tabIndex=${i}`}
             className={active ? "text-white" : "text-muted-foreground"}
           >
-            <Link href={`?tabIndex=${i}`}>{item}</Link>
-          </li>
+            {item}
+          </Link>
         );
       })}
-    </ul>
+    </nav>
   );
 };

@@ -39,7 +39,7 @@ export const SuccessModal = ({ open, onClose }: Props) => {
   const renderModalContent = (
     <Empty className="mt-4">
       <EmptyHeader className="">
-        <EmptyMedia variant="icon">
+        <EmptyMedia variant="icon" className="bg-brand mb-4">
           <IconRocket />
         </EmptyMedia>
         <EmptyTitle>
@@ -62,7 +62,7 @@ export const SuccessModal = ({ open, onClose }: Props) => {
   //
   return isMobile ? (
     <Drawer open={open} onOpenChange={onClose}>
-      <DrawerContent className="">{renderModalContent}</DrawerContent>
+      <DrawerContent className="rounded-t-4xl">{renderModalContent}</DrawerContent>
     </Drawer>
   ) : (
     <Dialog open={open} onOpenChange={onClose}>
