@@ -13,6 +13,7 @@ import {
 } from "@react-email/components";
 //
 import { ContactHelper } from "@/lib/supabase/services/contacts/helper";
+import { ContactHelper } from "@/lib/supabase/services/contacts/helper";
 import { ContactSchema } from "@/lib/supabase/services/contacts/types";
 import { APP } from "@/constants/APP";
 import { COPY, VALUE_PROPOSITION } from "@/constants/LOCALE";
@@ -22,6 +23,7 @@ interface Props {
 }
 
 export const WelcomeEmail = ({ data }: Props) => {
+  const contact = new ContactHelper(data);
   const contact = new ContactHelper(data);
   //
   return (
