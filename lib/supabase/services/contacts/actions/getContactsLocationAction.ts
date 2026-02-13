@@ -10,6 +10,10 @@ type ResponseDto = Required<Pick<ContactEntity, "location">>[];
 export async function getContactsLocationAction(): Promise<
   ApiResponse<ResponseDto>
 > {
-  const { data, error } = await supabase.from(TABLE).select("location");
+  const { data, error } = await supabase
+    .from(TABLE)
+    .select("location")
+    .order("location");
+
   return { data, error: error?.message };
 }

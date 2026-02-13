@@ -8,6 +8,10 @@ type RequestDto = never;
 type ResponseDto = IndustryEntity[];
 
 export async function getIndustriesAction(): Promise<ApiResponse<ResponseDto>> {
-  const { data, error } = await supabase.from(TABLE).select("*");
+  const { data, error } = await supabase
+    .from(TABLE)
+    .select("*")
+    .order("name");
+
   return { data, error: error?.message };
 }

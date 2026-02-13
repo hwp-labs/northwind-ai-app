@@ -3,7 +3,7 @@ export const PATH = {
   login: "/login",
   getStarted: "/get-started",  
   previewWelcomeEmail: "/preview/emails/welcome",
-  previewPostCards: "/preview/posts",
+  previewPostCards: "/preview/post-cards",
 } as const;
 
 export const PROTECTED_PATH = {

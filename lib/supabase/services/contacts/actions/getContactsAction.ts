@@ -8,6 +8,10 @@ type RequestDto = never;
 type ResponseDto = ContactEntity[];
 
 export async function getContactsAction(): Promise<ApiResponse<ResponseDto>> {
-  const { data, error } = await supabase.from(TABLE).select("*");
+  const { data, error } = await supabase
+    .from(TABLE)
+    .select("*")
+    .order("id", { ascending: false });
+    
   return { data, error: error?.message };
 }

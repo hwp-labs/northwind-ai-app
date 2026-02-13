@@ -1,6 +1,3 @@
-"use client";
-
-import { useSearchParams } from "next/navigation";
 import {
   Body,
   Button,
@@ -15,23 +12,25 @@ import {
   Text,
 } from "@react-email/components";
 //
+import { ContactHelper } from "@/lib/supabase/services/contacts/helper";
 import { ContactSchema } from "@/lib/supabase/services/contacts/types";
 import { APP } from "@/constants/APP";
-import { VALUE_PROPOSITION } from "@/constants/LOCALE";
+import { COPY, VALUE_PROPOSITION } from "@/constants/LOCALE";
 
 interface Props {
   data: ContactSchema;
 }
 
 export const WelcomeEmail = ({ data }: Props) => {
-  const searchParams = useSearchParams();
-  const displayName = searchParams.get("displayName") || data.name.split(" ")[0];
-  const previewText = `Welcome aboard ${APP.name}, ${displayName}!`;
+  const contact = new ContactHelper(data);
   //
   return (
     <Html>
       <Head />
-      <Preview>{previewText}</Preview>
+      <Preview>
+        {COPY.email.welcome}
+        {contact.DisplayName}!
+      </Preview>
       <Tailwind>
         <Body className="bg-background text-foreground m-auto font-sans">
           <Container className="mx-auto mb-10 max-w-[465px] p-5">
@@ -39,8 +38,8 @@ export const WelcomeEmail = ({ data }: Props) => {
               className="_text-center mx-0 my-8 p-0 font-normal text-white"
               style={{ fontSize: 24 }}
             >
-              Welcome aboard,{" "}
-              <strong className="font-semibold">{displayName}</strong>!
+              {COPY.email.welcome}
+              <strong className="font-semibold">{contact.DisplayName}</strong>!
             </Heading>
             <Text
               className="text-start leading-relaxed"
@@ -79,7 +78,7 @@ export const WelcomeEmail = ({ data }: Props) => {
                 <br />
                 AI Product Engineer, {APP.owner}
                 <br />
-                (+234)81 6996 0927
+                {APP.telDisplayText}
               </Text>
             </Section>
           </Container>

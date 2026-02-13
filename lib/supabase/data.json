@@ -1,0 +1,57 @@
+{
+  "BAD_REQUEST": {
+    "error": {
+      "code": "PGRST204",
+      "details": null,
+      "hint": null,
+      "message": "Could not find the 'ipAddress' column of 'visitors' in the schema cache"
+    },
+    "data": null,
+    "count": null,
+    "status": 400,
+    "statusText": ""
+  },
+  "UNAUTHORIZED": {
+    "error": {
+      "code": "42501",
+      "details": null,
+      "hint": null,
+      "message": "new row violates row-level security policy for table \"visitors\""
+    },
+    "data": null,
+    "count": null,
+    "status": 401,
+    "statusText": ""
+  },
+  "NOT_FOUND": {
+    "error": {
+      "code": "PGRST205",
+      "details": null,
+      "hint": "Perhaps you meant the table 'public.visitors'",
+      "message": "Could not find the table 'public.items' in the schema cache"
+    },
+    "data": null,
+    "count": null,
+    "status": 404,
+    "statusText": "Not Found"
+  },
+  "CONFLICT": {
+    "error": {
+      "code": "23505",
+      "details": null,
+      "hint": null,
+      "message": "duplicate key value violates unique constraint \"visitors_ip_address_key\""
+    },
+    "data": null,
+    "count": null,
+    "status": 409,
+    "statusText": ""
+  },
+  "OK": {
+    "error": null,
+    "data": [],
+    "count": null,
+    "status": 200,
+    "statusText": "OK"
+  }
+}

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 //
-import { DefaultPost } from "@/components/molecules/posts/ui/default-post";
+import { DefaultPost } from "@/components/molecules/post-cards/ui/default-post";
 // import { BlogPost } from "@/components/molecules/posts/ui/blog-post";
 // import { GenericPost } from "@/components/molecules/posts/ui/generic-post";
 

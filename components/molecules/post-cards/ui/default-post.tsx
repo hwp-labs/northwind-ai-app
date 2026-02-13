@@ -23,7 +23,7 @@ export const DefaultPost = () => {
             <p className="text-[12px] leading-4">
               Automate your SME's virtual workflows and Point-of-Sale (POS)
               systems with{" "}
-              <strong className="font-semibold">Northwind AI</strong>
+              <strong className="font-semibold">{APP.name}</strong>
             </p>
             <p className="text-[12px] leading-3">
               -transform repetitive business processes into{" "}

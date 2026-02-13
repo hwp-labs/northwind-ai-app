@@ -12,56 +12,57 @@ import { WelcomeEmail } from "@/components/emails/welcome-email";
 import { sendEmailAction } from "@/lib/nodemailer/sendEmailAction";
 import { ContactSchema } from "@/lib/supabase/services/contacts/types";
 import { APP } from "@/constants/APP";
+import { MOCK } from "@/constants/MOCK";
+import { COPY } from "@/constants/LOCALE";
 //
 import { PersonalDetailsFieldGroup } from "./ui/personal-details-field-group";
 import { BusinessDetailsFieldGroup } from "./ui/business-details-field-group";
 import { SuccessModal } from "./ui/success-modal";
 import { useContactFormWidget } from "./hook";
 
-const sendWelcomeEmail = async (formData: ContactSchema) => {
-  const body = await pretty(
-    await render(<WelcomeEmail data={formData} />),
-  );
-
-  await sendEmailAction({
-    to: formData.email,
-    subject: `Welcome to ${APP.name}`,
-    body,
-  });
-};
-
 export const ContactFormWidget = () => {
   const { form, submitting, success, setSuccess, onSubmit, onSubmitted } =
     useContactFormWidget({ sendWelcomeEmail });
   //
   return (
-    <>
-      <ControlledFormFieldset
-        form={form}
-        onSubmit={form.handleSubmit(onSubmit)}
-        disabled={submitting}
-        h1={`Get started with ${APP.name}`}
-        p="Required fields are labelled with asterisk *"
-      >
-        <PersonalDetailsFieldGroup />
-        <BusinessDetailsFieldGroup />
-        <SubmitButtonGrid>
-          <ControlledFieldSwitch
-            control={form.control}
-            name="subscribed"
-            label="Subscribe for email updates"
-          />
-          <SubmitButton
-            submitting={submitting}
-            submittingText="Going..."
-            success={success}
-            successText="Gone!"
-          >
-            Let's go
-          </SubmitButton>
-        </SubmitButtonGrid>
-      </ControlledFormFieldset>
+    <ControlledFormFieldset
+      form={form}
+      onSubmit={form.handleSubmit(onSubmit)}
+      disabled={submitting}
+      h1={`Get started with ${APP.name}`}
+      p="Required fields are labelled with asterisk *"
+    >
+      <PersonalDetailsFieldGroup />
+      <BusinessDetailsFieldGroup />
+      <SubmitButtonGrid>
+        <ControlledFieldSwitch
+          control={form.control}
+          name="subscribed"
+          label="Subscribe for email updates"
+        />
+        <SubmitButton
+          submitting={submitting}
+          submittingText="One sec..."
+          success={success}
+          successText="Done!"
+        >
+          Let's go
+        </SubmitButton>
+      </SubmitButtonGrid>
       <SuccessModal open={success} onClose={onSubmitted} />
-    </>
+    </ControlledFormFieldset>
   );
+};
+
+const sendWelcomeEmail = async (formData: ContactSchema) => {
+  if (MOCK.sendWelcomeEmail.skip)
+    return { data: "<fake@message.id>", error: undefined };
+
+  const body = await pretty(await render(<WelcomeEmail data={formData} />));
+
+  return await sendEmailAction({
+    to: formData.email,
+    subject: COPY.email.subject,
+    body,
+  });
 };

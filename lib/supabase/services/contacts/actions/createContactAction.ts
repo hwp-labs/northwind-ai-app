@@ -3,6 +3,7 @@
 import { supabase } from "@/lib/supabase/client";
 import { ApiResponse } from "@/lib/supabase/types";
 import { CreateContactDto, TABLE, ContactEntity } from "../types";
+import { ERROR } from "@/constants/LOCALE";
 
 type RequestDto = CreateContactDto;
 type ResponseDto = ContactEntity;
@@ -15,6 +16,10 @@ export async function createContactAction(
     .insert(body)
     .select()
     .single();
+
+  if (error?.code === "23505") {
+    return { data: null, error: ERROR.duplicateContactEmail };
+  }
 
   return { data, error: error?.message };
 }

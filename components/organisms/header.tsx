@@ -16,12 +16,12 @@ export const Header = () => {
       <Logo path={PATH.home} />
       <div className="flex-row-cs border_ gap-4">
         <VisitorTrackerWidget />
-        <a href={APP.repository} target="_blank" title="View Source">
-          <IconBrandGithubFilled size={20} />
-        </a>
         <Link href={PATH.login} title="Log in">
           <IconUserScan size={20} />
         </Link>
+        <a href={APP.repository} target="_blank" title="View Source">
+          <IconBrandGithubFilled size={20} />
+        </a>
       </div>
     </header>
   );

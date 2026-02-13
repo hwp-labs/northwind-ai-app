@@ -17,9 +17,9 @@
       "url": "/get-started"
     },
     {
-      "name": "Dashboard",
-      "short_name": "Dashboard",
-      "url": "/dashboard"
+      "name": "Sign in",
+      "short_name": "Sign in",
+      "url": "/login"
     }
   ]
 }

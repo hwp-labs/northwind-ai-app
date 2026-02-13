@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { createContactAction } from "@/lib/supabase/services/contacts/actions/createContactAction";
 import { useToast } from "@/hooks/use-toast";
 import { sleep } from "@/utils";
+import { ApiResponse } from "@/lib/supabase/types";
 import {
   contactSchema,
   ContactSchema,
@@ -15,7 +16,7 @@ import { PATH } from "@/constants/PATH";
 import { M, defaultValues, prepareCreateContactPayload } from "./utils";
 
 interface Params {
-  sendWelcomeEmail?: (formData: ContactSchema) => Promise<void>;
+  sendWelcomeEmail?: (formData: ContactSchema) => Promise<ApiResponse<string>>;
 }
 
 export function useContactFormWidget(params?: Params) {
@@ -32,6 +33,7 @@ export function useContactFormWidget(params?: Params) {
 
   const onSubmitted = async () => {
     setSuccess(false);
+    form.reset();
     M.router ? null : router.replace(PATH.home);
   };
 
@@ -42,7 +44,7 @@ export function useContactFormWidget(params?: Params) {
       await sleep();
     } else {
       const payload = prepareCreateContactPayload(formData);
-      const { data, error } = await createContactAction(payload);
+      const { error } = await createContactAction(payload);
 
       if (error) {
         toast.error(error);
@@ -50,10 +52,17 @@ export function useContactFormWidget(params?: Params) {
         return;
       }
 
-      if (params?.sendWelcomeEmail) await params.sendWelcomeEmail(formData);
+      if (params?.sendWelcomeEmail) {
+        const { error } = await params.sendWelcomeEmail(formData);
+
+        if (error) {
+          toast.error(error);
+          setSubmitting(false);
+          return;
+        }
+      }
     }
 
-    form.reset();
     setSubmitting(false);
     setSuccess(true);
   };

@@ -1,10 +1,11 @@
 import { PiggyBankIcon, SmileIcon, StarIcon } from "lucide-react";
+import { APP } from "./APP";
 
 export const NAIRA = "₦";
 export const DOLLAR = "$";
 //
 export const ZERO = "0";
-export const EMPTY_STRING = "";
+export const EMPTY_STR = "";
 export const HYPHENS = "---";
 export const NOT_APPLICABLE = "N/A";
 export const UNKNOWN = "Unknown";
@@ -15,11 +16,14 @@ export const IMAGE_FILE_SIZE = 1024 * 1024 * 5; // 5MB
 export const IMAGE_MIME_TYPE = ["image/jpeg", "image/png"];
 //
 export const COPY = {
-  prompt: "How can Northwind AI help automate my business?",
-  automate:
-    "Automate your SME's virtual workflows and Point-of-Sale (POS) systems with Northwind AI",
+  prompt: `How can ${APP.name} help automate my business?`,
+  automate: `Automate your SME's virtual workflows and Point-of-Sale (POS) systems with ${APP.name}`,
   transform:
     "-transform repetitive business processes into smart, autonomous AI agents.",
+  email: {
+    subject: `Welcome to ${APP.name}`,
+    welcome: "Welcome aboard, ",
+  },
 };
 
 export const VALUE_PROPOSITION = [
@@ -42,3 +46,7 @@ export const VALUE_PROPOSITION = [
           AI agents provide seamless multi-channel integration and scenario-based engagement that exceed customer expectations, build trust and nurtures loyalty.`,
   },
 ];
+
+export const ERROR = {
+  duplicateContactEmail: "Hey, contact email already captured 👀",
+};

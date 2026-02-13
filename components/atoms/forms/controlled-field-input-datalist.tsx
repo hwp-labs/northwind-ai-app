@@ -44,8 +44,8 @@ export const ControlledFieldInputDatalist = <T extends FieldValues>({
             />
           )}
           <datalist id={listName}>
-            {options.map((item) => (
-              <option key={item} value={item} />
+            {options.map((item, i) => (
+              <option key={i} value={item} />
             ))}
           </datalist>
           <CustomFieldError options={{ fieldState, description }} />

@@ -18,7 +18,7 @@ export const APP = {
   socialPreview: "https://northwindai.org/social-preview.png",
   email: "no-reply@northwindai.org",
   tel: "+2348169960927",
-  telDisplayText: "+234(0) 816 996 0927",
+  telDisplayText: "(+234)81 6996 0927",
   whatsappUrl: "https://wa.me/2348169960927",
   repository: "https://github.com/hwp-labs/northwind-ai-app",
   //
@@ -27,5 +27,9 @@ export const APP = {
     black: "#120e0d",
     brand: "#0092dd",
     contrast: "#dd4a00",
+    info: "oklch(0.488 0.243 264.376)",
+    success: "oklch(0.696 0.17 162.48)",
+    warning: "oklch(0.769 0.188 70.08)",
+    danger: "oklch(0.645 0.246 16.439)",
   },
 } as const;
