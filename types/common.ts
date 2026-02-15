@@ -26,7 +26,7 @@ export interface ControlledInput<T extends FieldValues> extends BaseInput {
   description?: string;
 }
 
-export interface PageProps {
-  params: Promise<{ slug: string }>
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+export interface PageProps<T extends string | string[] = string> {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: T | undefined }>;
 }

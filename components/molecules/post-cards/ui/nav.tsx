@@ -9,7 +9,7 @@ export const Nav = () => {
   //
   return (
     <nav className="flex-row-cs gap-6">
-      {["Default", "Generic", "Blog"].map((item, i) => {
+      {["Default", "Monthly", "List", "Blog"].map((item, i) => {
         const active = i === tabIndex;
         return (
           <Link

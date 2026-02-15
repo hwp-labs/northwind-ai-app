@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import { TerminalIcon } from "lucide-react";
 import { APP } from "@/constants/APP";
 

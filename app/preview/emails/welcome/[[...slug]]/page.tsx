@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-// 
+//
 import { WelcomeEmail } from "@/components/emails/welcome-email";
 import { PageProps } from "@/types/common";
 
@@ -10,12 +10,10 @@ export const metadata: Metadata = {
 };
 
 export default async function PreviewWelcomeEmailPage({
-  params,
   searchParams,
 }: PageProps) {
-  const displayName = (await searchParams).displayName as string;
-  // 
-  return (
-    <WelcomeEmail data={{ ...mockData, name: displayName || mockData.name }} />
-  );
+  const displayNameAsync = (await searchParams).displayName;
+  const name = displayNameAsync || mockData.name;
+  //
+  return <WelcomeEmail data={{ ...mockData, name }} />;
 }

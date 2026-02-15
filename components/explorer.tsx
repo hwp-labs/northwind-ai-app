@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { FolderIcon, FolderOpenIcon } from "lucide-react";
 //
-import { Button } from "../shadcn/ui/button";
+import { Button } from "./shadcn/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,

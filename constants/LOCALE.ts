@@ -50,3 +50,18 @@ export const VALUE_PROPOSITION = [
 export const ERROR = {
   duplicateContactEmail: "Hey, contact email already captured 👀",
 };
+
+export const MONTH = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
