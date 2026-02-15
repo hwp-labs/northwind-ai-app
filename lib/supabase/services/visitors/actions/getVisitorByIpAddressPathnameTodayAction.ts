@@ -3,7 +3,7 @@
 import { supabase } from "@/lib/supabase/client";
 import { ApiResponse } from "@/lib/supabase/types";
 import { TABLE, VisitorEntity } from "../types";
-import { CUR_DATE } from "@/constants/LOCALE";
+import { CUR_DATE } from "@/constants";
 
 type RequestDto = Required<Pick<VisitorEntity, "ip_address" | "pathname">>;
 type ResponseDto = Required<Pick<VisitorEntity, "id" | "visits">>;

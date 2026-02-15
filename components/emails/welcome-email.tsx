@@ -15,7 +15,7 @@ import {
 import { ContactHelper } from "@/lib/supabase/services/contacts/helper";
 import { ContactSchema } from "@/lib/supabase/services/contacts/types";
 import { APP } from "@/constants/APP";
-import { COPY, VALUE_PROPOSITION } from "@/constants/LOCALE";
+import { COPY } from "@/constants/LOCALE";
 
 interface Props {
   data: ContactSchema;
@@ -57,7 +57,7 @@ export const WelcomeEmail = ({ data }: Props) => {
               />
             </Section>
             <Section>
-              {VALUE_PROPOSITION.map((item, i) => (
+              {COPY.valueProposition.map((item, i) => (
                 <Text
                   key={i}
                   className="text-start leading-relaxed"

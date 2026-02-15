@@ -12,7 +12,7 @@
 */
 
 import { startCase } from "lodash";
-import { EMPTY_STR, UNKNOWN } from "@/constants/LOCALE";
+import { EMPTY_STR, UNKNOWN } from "@/constants";
 import { ContactEntity } from "./types";
 
 type T = ContactEntity;

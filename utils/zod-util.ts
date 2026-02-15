@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { IMAGE_FILE_SIZE, IMAGE_MIME_TYPE } from "@/constants/LOCALE";
+import { IMAGE_FILE_SIZE, IMAGE_MIME_TYPE } from "@/constants";
 
 export { z } from "zod";
 

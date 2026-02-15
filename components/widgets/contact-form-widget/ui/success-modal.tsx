@@ -1,6 +1,6 @@
 "use client";
 
-import { useFormContext, useWatch } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 import { IconRocket } from "@tabler/icons-react";
 //
 import { Button } from "@/components/shadcn/ui/button";
@@ -22,7 +22,6 @@ import {
 import { useIsMobile } from "@/hooks/use-is-mobile";
 import { ContactHelper } from "@/lib/supabase/services/contacts/helper";
 import { ContactSchema } from "@/lib/supabase/services/contacts/types";
-import { APP } from "@/constants/APP";
 import { COPY } from "@/constants/LOCALE";
 
 interface Props {
@@ -47,9 +46,7 @@ export const SuccessModal = ({ open, onClose }: Props) => {
           {contact.DisplayName}!
         </EmptyTitle>
         <EmptyDescription className="_border text-muted-foreground w-[340px]">
-          We'll reach out shortly to discuss how{" "}
-          <span className="text-white">{APP.name}</span> can help automate your
-          business. Cool?
+          {COPY.promptWithCool}
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent className="grid">
@@ -62,7 +59,9 @@ export const SuccessModal = ({ open, onClose }: Props) => {
   //
   return isMobile ? (
     <Drawer open={open} onOpenChange={onClose}>
-      <DrawerContent className="rounded-t-4xl">{renderModalContent}</DrawerContent>
+      <DrawerContent className="rounded-t-4xl">
+        {renderModalContent}
+      </DrawerContent>
     </Drawer>
   ) : (
     <Dialog open={open} onOpenChange={onClose}>

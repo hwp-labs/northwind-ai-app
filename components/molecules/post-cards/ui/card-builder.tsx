@@ -1,10 +1,13 @@
+import { PropsWithChildren } from "react";
 import { ChevronRightIcon } from "lucide-react";
 import { IconRocket } from "@tabler/icons-react";
+import clsx from "clsx";
 //
 import { Logo } from "@/components/logo";
 import { APP } from "@/constants/APP";
+import { COPY } from "@/constants/LOCALE";
 
-export const Header = () => {
+const Header = () => {
   return (
     <header className="flex-row-cb border-gray-100_ border-b bg-white px-8 py-6">
       <Logo />
@@ -18,20 +21,36 @@ export const Header = () => {
   );
 };
 
-const Backdrop = () => (
-  <div className="absolute inset-0 bg-[url('/images/bg-radial.png')] bg-cover bg-center bg-no-repeat opacity-8 grayscale filter" />
+interface ContainerProps {
+  children: React.ReactNode;
+  classNames?: string;
+}
+
+const Container = ({ children, classNames }: ContainerProps) => (
+  <main
+    className={clsx(
+      "bg-foreground relative flex-1 overflow-hidden",
+      classNames,
+    )}
+  >
+    <div className="absolute inset-0 z-1 bg-[url('/images/background.png')] bg-cover bg-center bg-no-repeat opacity-8 grayscale filter" />
+    {children}
+  </main>
 );
 
-const Description = () => (
-  <article className="absolute bottom-26 text-center text-[12px] debug_ w-full">
-    <p className="">
-      Automate your SME's virtual workflows and Point-of-Sale (POS) systems with{" "}
-      <strong className="font-semibold">{APP.name}</strong>
-    </p>
-    <p className="">
-      -transform repetitive business processes into{" "}
-      <strong className="font-medium">smart, autonomous AI agents</strong>.
-    </p>
+interface DescriptionProps {
+  centered?: boolean;
+}
+
+const Description = ({ centered }: DescriptionProps) => (
+  <article
+    className={clsx(
+      "debug_ absolute bottom-25 w-full text-[12px] leading-5",
+      centered ? "text-center" : "px-10",
+    )}
+  >
+    <p className="">{COPY.automateRichText}</p>
+    <p className="">{COPY.transformRichText}</p>
   </article>
 );
 
@@ -50,4 +69,4 @@ const CTA = () => (
   </footer>
 );
 
-export const CardBuilder = { Header, Backdrop, Description, CTA };
+export const CardBuilder = { Header, Container, Description, CTA };

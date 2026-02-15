@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+// 
 import { CardBuilder } from "./card-builder";
-import { MONTH } from "@/constants/LOCALE";
+import { MONTH } from "@/constants";
 
 export const MonthlyPost = () => {
   const [i, setCounter] = useState(1);

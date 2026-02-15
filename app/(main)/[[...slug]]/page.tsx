@@ -5,7 +5,7 @@ import { Hero } from "@/components/molecules/hero";
 import { BookADemoButton } from "@/components/molecules/book-a-demo-button";
 import { TalkToSalesButtonWidget } from "@/components/widgets/talk-to-sales-button-widget";
 import { ValueProposition } from "@/components/molecules/value-proposition";
-import { COPY, VALUE_PROPOSITION } from "@/constants/LOCALE";
+import { COPY } from "@/constants/LOCALE";
 
 export default function HomePage() {
   return (
@@ -34,7 +34,7 @@ export default function HomePage() {
       <div className="border_ px-4 pb-16 lg:py-16">
         <ValueProposition.Heading classNames="text-center" />
         <ul className="mx-auto mt-10 space-y-10 lg:max-w-[70%]">
-          {VALUE_PROPOSITION.map((item, i) => (
+          {COPY.valueProposition.map((item, i) => (
             <ValueProposition.ListItem
               key={i}
               {...item}
