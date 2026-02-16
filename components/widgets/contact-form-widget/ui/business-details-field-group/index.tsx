@@ -28,7 +28,7 @@ export const BusinessDetailsFieldGroup = ({}: Props) => {
         label="Business Name"
         type="search"
         name="business_name"
-        placeholder="Ex. VIVID Frozen Food & Drinks"
+        placeholder="Ex. VIVID Homes & Interiors"
         required
       />
       <div className="grid gap-5 lg:grid-cols-2">
@@ -60,7 +60,7 @@ export const BusinessDetailsFieldGroup = ({}: Props) => {
           control={control}
           label="Select Industry"
           name="industry_id"
-          placeholder="Ex. Food & Drinks"
+          placeholder="Ex. Real Estate"
           options={[...industryIdOptions, ...IndustryLookup]}
           disabled={fetchingIndustries}
           loading={fetchingIndustries}

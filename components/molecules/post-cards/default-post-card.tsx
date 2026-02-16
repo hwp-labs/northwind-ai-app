@@ -1,7 +1,7 @@
-import { CardBuilder } from "./card-builder";
+import { CardBuilder } from "./ui/card-builder";
 import { APP } from "@/constants/APP";
 
-export const DefaultPost = () => {
+export const DefaultPostCard = () => {
   return (
     <>
       <CardBuilder.Header />

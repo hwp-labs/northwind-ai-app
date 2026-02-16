@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { isValidIp } from "@/utils";
 import { BaseEntity } from "../base/types";
-import { IpWhoIsResponse } from "@/lib/ipwhois/interface";
+import { IpApiResponse } from "@/lib/ip-api/interface";
 
 export const TABLE = "visitors";
 
@@ -13,7 +13,7 @@ export interface VisitorEntity extends BaseEntity {
   platform?: string;
   user_agent?: string;
   screen?: ScreenDto;
-  geolocation?: IpWhoIsResponse;
+  geolocation?: IpApiResponse;
 }
 
 export enum DeviceEnum {

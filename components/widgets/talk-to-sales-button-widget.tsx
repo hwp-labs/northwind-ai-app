@@ -12,7 +12,7 @@ export const TalkToSalesButtonWidget = () => {
   };
   //
   return (
-    <Button size="lg" variant="default" onClick={handleClick}>
+    <Button size="lg" variant="default" onClick={handleClick} className="bg-gray-800">
       Talk to sales
     </Button>
   );

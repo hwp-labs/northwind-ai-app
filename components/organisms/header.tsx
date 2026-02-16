@@ -1,4 +1,4 @@
-import { IconBrandGithubFilled } from "@tabler/icons-react";
+import { IconBrandGithubFilled, IconUserCircle } from "@tabler/icons-react";
 //
 import { Logo } from "../logo";
 import { VisitorTrackerWidget } from "../widgets/visitor-tracker-widget";
@@ -9,7 +9,7 @@ export const Header = () => {
   return (
     <header className="border_ flex-row-cb p-6 lg:p-8">
       <Logo path={PATH.home} />
-      <section className="flex-row-cs border_ gap-4">
+      <section className="flex-row-cs border_ gap-4 hidden_">
         <VisitorTrackerWidget />
         <a href={APP.repository} target="_blank" title="View Source">
           <IconBrandGithubFilled size={20} />

@@ -2,14 +2,14 @@
 
 import { useEffect, useState } from "react";
 //
-import { CardBuilder } from "./card-builder";
+import { CardBuilder } from "./ui/card-builder";
 import { MONTH } from "@/constants";
 
 interface Props {
   page?: number;
 }
 
-export const MonthlyPost = ({ page }: Props) => {
+export const MonthlyPostCard = ({ page }: Props) => {
   const [i, setCounter] = useState(page || 1);
 
   const displayMonth = MONTH[i - 1].slice(0, 3);

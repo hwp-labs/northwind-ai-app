@@ -1,4 +1,10 @@
 import { PiggyBankIcon, SmileIcon, StarIcon } from "lucide-react";
+import {
+  IconMoodSmileFilled,
+  IconPigFilled,
+  IconStarFilled,
+} from "@tabler/icons-react";
+//
 import { APP } from "./APP";
 
 export const COPY = {
@@ -44,19 +50,19 @@ export const COPY = {
   },
   valueProposition: [
     {
-      Icon: PiggyBankIcon,
+      Icon: IconPigFilled,
       title: "Save Time & Money",
       description: `Instantly reduce operational costs by up to 40% and save hours on repetitive tasks and virtual workflows. 
             AI agents run 24/7, and free up time for you and your team to focus on innovation and leads generation.`,
     },
     {
-      Icon: SmileIcon,
+      Icon: IconMoodSmileFilled,
       title: "Improve Quality of Service",
       description: `Autonomously deliver professional and reliable service.
             AI-powered automation ensures 99% accuracy across internal business processes, learning and adapting as your business grows.`,
     },
     {
-      Icon: StarIcon,
+      Icon: IconStarFilled,
       title: "Satisfy Your Customers",
       description: `Continuously convert 10x more sales leads. 
           AI agents provide seamless multi-channel integration and scenario-based engagement that exceed customer expectations, build trust and nurtures loyalty.`,

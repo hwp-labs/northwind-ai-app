@@ -14,7 +14,7 @@ export const Pager = () => {
   //
   return (
     <Select onValueChange={(page) => add({ _: { page } })}>
-      <SelectTrigger className="max-w-22 bg-transparent">
+      <SelectTrigger className="max-w-24 bg-transparent">
         <SelectValue placeholder="Page" />
       </SelectTrigger>
       <SelectContent>

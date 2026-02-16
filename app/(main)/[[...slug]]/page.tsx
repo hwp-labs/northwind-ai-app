@@ -10,8 +10,8 @@ import { COPY } from "@/constants/LOCALE";
 export default function HomePage() {
   return (
     <main>
-      <section className="flex-row-cc mt-0 px-4 lg:mt-6">
-        <div className="flex-row-cs custom-mono gap-2.5 rounded-lg border px-4 py-3 text-xs lg:text-sm">
+      <section className="flex-row-cc mt-0 px-8 lg:px-0 lg:mt-6">
+        <div className="flex-row-cs custom-mono from-contrast/20  to-brand/5 border gap-2.5 rounded-lg bg-gradient-to-t px-4 py-3 text-xs lg:text-sm leading-[18px]">
           <ThemedTerminalIcon alt />
           {COPY.prompt}
         </div>
@@ -21,24 +21,22 @@ export default function HomePage() {
         <BookADemoButton />
         <TalkToSalesButtonWidget />
       </section>
-      <figure className="flex-center-center my-16 px-4 lg:px-0">
-        <Image
-          className="invert"
-          src="/social-preview.png"
-          alt=""
-          width={1280}
-          height={640}
-          priority
-        />
-      </figure>
+      <Image
+        className="mx-auto my-16 px-4 invert lg:px-0"
+        src="/social-preview.png"
+        alt=""
+        width={1280}
+        height={640}
+        priority
+      />
       <div className="border_ px-4 pb-16 lg:py-16">
         <ValueProposition.Heading classNames="text-center" />
-        <ul className="mx-auto mt-10 space-y-10 lg:max-w-[70%]">
+        <ul className="mx-auto mt-10 lg:max-w-[80%] grid lg:grid-cols-3 gap-8">
           {COPY.valueProposition.map((item, i) => (
             <ValueProposition.ListItem
               key={i}
               {...item}
-              classNames="border p-8 lg:p-10 text-left rounded-xl"
+              classNames="border p-8 pb-6 text-left rounded-xl"
             />
           ))}
         </ul>

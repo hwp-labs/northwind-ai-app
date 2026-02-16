@@ -6,7 +6,7 @@ import {
   DeviceEnum,
   VisitorEntity,
 } from "@/lib/supabase/services/visitors/types";
-import { IpWhoIsResponse } from "@/lib/ipwhois/interface";
+import { IpApiResponse } from "@/lib/ip-api/interface";
 import { MOCK } from "@/constants/MOCK";
 
 export type DeviceDetails = Omit<
@@ -33,7 +33,7 @@ export function useDeviceDetails() {
     setFetching(true);
     fetch("https://ipapi.co/json/")
       .then((raw) => raw.json())
-      .then((res: IpWhoIsResponse) => {
+      .then((res: IpApiResponse) => {
         const data = {
           pathname,
           platform,

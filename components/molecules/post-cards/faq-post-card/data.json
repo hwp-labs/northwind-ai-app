@@ -1,0 +1,46 @@
+[
+  {
+    "icon": "e-commerce.png",
+    "label": "E-Commerce & Logistics business",
+    "value": [
+      "Conversational search & recommendations",
+      "Real-time order tracking & stock monitoring",
+      "Agentic supply-chain & fleet management",
+      "Demand forecasting & dynamic pricing",
+      "Payment audit & settlement automation"
+    ]
+  },
+  {
+    "icon": "real-estate.png",
+    "label": "Real Estate or Realtor business",
+    "value": [
+      "Automated property listing, lease management & document verification",
+      "Conversational property search & discovery",
+      "Payment audit & settlement automation",
+      "Virtual Reality (VR) navigation and touring",
+      "Augmented Reality (AR) spatial design"
+    ]
+  },
+  {
+    "icon": "hospital.png",
+    "label": "Health Centres, Labs & Pharmaceuticals",
+    "value": [
+      "Electronic Health Records (EHR) automation",
+      "Voice-automated appointment scheduling & medical consultation",
+      "Automated patient triage, test ordering & prescription refills",
+      "AI-powered diagnosis and medical image analysis",
+      "Health insurance & claims automation"
+    ]
+  },
+  {
+    "icon": "restaurant.png",
+    "label": "Hotels, Restaurants & Bar business",
+    "value": [
+      "Automated check-in/check-out workflows",
+      "Voice-automated booking & reservation",
+      "Food menu discovery & recommendations",
+      "Predictive maintenance & housekeeping",
+      "Kitchen workflow & waste management optimization"
+    ]
+  }
+]
