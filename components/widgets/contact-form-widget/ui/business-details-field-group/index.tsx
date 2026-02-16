@@ -36,7 +36,7 @@ export const BusinessDetailsFieldGroup = ({}: Props) => {
           control={control}
           label="Business Location"
           name="location"
-          placeholder="Ex. Sapele Road, Benin"
+          placeholder="Ex. Ajah, Lekki"
           options={locationOptions}
           required
           disabled={fetchingLocations}
@@ -47,7 +47,7 @@ export const BusinessDetailsFieldGroup = ({}: Props) => {
           label="Select State"
           name="state_id"
           options={StateLookup}
-          placeholder="Ex. Edo"
+          placeholder="Ex. Lagos"
           required
         />
       </div>

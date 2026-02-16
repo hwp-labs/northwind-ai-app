@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import useQueryParams from "@/hooks/use-query-params";
 
 export const Nav = () => {
-  const searchParams = useSearchParams();
-  const tabIndex = Number(searchParams.get("tabIndex") || "0");
+  const { get } = useQueryParams();
+  const tabIndex = Number(get("tabIndex", 0));
   //
   return (
     <nav className="flex-row-cs gap-6">

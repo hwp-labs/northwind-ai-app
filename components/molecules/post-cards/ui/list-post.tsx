@@ -8,34 +8,34 @@ interface Props {
 
 export const ListPost = ({ page }: Props) => {
   const i = (page || 1) - 1;
-  const item = data[i];
+  const item = data[i] || data[0];
   //
   return (
     <>
       <CardBuilder.Header />
       <CardBuilder.Container>
-          <div className="debug_ mx-auto grid max-w-sm relative z-2 mt-8 gap-4 rounded-2xl bg-white px-8 py-6 shadow-2xl">
-            <figure className="grid gap-2">
-              <div className="relative mx-auto size-[60px]">
-                <img
-                  src={`/uploads/list/${item.icon}`}
-                  alt=""
-                  className="size-full object-contain"
-                />
-              </div>
-              <figcaption className="font-[Raleway] text-xl leading-[26px] font-bold">
-                What can AI Automation do for {item.label}?
-              </figcaption>
-            </figure>
-            <ul className="grid gap-4">
-              {item.value.map((it, i) => (
-                <li key={i} className="flex gap-2.5">
-                  <IconCircleCheckFilled size={20} color={APP.colors.brand} />
-                  <p className="text-sm font-medium">{it}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="debug_ relative z-2 mx-auto mt-8 grid max-w-sm gap-4 rounded-2xl bg-white px-8 py-6 shadow-2xl">
+          <figure className="grid gap-2">
+            <div className="relative mx-auto size-[60px]">
+              <img
+                src={`/uploads/list/${item.icon}`}
+                alt=""
+                className="size-full object-contain"
+              />
+            </div>
+            <figcaption className="font-[Raleway] text-xl leading-[26px] font-bold">
+              What can AI Automation do for {item.label}?
+            </figcaption>
+          </figure>
+          <ul className="grid gap-4">
+            {item.value.map((it, i) => (
+              <li key={i} className="flex gap-2.5">
+                <IconCircleCheckFilled size={20} color={APP.colors.brand} />
+                <p className="text-sm font-medium">{it}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
         <CardBuilder.Description centered />
         <CardBuilder.CTA />
       </CardBuilder.Container>
