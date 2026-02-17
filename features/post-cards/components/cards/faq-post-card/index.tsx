@@ -1,6 +1,6 @@
 import { IconCircleCheckFilled } from "@tabler/icons-react";
 //
-import { CardBuilder } from "../ui/card-builder";
+import { CardBuilder } from "../../../ui/card-builder";
 import { APP } from "@/constants/APP";
 import data from "./data.json";
 

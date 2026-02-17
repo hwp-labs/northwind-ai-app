@@ -4,6 +4,8 @@ export const PATH = {
   getStarted: "/get-started",  
   previewWelcomeEmail: "/preview/emails/welcome",
   previewPostCards: "/preview/post-cards",
+  dataPolicy: "/data-policy",
+  terms: "/terms",
 } as const;
 
 export const PROTECTED_PATH = {

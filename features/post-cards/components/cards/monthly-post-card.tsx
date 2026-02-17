@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 //
-import { CardBuilder } from "./ui/card-builder";
-import { MONTH } from "@/constants";
+import { CardBuilder } from "../card-builder";
+import { MONTH_SHORT } from "@/utils/date-fns-util";
 
 interface Props {
   page?: number;
@@ -12,7 +12,7 @@ interface Props {
 export const MonthlyPostCard = ({ page }: Props) => {
   const [i, setCounter] = useState(page || 1);
 
-  const displayMonth = MONTH[i - 1].slice(0, 3);
+  const displayMonth = MONTH_SHORT[i - 1];
   const mutateCounter = () => setCounter((prev) => (prev < 12 ? prev + 1 : 1));
 
   useEffect(() => {

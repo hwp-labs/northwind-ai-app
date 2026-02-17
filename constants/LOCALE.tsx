@@ -1,10 +1,8 @@
-import { PiggyBankIcon, SmileIcon, StarIcon } from "lucide-react";
 import {
   IconMoodSmileFilled,
   IconPigFilled,
   IconStarFilled,
 } from "@tabler/icons-react";
-//
 import { APP } from "./APP";
 
 export const COPY = {
