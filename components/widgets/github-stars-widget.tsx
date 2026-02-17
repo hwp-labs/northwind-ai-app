@@ -29,11 +29,12 @@ export const GithubStarsWidget = () => {
         <a
           href={APP.repositoryUrl}
           title="View Source"
-          className="flex-row-cc border-outline debug_ gap-2.5 rounded-lg border py-0.5 pr-2.5 pl-1.5 text-white"
+          className="flex-row-cc border-outline debug_ gap-2.5 rounded-md border py-0.5 pr-2.5 pl-1.5 text-white"
         >
           <FaGithub />
-          <span className="font-[Raleway] text-sm font-medium">
+          <span className="text-sm font-medium">
             {stargazers_count}
+            {/* +15.9k */}
           </span>
         </a>
       )}

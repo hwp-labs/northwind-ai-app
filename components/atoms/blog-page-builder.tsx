@@ -1,6 +1,7 @@
 import { PropsWithChildren } from "react";
 import Link from "next/link";
 import { ChevronLeftIcon } from "lucide-react";
+import clsx from "clsx";
 //
 import { momentUtil } from "@/utils/moment-util";
 import { PATH } from "@/constants/PATH";
@@ -43,7 +44,7 @@ const H2 = ({ children }: PropsWithChildren) => (
 );
 
 const H3 = ({ children }: PropsWithChildren) => (
-  <h2 className="mt-4 mb-4 scroll-m-20 text-md font-semibold tracking-tight">
+  <h2 className="text-md mt-4 mb-4 scroll-m-20 font-semibold tracking-tight">
     {children}
   </h2>
 );
@@ -54,8 +55,14 @@ const Strong = ({ children }: PropsWithChildren) => (
   </strong>
 );
 
-const Ul = ({ children }: PropsWithChildren) => (
-  <ul className="mb-4 ml-6 list-disc [&>li]:mt-2">{children}</ul>
+interface UlProps extends PropsWithChildren {
+  classNames?: string;
+}
+
+const Ul = ({ children, classNames }: UlProps) => (
+  <ul className={clsx("mb-4 ml-6 list-disc [&>li]:mt-2", classNames)}>
+    {children}
+  </ul>
 );
 
 export const BlogPageBuilder = { Container, H2, H3, Strong, Ul };

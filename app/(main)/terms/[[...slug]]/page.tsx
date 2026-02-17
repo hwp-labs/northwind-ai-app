@@ -11,8 +11,8 @@ export default function TermsPage() {
   return (
     <_.Container h1="Terms & Conditions" time={APP.launchData}>
       <_.H2>1. Agreement to Terms</_.H2>
-      By accessing or using <_.Strong>{APP.owner}</_.Strong> AI automation
-      services, you agree to the following terms:
+      By accessing or using <_.Strong>{APP.name}</_.Strong> automation
+      web services,<br/> you agree to the following terms:
       <_.H2>2. Description of Services</_.H2>
       We provide:
       <_.Ul>

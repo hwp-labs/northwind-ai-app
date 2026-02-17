@@ -1,27 +1,29 @@
 import Link from "next/link";
 //
 import { Copyright } from "./copyright";
+import { FooterBadges } from "./footer-badges";
 import { PATH } from "@/constants/PATH";
 
 export const Footer = () => {
   return (
-    <footer className="px-4 lg:px-12">
+    <footer className="px-4 text-sm lg:px-12">
       <section className="flex-col-cc gap-6 border-t py-8">
-        <nav className="flex-row-cs text-muted-foreground gap-4 _w-full">
+        <nav className="debug_ flex flex-col items-center justify-center gap-4 md:flex-row md:gap-8">
           {[
-            { label: "Data Policy", path: PATH.dataPolicy },
             { label: "Terms & Conditions", path: PATH.terms },
-            // { label: "Manage Cookies", path: PATH.login },
+            { label: "Data Policy", path: PATH.dataPolicy },
+            { label: "Manage Cookies", path: PATH.manageCookies },
           ].map(({ label, path }, i) => (
             <Link
               key={i}
               href={path}
-              className="text-sm underline underline-offset-2 hover:cursor-default hover:font-medium hover:text-white"
+              className="text-muted-foreground  text-center underline underline-offset-2 hover:font-medium hover:text-white"
             >
               {label}
             </Link>
           ))}
         </nav>
+        <FooterBadges fastApi />
         <Copyright />
       </section>
     </footer>

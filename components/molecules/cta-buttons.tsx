@@ -18,7 +18,7 @@ export const CTAButtons = () => {
   };
   //
   return (
-    <section className="mt-10 flex flex-col justify-center gap-4 px-6 lg:flex-row lg:items-center">
+    <section className="mt-10 flex flex-col justify-center gap-4 px-6 md:flex-row md:items-center">
       <Button size="lg" variant="secondary" onClick={handleBookDemo}>
         Book a demo
       </Button>
