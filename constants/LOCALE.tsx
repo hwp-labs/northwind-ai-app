@@ -42,6 +42,8 @@ export const COPY = {
       </a>
     </>
   ),
+  whatWeDo:
+    "We design, integrate and deploy AI-powered solutions for small and medium-sized enterprises (SMEs).",
   email: {
     subject: `Welcome to ${APP.name}`,
     welcome: "Welcome aboard, ",

@@ -38,6 +38,6 @@ const transform = (format: string, dt?: InputType) =>
   moment(dt).tz("Africa/Lagos").format(format);
 
 // Sun, Jan 1st, 1970 | 9:00 AM
-const lastUpdated = (dt?: InputType) => transform("ddd, MMM Do, YYYY | h:mm A", dt);
+const publishedDate = (dt?: InputType) => transform("ddd, MMM Do, YYYY | h:mm A", dt);
 
-export const momentUtil = { lastUpdated };
+export const momentUtil = { publishedDate };
