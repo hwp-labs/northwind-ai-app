@@ -29,7 +29,7 @@ export default function HomePage() {
         height={640}
         priority
       />
-      <div className="border_ px-4 pb-16 lg:py-16">
+      <div className="border_ px-4 pb-16">
         <ValueProposition.Heading classNames="text-center" />
         <ul className="mx-auto mt-10 lg:max-w-[80%] grid lg:grid-cols-3 gap-8">
           {COPY.valueProposition.map((item, i) => (
