@@ -1,4 +1,4 @@
-import { Header } from "@/components/molecules/post-cards/ui/header";
+import { Header } from "@/features/post-cards/components/header";
 
 export default function PreviewPostsLayout({
   children,

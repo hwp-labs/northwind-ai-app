@@ -73,6 +73,9 @@ npm install @react-email/components -E
 npm install @react-email/render
 
 npm install resend
+
+# 
+npm install swr
 ```
 
 #### Shadcn/ui ... components.json

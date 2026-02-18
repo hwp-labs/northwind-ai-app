@@ -10,14 +10,18 @@ import {
 import useQueryParams from "@/hooks/use-query-params";
 
 export const Pager = () => {
-  const { add } = useQueryParams();
+  const query = useQueryParams();
+  const { page } = query.get({ page: 0 });
+  const handleChange = (page: string) =>
+    page === "0" ? query.remove("page") : query.add({ page });
   //
   return (
-    <Select onValueChange={(page) => add({ _: { page } })}>
+    <Select value={page} onValueChange={handleChange}>
       <SelectTrigger className="max-w-24 bg-transparent">
         <SelectValue placeholder="Page" />
       </SelectTrigger>
       <SelectContent>
+        <SelectItem value={String(0)}>Reset</SelectItem>
         {Array.from({ length: 12 }).map((_, i) => {
           const j = i + 1;
           //

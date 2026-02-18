@@ -4,7 +4,7 @@ import { DownloadIcon } from "lucide-react";
 //
 import { Button } from "@/components/shadcn/ui/button";
 import { Spinner } from "@/components/shadcn/ui/spinner";
-import { useHtmlToImage } from "@/hooks/use-html-to-image";
+import { useHtmlToImage } from "../hooks/use-html-to-image";
 import { Nav } from "./nav";
 import { Pager } from "./pager";
 

@@ -1,9 +1,10 @@
 import { Metadata } from "next";
 //
-import { DefaultPostCard } from "@/components/molecules/post-cards/default-post-card";
-import { MonthlyPostCard } from "@/components/molecules/post-cards/monthly-post-card";
-import { FAQPostCard } from "@/components/molecules/post-cards/faq-post-card";
-// import { BlogPostCard } from "@/components/molecules/post-cards/blog-post";
+import {
+  DefaultPostCard,
+  FAQPostCard,
+  MonthlyPostCard,
+} from "@/features/post-cards/components/cards";
 import { PageProps } from "@/types/common";
 
 export const metadata: Metadata = {
@@ -25,8 +26,8 @@ export default async function PreviewPostCardsPage({
       {
         [
           <DefaultPostCard />,
-          <MonthlyPostCard page={page} />,
           <FAQPostCard page={page} />,
+          <MonthlyPostCard page={page} />,
         ][tabIndex]
       }
     </main>

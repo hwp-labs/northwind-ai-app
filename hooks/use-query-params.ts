@@ -1,56 +1,46 @@
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 
-type QueryType = Record<string, unknown>;
-
-interface QueryArgs {
-  _: QueryType | QueryType[];
+type Query = Record<string, unknown>;
+type QueryOptions = {
   replace?: boolean;
   scroll?: boolean;
-}
+};
 
 export default function useQueryParams() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const params = new URLSearchParams(searchParams.toString());
 
-  const get = (key: string, fallback: unknown) =>
-    searchParams.get(key) || fallback;
+  const get = (query: Query) => {
+    const obj: Record<string, string> = {};
 
-  const add = ({ _: query, scroll = true, replace }: QueryArgs) => {
-    const params = new URLSearchParams(searchParams.toString());
+    Object.entries(query).forEach(([key, fallbackValue]) => {
+      obj[key] = searchParams.get(key) || String(fallbackValue);
+    });
 
-    if (Array.isArray(query)) {
-      query.forEach((item) => {
-        const key = Object.keys(item)[0];
-        const value = Object.values(item)[0];
-        params.set(key, String(value));
-      });
-    } else {
-      const key = Object.keys(query)[0];
-      const value = Object.values(query)[0];
-      params.set(key, String(value));
-    }
+    return obj;
+  };
+
+  const add = (query: Query, options?: QueryOptions) => {
+    Object.entries(query).forEach(([key, value]) =>
+      params.set(key, String(value)),
+    );
 
     const href = `${pathname}?${params.toString()}`;
+    const { scroll = true, replace = false } = options || {};
     replace ? router.replace(href, { scroll }) : router.push(href, { scroll });
   };
 
-  const remove = ({ _: query, scroll = true, replace }: QueryArgs) => {
-    const params = new URLSearchParams(searchParams.toString());
-
+  const remove = (query: string | string[], options?: QueryOptions) => {
     if (Array.isArray(query)) {
-      query.forEach((item) => {
-        const key = Object.keys(item)[0];
-        const value = Object.values(item)[0];
-        params.delete(key, String(value));
-      });
+      query.forEach((key) => params.delete(key));
     } else {
-      const key = Object.keys(query)[0];
-      const value = Object.values(query)[0];
-      params.delete(key, String(value));
+      params.delete(query);
     }
 
     const href = `${pathname}?${params.toString()}`;
+    const { scroll = true, replace = false } = options || {};
     replace ? router.replace(href, { scroll }) : router.push(href, { scroll });
   };
 

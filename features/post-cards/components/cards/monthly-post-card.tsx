@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 //
 import { CardBuilder } from "../card-builder";
-import { MONTH_SHORT } from "@/utils/date-fns-util";
+import { MONTH_SHORT } from "@/utils/moment-util";
 
 interface Props {
   page?: number;
@@ -16,18 +16,22 @@ export const MonthlyPostCard = ({ page }: Props) => {
   const mutateCounter = () => setCounter((prev) => (prev < 12 ? prev + 1 : 1));
 
   useEffect(() => {
-    if (typeof window !== "undefined" && !page) {
-      const interval = setInterval(mutateCounter, 3000);
-      return () => clearInterval(interval);
+    if (typeof window !== "undefined") {
+      if (!page) {
+        const interval = setInterval(mutateCounter, 3000);
+        return () => clearInterval(interval);
+      }
+
+      if (page > 0) setCounter(page);
     }
-  }, []);
+  }, [page]);
   //
   return (
     <>
       <CardBuilder.Header />
       <CardBuilder.Container classNames="bg-white">
         <figure className="mt-5">
-          <div className="relative mx-auto size-[120px] z-2">
+          <div className="relative z-2 mx-auto size-[120px]">
             <img
               src={`/uploads/monthly/bot-${i}.png`}
               alt=""

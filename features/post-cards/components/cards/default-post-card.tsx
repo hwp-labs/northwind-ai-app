@@ -1,4 +1,4 @@
-import { CardBuilder } from "./ui/card-builder";
+import { CardBuilder } from "../card-builder";
 import { APP } from "@/constants/APP";
 
 export const DefaultPostCard = () => {

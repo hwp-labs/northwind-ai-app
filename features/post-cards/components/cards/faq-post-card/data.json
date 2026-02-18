@@ -1,46 +1,65 @@
 [
   {
-    "icon": "e-commerce.png",
+    "icon": "cart.png",
     "label": "E-Commerce & Logistics business",
     "value": [
-      "Conversational search & recommendations",
-      "Real-time order tracking & stock monitoring",
-      "Agentic supply-chain & fleet management",
-      "Demand forecasting & dynamic pricing",
-      "Payment audit & settlement automation"
+      "Chat/voice-enabled search & suggestions",
+      "Real-time order tracking, deliveries & returns",
+      "Transaction invoice & auditing automation",
+      "Product demand forecasting, real-time dynamic pricing & stock monitoring alerts",
+      "Inventory, supply-chain & fleet management",
+      "# emma ar, shafiyi, steady"
     ]
   },
   {
     "icon": "real-estate.png",
-    "label": "Real Estate or Realtor business",
+    "label": "Real Estate & Realtor business",
     "value": [
-      "Automated property listing, lease management & document verification",
-      "Conversational property search & discovery",
-      "Payment audit & settlement automation",
-      "Virtual Reality (VR) navigation and touring",
-      "Augmented Reality (AR) spatial design"
+      "Chat/voice-enabled search & valuation",
+      "Lease agreement & document verification",
+      "#Automated Property Valuation (AVMs)",
+      "Virtual Reality (VR) inspection & tour",
+      "Augmented Reality (AR) interior design",
+      "Smart home device ecosystem integration",
+      "# madu"
     ]
   },
   {
-    "icon": "hospital.png",
-    "label": "Health Centres, Labs & Pharmaceuticals",
+    "icon": "first-aid.png",
+    "label": "Health Centres, Pharmaceuticals & Labs",
     "value": [
-      "Electronic Health Records (EHR) automation",
-      "Voice-automated appointment scheduling & medical consultation",
-      "Automated patient triage, test ordering & prescription refills",
-      "AI-powered diagnosis and medical image analysis",
-      "Health insurance & claims automation"
+      "Electronic Health Records (EHR) workflow automation & patient triage sub-systems",
+      "Chat/voice-enabled health information assistants & appointment scheduling",
+      "Automated test orders & prescription refills",
+      "AI diagnostics & medical  image analysis",
+      "Health insurance policy & claims processing",
+      "# efosa, emma ar, vicky ben, pmed x24"
     ]
   },
   {
-    "icon": "restaurant.png",
-    "label": "Hotels, Restaurants & Bar business",
+    "icon": "pos.png",
+    "label": "Financial Institutions & Fintechs",
     "value": [
-      "Automated check-in/check-out workflows",
-      "Voice-automated booking & reservation",
-      "Food menu discovery & recommendations",
-      "Predictive maintenance & housekeeping",
-      "Kitchen workflow & waste management optimization"
+      "Loan processing & credit risk assessment",
+      "Investment insights & portfolio management",
+      "Financial forecasting & market trend analysis",
+      "#Fraud detection & transaction monitoring",
+      "Automated KYC & Anti-Money Laundering (AML) compliance screening",
+      "Smart contracts & escrow-based DeFi",
+      "#"
+    ]
+  },
+  {
+    "icon": "breakfast.png",
+    "label": "Hotels, Restaurant & Bar business",
+    "value": [
+      "Chat/voice-enabled booking & reservations",
+      "Check-in/out workflow automation",
+      "Automated recipe sourcing & meal planning",
+      "#Kitchen workflow optimization & waste management",
+      "Transaction invoice & auditing automation",
+       "Automated billing, invoicing, and financial audit management",
+      "#"
     ]
   }
 ]
