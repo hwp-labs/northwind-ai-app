@@ -9,11 +9,18 @@ export const FooterBadges = ({ fastApi, vercel, supabase }: Props) => {
   return (
     <figure className="flex-row-cs gap-4">
       {fastApi && (
-        <a href={APP.repositoryApiUrl}>
-          <img
-            src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi"
-            alt="FastAPI"
-          />
+        <a
+          href={APP.repositoryApiUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <figure className="flex-row-cs gap-2.5">
+            <figcaption>Powered by</figcaption>
+            <img
+              src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi"
+              alt="FastAPI"
+            />
+          </figure>
         </a>
       )}
       {vercel && (

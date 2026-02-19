@@ -29,6 +29,8 @@ export const GithubStarsWidget = () => {
         <a
           href={APP.repositoryUrl}
           title="View Source"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex-row-cc border-outline debug_ gap-2.5 rounded-md border py-0.5 pr-2.5 pl-1.5 text-white"
         >
           <FaGithub />

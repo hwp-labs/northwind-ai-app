@@ -1,12 +1,12 @@
 import Link from "next/link";
 //
+import { PoweredBy } from "./powered-by";
 import { Copyright } from "./copyright";
-import { FooterBadges } from "./footer-badges";
 import { PATH } from "@/constants/PATH";
 
 export const Footer = () => {
   return (
-    <footer className="px-4 text-sm lg:px-12">
+    <footer id="footer" className="px-4 text-sm lg:px-12">
       <section className="flex-col-cc gap-6 border-t py-8">
         <nav className="debug_ flex flex-col items-center justify-center gap-4 md:flex-row md:gap-8">
           {[
@@ -17,13 +17,13 @@ export const Footer = () => {
             <Link
               key={i}
               href={path}
-              className="text-muted-foreground  text-center underline underline-offset-2 hover:font-medium hover:text-white"
+              className="text-muted-foreground text-center underline underline-offset-2 hover:font-medium hover:text-white"
             >
               {label}
             </Link>
           ))}
         </nav>
-        <FooterBadges fastApi />
+        <PoweredBy />
         <Copyright />
       </section>
     </footer>

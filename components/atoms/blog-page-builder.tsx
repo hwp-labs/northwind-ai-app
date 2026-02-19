@@ -17,7 +17,7 @@ const Container = ({ children, h1, time }: ContainerProps) => (
       <section className="debug_ mb-4 border-b pb-4">
         <h1 className="debug_ inline-block">
           <Link
-            href={PATH.home}
+            href={PATH.home + "#footer"}
             title="Back"
             className="debug_ flex-row-cs gap-2.5 font-[Raleway] text-2xl font-semibold text-white"
           >

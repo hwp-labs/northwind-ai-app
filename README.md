@@ -46,36 +46,34 @@ npm run dev
 ```sh
 #
 rm -rf .next package-lock.json node_modules
-npm install
+npm i
 npm run dev
 
 #
-npm i clsx lodash date-fns
-npm i --save-dev @types/lodash
+npm i lodash
+npm install --save-dev @types/lodash
 
 # 
 npm i react-hook-form @hookform/resolvers zod
 
 #
-npm install @supabase/supabase-js @supabase/auth-helpers-nextjs @supabase/ssr 
+npm i @supabase/supabase-js @supabase/auth-helpers-nextjs @supabase/ssr 
 npm install --save-dev supabase
 
 #
-npm install -D ts-node typescript
+npm i -D ts-node typescript
 npx ts-node lib/supabase/seed.ts
 
 # 
-npm install nodemailer
+npm i nodemailer
 npm i --save-dev @types/nodemailer
 > https://myaccount.google.com/apppasswords
 
-npm install @react-email/components -E
-npm install @react-email/render
-
-npm install resend
+npm i @react-email/components -E
+npm i @react-email/render
+npm i resend
 
 # 
-npm install swr
 ```
 
 #### Shadcn/ui ... components.json

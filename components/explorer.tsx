@@ -22,8 +22,9 @@ export const Explorer = () => {
       <DropdownMenuTrigger asChild>
         <Button
           size="icon"
-          className="fixed right-4 bottom-4 z-[99] shadow-md transition-colors"
+          title="Explore"
           aria-label="Explore"
+          className="fixed left-16 bottom-5 z-[99] shadow-lg transition-colors"
         >
           {open ? <FolderOpenIcon size={14} /> : <FolderIcon size={14} />}
         </Button>

@@ -1,5 +1,6 @@
 import { Header } from "@/components/organisms/header";
 import { Footer } from "@/components/organisms/footer";
+import { ScrollToTop } from "@/components/organisms/scroll-to-top";
 
 export default function MainLayout({
   children,
@@ -11,6 +12,7 @@ export default function MainLayout({
       <Header />
       {children}
       <Footer />
+      <ScrollToTop />
     </>
   );
 }

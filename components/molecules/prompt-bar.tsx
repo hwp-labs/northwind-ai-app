@@ -1,10 +1,17 @@
+import clsx from "clsx";
 import { ThemedTerminalIcon } from "../atoms/themed-terminal-icon";
 import { COPY } from "@/constants/LOCALE";
 
 export const PromptBar = () => {
   return (
     <section className="flex-row-cc mt-2 px-6 lg:mt-6 lg:px-0">
-      <div className="flex-row-cs custom-mono from-contrast/20 to-brand/5 gap-2.5 rounded-lg border bg-gradient-to-t px-4 py-3 text-xs leading-[18px] lg:text-sm">
+      <div
+        className={clsx(
+          "flex-row-cs custom-mono gap-2.5 rounded-lg _border px-6 py-3 text-xs leading-[18px] lg:text-sm",
+          "from-contrast/20 bg-gradient-to-l to-purple-900/20",
+          // "from-contrast/20 to-brand/5 bg-gradient-to-t",
+        )}
+      >
         <ThemedTerminalIcon alt />
         {COPY.prompt}
       </div>

@@ -33,7 +33,7 @@ export const FAQPostCard = ({ page }: Props) => {
                 />
               </div>
               <figcaption className="text-md text-center font-[Raleway] leading-[22px] font-bold">
-                What can AI Automation do for{" "}
+                How can {APP.name} help automate{" "}
                 <span className="inline-block">{item.label}</span>?
               </figcaption>
             </figure>

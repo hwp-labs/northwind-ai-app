@@ -7,15 +7,15 @@ import { COPY } from "@/constants/LOCALE";
 
 export const ValuePropositionCards = () => {
   return (
-    <section className="border_ px-4 pb-16">
+    <section className="debug_ px-6 py-16 sm:px-0 md:py-48">
       <h1 className="text-center font-[Raleway] text-[24px] leading-9 font-medium text-white lg:text-4xl lg:leading-12">
         {COPY.prompt}
       </h1>
-      <ul className="mx-auto mt-10 grid gap-8 lg:max-w-[80%] lg:grid-cols-3">
+      <ul className="flex-row-cc mt-10 flex-wrap gap-8">
         {COPY.valueProposition.map(({ Icon, ...item }, i) => (
           <li
             key={i}
-            className="flex flex-col gap-2 rounded-xl border p-8 pb-6 text-left"
+            className="flex flex-col gap-2 rounded-xl border p-8 pb-6 text-left sm:w-[450px]"
           >
             <div className="_flex-row-cs grid gap-4">
               <Button
