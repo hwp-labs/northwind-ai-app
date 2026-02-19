@@ -1,3 +1,5 @@
+import { APP } from "@/constants/APP";
+
 interface Props {
   fastApi?: boolean;
   vercel?: boolean;
@@ -7,10 +9,12 @@ export const FooterBadges = ({ fastApi, vercel, supabase }: Props) => {
   return (
     <figure className="flex-row-cs gap-4">
       {fastApi && (
-        <img
-          src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi"
-          alt="FastAPI"
-        />
+        <a href={APP.repositoryApiUrl}>
+          <img
+            src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi"
+            alt="FastAPI"
+          />
+        </a>
       )}
       {vercel && (
         <img

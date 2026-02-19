@@ -30,7 +30,7 @@ const Container = ({ children, h1, time }: ContainerProps) => (
     {time ? (
       <section className="text-muted-foreground text-sm">
         <strong className="font-semibold">Last Updated:</strong>{" "}
-        <time dateTime={time}>{momentUtil.publishedDate(time)}</time>
+        <time dateTime={time}>{momentUtil.verbose(time)}</time>
       </section>
     ) : null}
     <article className="text-sm leading-6">{children}</article>

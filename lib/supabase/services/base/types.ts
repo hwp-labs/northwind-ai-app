@@ -2,9 +2,9 @@ export type PrimaryKeyType = number;
 
 export interface BaseEntity {
   id: PrimaryKeyType;
-  createdAt?: string;
-  updatedAt?: string | null;
-  deletedAt?: string | null;
+  created_at?: string;
+  updated_at?: string | null;
+  deleted_at?: string | null;
 }
 
 export interface LookupEntity {

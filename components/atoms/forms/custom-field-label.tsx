@@ -1,5 +1,5 @@
 import { FieldLabel } from "@/components/shadcn/ui/field";
-import { BaseInput } from "@/types/common";
+import { BaseInput } from "@/types";
 
 interface Props {
   options: Omit<BaseInput, "disabled">;

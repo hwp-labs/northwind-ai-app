@@ -12,7 +12,7 @@ import { ScrollArea } from "@/components/shadcn/ui/scroll-area";
 import { InputSkeleton } from "./input-skeleton";
 import { CustomFieldLabel } from "./custom-field-label";
 import { CustomFieldError } from "./custom-field-error";
-import { ControlledInput, OptionItem } from "@/types/common";
+import { ControlledInput, OptionItem } from "@/types";
 
 interface Props<T extends FieldValues> extends ControlledInput<T> {
   options?: OptionItem[];

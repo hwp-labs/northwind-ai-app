@@ -1,16 +1,46 @@
-{
-  "ipAddress": "203.0.113.42",
-  "visits": 1,
-  "screen": {
-    "width": 900,
-    "height": 1440,
-    "device": "desktop"
-  },
-  "platform": "MacIntel",
-  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
-  "geolocation": {
-    "latitude": 37.7749,
-    "longitude": -122.4194,
-    "accuracy": 25
+  {
+    "id": 68,
+    "created_at": "2026-02-17T18:39:17.676193+00:00",
+    "updated_at": null,
+    "deleted_at": null,
+    "visits": 1,
+    "screen": {
+      "width": 360,
+      "height": 806,
+      "device": "mobile"
+    },
+    "platform": "Linux armv81",
+    "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Mobile Safari/537.36",
+    "geolocation": {
+      "ip": "102.91.103.26",
+      "network": "102.91.96.0/19",
+      "version": "IPv4",
+      "city": "Abuja",
+      "region": "FCT",
+      "region_code": "FC",
+      "country": "NG",
+      "country_name": "Nigeria",
+      "country_code": "NG",
+      "country_code_iso3": "NGA",
+      "country_capital": "Abuja",
+      "country_tld": ".ng",
+      "continent_code": "AF",
+      "in_eu": false,
+      "postal": null,
+      "latitude": 9.0567,
+      "longitude": 7.4969,
+      "timezone": "Africa/Lagos",
+      "utc_offset": "+0100",
+      "country_calling_code": "+234",
+      "currency": "NGN",
+      "currency_name": "Naira",
+      "languages": "en-NG,ha,yo,ig,ff",
+      "country_area": 923768,
+      "country_population": 195874740,
+      "asn": "AS29465",
+      "org": "MTN NIGERIA Communication limited"
+    },
+    "ip_address": "102.91.103.26",
+    "visited_on": "2026-02-17",
+    "pathname": "/"
   }
-}

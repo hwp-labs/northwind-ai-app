@@ -5,7 +5,7 @@ import {
   FAQPostCard,
   MonthlyPostCard,
 } from "@/features/post-cards/components/cards";
-import { PageProps } from "@/types/common";
+import { PageProps } from "@/types";
 
 export const metadata: Metadata = {
   title: "Post Cards",

@@ -5,7 +5,7 @@ import { Input } from "@/components/shadcn/ui/input";
 import { InputSkeleton } from "./input-skeleton";
 import { CustomFieldLabel } from "./custom-field-label";
 import { CustomFieldError } from "./custom-field-error";
-import { ControlledInput } from "@/types/common";
+import { ControlledInput } from "@/types";
 
 interface Props<T extends FieldValues> extends ControlledInput<T> {
   options?: string[];

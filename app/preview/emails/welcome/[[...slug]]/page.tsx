@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 //
 import { WelcomeEmail } from "@/components/emails/welcome-email";
-import { PageProps } from "@/types/common";
+import { PageProps } from "@/types";
 
 import mockData from "@/lib/supabase/services/contacts/data.json";
 

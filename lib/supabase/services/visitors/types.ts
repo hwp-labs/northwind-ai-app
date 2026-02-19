@@ -1,7 +1,8 @@
 import { z } from "zod";
 import { isValidIp } from "@/utils";
-import { BaseEntity } from "../base/types";
 import { IpApiResponse } from "@/lib/ip-api/interface";
+import { ApiQueryParams } from "../../types";
+import { BaseEntity } from "../base/types";
 
 export const TABLE = "visitors";
 
@@ -44,6 +45,11 @@ export type UpdateVisitorDto = Partial<
     keyof BaseEntity | "ip_address" | "pathname" | "visited_on"
   >
 >;
+export interface QueryVisitorDto extends ApiQueryParams<
+  Pick<VisitorEntity, "pathname" | "visits">
+> {
+  filterByScreen?: `${DeviceEnum}`;
+}
 
 export const visitorSchema = z.object({
   ip_address: z.string().refine(isValidIp, { message: "Invalid IP address" }),

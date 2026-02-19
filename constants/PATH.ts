@@ -1,5 +1,6 @@
 export const PATH = {
   home: "/",
+  icon: "/icon",
   login: "/login",
   getStarted: "/get-started",  
   previewWelcomeEmail: "/preview/emails/welcome",

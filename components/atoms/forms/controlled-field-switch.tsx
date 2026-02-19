@@ -6,7 +6,7 @@ import { Spinner } from "@/components/shadcn/ui/spinner";
 import { Switch } from "@/components/shadcn/ui/switch";
 import { CustomFieldLabel } from "./custom-field-label";
 import { CustomFieldError } from "./custom-field-error";
-import { ControlledInput } from "@/types/common";
+import { ControlledInput } from "@/types";
 
 interface Props<T extends FieldValues> extends Omit<
   ControlledInput<T>,

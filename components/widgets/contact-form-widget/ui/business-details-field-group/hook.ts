@@ -3,7 +3,7 @@ import { useFormContext, useWatch } from "react-hook-form";
 //
 import { getIndustriesAction } from "@/lib/supabase/services/industries/actions/getIndustriesAction";
 import { getContactsLocationAction } from "@/lib/supabase/services/contacts/actions/getContactsLocationAction";
-import { OptionItem } from "@/types/common";
+import { OptionItem } from "@/types";
 import { ContactSchema } from "@/lib/supabase/services/contacts/types";
 
 export function useBusinessDetailsFieldGroup() {

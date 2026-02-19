@@ -8,7 +8,9 @@ export default function DashboardLayout({
   return (
     <>
       <AuthGuardWidget />
+      <div className="px-6">
       {children}
+      </div>
     </>
   );
 }
