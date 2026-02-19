@@ -56,11 +56,11 @@ const Strong = ({ children }: PropsWithChildren) => (
 );
 
 interface UlProps extends PropsWithChildren {
-  classNames?: string;
+  className?: string;
 }
 
-const Ul = ({ children, classNames }: UlProps) => (
-  <ul className={clsx("mb-4 ml-6 list-disc [&>li]:mt-2", classNames)}>
+const Ul = ({ children, className }: UlProps) => (
+  <ul className={clsx("mb-4 ml-6 list-disc [&>li]:mt-2", className)}>
     {children}
   </ul>
 );

@@ -31,7 +31,7 @@ export const Explorer = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="" align="end">
         {Object.entries({ ...PATH, ...PROTECTED_PATH }).map(([name, path]) => (
-          <DropdownMenuItem key={name} onClick={() => router.push(path)}>
+          <DropdownMenuItem key={name} onSelect={() => router.push(path)}>
             {name}
           </DropdownMenuItem>
         ))}

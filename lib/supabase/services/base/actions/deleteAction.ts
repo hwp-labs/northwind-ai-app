@@ -2,17 +2,19 @@
 
 import { supabase } from "@/lib/supabase/client";
 import { ApiResponse } from "@/lib/supabase/types";
+import { PrimaryKeyType } from "../types";
 
-type RequestDto = string;
+type RequestDto = { table: string; id: PrimaryKeyType };
 type ResponseDto = number;
 
-export async function truncateTableAction(
-  table: RequestDto,
-): Promise<ApiResponse<ResponseDto>> {
+export async function deleteAction({
+  table,
+  id,
+}: RequestDto): Promise<ApiResponse<ResponseDto>> {
   const { count, error } = await supabase
     .from(table)
-    .delete({ count: "estimated" })
-    .neq("id", 0);
-    
+    .delete({ count: "exact" })
+    .eq("id", id);
+
   return { data: count, error: error?.message };
 }

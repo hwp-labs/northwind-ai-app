@@ -20,7 +20,7 @@ export async function seedIndustriesAction({
 
     const { count, error } = await supabase
       .from(TABLE)
-      .insert(seedData, { count: "exact" });
+      .insert(seedData, { count: "estimated" });
 
     return { data: `${count || 0} rows inserted`, error: error?.message };
   }
@@ -38,7 +38,7 @@ export async function seedIndustriesAction({
 
   const { count, error } = await supabase
     .from(TABLE)
-    .insert(seedDataFiltered, { count: "exact" });
+    .insert(seedDataFiltered, { count: "estimated" });
 
   return { data: `${count || 0} rows inserted`, error: error?.message };
 }

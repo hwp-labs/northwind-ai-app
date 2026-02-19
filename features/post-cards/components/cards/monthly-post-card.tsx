@@ -29,7 +29,7 @@ export const MonthlyPostCard = ({ page }: Props) => {
   return (
     <>
       <CardBuilder.Header />
-      <CardBuilder.Container classNames="bg-white">
+      <CardBuilder.Container className="bg-white">
         <figure className="mt-5">
           <div className="relative z-2 mx-auto size-[120px]">
             <img

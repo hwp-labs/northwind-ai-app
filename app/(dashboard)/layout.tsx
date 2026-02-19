@@ -1,4 +1,4 @@
-import { AuthGuardWidget } from "@/components/widgets/auth-guard-widget";
+import { HeaderDashboard } from "@/components/organisms/header-dashboard";
 
 export default function DashboardLayout({
   children,
@@ -7,10 +7,8 @@ export default function DashboardLayout({
 }) {
   return (
     <>
-      <AuthGuardWidget />
-      <div className="px-6">
-      {children}
-      </div>
+      <HeaderDashboard />
+      <div className="px-6">{children}</div>
     </>
   );
 }

@@ -5,6 +5,8 @@ export const PATH = {
   getStarted: "/get-started",  
   previewWelcomeEmail: "/preview/emails/welcome",
   previewPostCards: "/preview/post-cards",
+  previewFAQPostCard: "/preview/post-cards?tabIndex=1",
+  previewMonthlyPostCard: "/preview/post-cards?tabIndex=2&page=3",
   terms: "/terms",
   dataPolicy: "/data-policy",
   manageCookies: "/manage-cookies",

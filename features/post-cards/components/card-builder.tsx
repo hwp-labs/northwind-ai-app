@@ -23,15 +23,12 @@ const Header = () => {
 
 interface ContainerProps {
   children: React.ReactNode;
-  classNames?: string;
+  className?: string;
 }
 
-const Container = ({ children, classNames }: ContainerProps) => (
+const Container = ({ children, className }: ContainerProps) => (
   <main
-    className={clsx(
-      "bg-foreground relative flex-1 overflow-hidden",
-      classNames,
-    )}
+    className={clsx("bg-foreground relative flex-1 overflow-hidden", className)}
   >
     <div className="absolute inset-0 z-1 bg-[url('/images/background.png')] bg-cover bg-center bg-no-repeat opacity-8 grayscale filter" />
     {children}

@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { User } from "@supabase/supabase-js";
 //
-import { useToast } from "@/hooks/use-toast";
+import { useToast } from "./use-toast";
 import { getAuthUserAction } from "@/lib/supabase/services/auth/actions/getAuthUserAction";
 import { signOutAction } from "@/lib/supabase/services/auth/actions/authActions";
 import { PATH } from "@/constants/PATH";
 
-export function useAuthGuardWidget() {
+export function useAuthGuard() {
   const router = useRouter();
   const toast = useToast();
 

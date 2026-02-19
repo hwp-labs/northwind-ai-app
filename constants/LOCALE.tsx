@@ -6,7 +6,7 @@ import {
 import { APP } from "./APP";
 
 export const COPY = {
-  prompt: `How can ${APP.name} help automate my business?`,
+  prompt: `How can ${APP.name}  automate my business?`,
   promptWithHi: `Hi, how can ${APP.name} help automate my business?`,
   promptWithCool: (
     <>

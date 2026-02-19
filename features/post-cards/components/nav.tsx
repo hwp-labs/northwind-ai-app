@@ -8,7 +8,7 @@ export const Nav = () => {
   const { tabIndex } = get({ tabIndex: 0 });
   //
   return (
-    <nav className="flex-row-cs gap-6">
+    <nav className="flex-row-cs gap-4 sm:gap-6 text-sm">
       {["Default", "FAQs", "Monthly", "Blog"].map((item, i) => (
         <Link
           key={i}

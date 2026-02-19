@@ -1,5 +1,5 @@
 import { startCase } from "lodash";
-import { EMPTY_STR, UNKNOWN } from "@/constants";
+import { UNKNOWN } from "@/constants";
 //
 import { BaseHelper } from "../base/helper";
 import { ContactEntity } from "./types";
@@ -7,18 +7,20 @@ import { ContactEntity } from "./types";
 type T = ContactEntity;
 
 export class ContactHelper extends BaseHelper {
-  private _?: T;
+  private c?: T;
 
   constructor(contact?: unknown) {
     super(contact);
-    if (contact) this._ = contact as T;
+    if (contact) this.c = contact as T;
   }
 
   setContact(contact: unknown) {
-    this._ = contact as T;
+    this.setBase(contact);
+    this.c = contact as T;
   }
+  // ////////////////////////////////////////////////////////////////////////
 
-  get DisplayName() {
-    return this._?.name ? startCase(this._.name.split(" ")[0]) : UNKNOWN;
+  DisplayName() {
+    return this.c?.name ? startCase(this.c.name.split(" ")[0]) : UNKNOWN;
   }
 }

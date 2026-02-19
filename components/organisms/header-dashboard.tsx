@@ -1,15 +1,20 @@
 "use client";
 
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/shadcn/ui/avatar";
+import {
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
+} from "@/components/shadcn/ui/avatar";
 import { Button } from "@/components/shadcn/ui/button";
 import { Spinner } from "@/components/shadcn/ui/spinner";
 import { Skeleton } from "@/components/shadcn/ui/skeleton";
-// 
-import { useAuthGuardWidget } from "./hook";
+import { useAuthGuard } from "@/hooks/use-auth-guard";
+import { NavDashboard } from "./nav-dashboard";
+//
 
-export const AuthGuardWidget = () => {
+export const HeaderDashboard = () => {
   const { user, fetching, loading, auth, ready, handleSignIn, handleSignOut } =
-    useAuthGuardWidget();
+    useAuthGuard();
   //
   return (
     <section className="flex-row-cb gap-4 p-6">
@@ -31,10 +36,12 @@ export const AuthGuardWidget = () => {
           ) : null}
         </figure>
       )}
+      <NavDashboard />
       <div className="flex-row-ce gap-4">
         {auth ? (
           <Button
             variant="destructive"
+            size="sm"
             onClick={handleSignOut}
             disabled={loading}
             className=""
@@ -45,6 +52,7 @@ export const AuthGuardWidget = () => {
         ) : (
           <Button
             variant="secondary"
+            size="sm"
             onClick={handleSignIn}
             disabled={fetching}
             className=""

@@ -44,7 +44,7 @@ export default function ManageCookiesPage() {
       </_.Ul>
       <_.H2>Manage Preferences</_.H2>
       You may:
-      <_.Ul classNames="[&>li]:underline [&>li]:underline-offset-2 text-brand">
+      <_.Ul className="text-brand [&>li]:underline [&>li]:underline-offset-2">
         <li>Accept All Cookies</li>
         <li>Reject Non-Essential Cookies</li>
         <li>Customize Settings</li>

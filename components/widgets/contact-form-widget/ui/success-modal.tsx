@@ -43,7 +43,7 @@ export const SuccessModal = ({ open, onClose }: Props) => {
         </EmptyMedia>
         <EmptyTitle>
           {COPY.email.welcome}
-          {contact.DisplayName}!
+          {contact.DisplayName()}!
         </EmptyTitle>
         <EmptyDescription className="_border text-muted-foreground w-[340px]">
           {COPY.promptWithCool}

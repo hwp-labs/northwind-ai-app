@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Script from "next/script";
 import useSWR from "swr";
 import { FaGithub } from "react-icons/fa6";
 //
 import { Skeleton } from "../shadcn/ui/skeleton";
 import { APP } from "@/constants/APP";
+import { useAppStore } from "@/store/appStore";
 
 type Data = {
   data?: { stargazers_count: number };
@@ -19,7 +20,14 @@ export const GithubStarsWidget = () => {
     (url: string) => fetch(url).then((res) => res.json()),
     { revalidateOnFocus: false },
   );
+
+  const { setStargazersCount } = useAppStore();
+
   const stargazers_count = res?.data?.stargazers_count || 0;
+
+  useEffect(() => {
+    setStargazersCount(stargazers_count);
+  }, [stargazers_count]);
   //
   return (
     <div className="_flex-row-cs">

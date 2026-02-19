@@ -21,7 +21,7 @@ export const FAQPostCard = ({ page }: Props) => {
   return (
     <>
       <CardBuilder.Header />
-      <CardBuilder.Container classNames="debug_">
+      <CardBuilder.Container className="debug_">
         <div className="debug_ flex-col-cc relative z-2 size-[430px] w-full">
           <div className="grid max-w-sm gap-2 rounded-2xl bg-white pt-6 pb-6 shadow-2xl">
             <figure className="grid gap-4">

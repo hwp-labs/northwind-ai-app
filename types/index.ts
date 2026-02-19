@@ -30,3 +30,18 @@ export interface PageProps<T extends string | string[] = string> {
   params: Promise<{ slug: string }>;
   searchParams: Promise<{ [key: string]: T | undefined }>;
 }
+
+export type ColorVariantType =
+  | "default"
+  | "info"
+  | "success"
+  | "warning"
+  | "danger";
+
+export enum ColorVariantEnum {
+  DEFAULT = "default",
+  INFO = "info",
+  SUCCESS = "success",
+  WARNING = "warning",
+  DANGER = "danger",
+}

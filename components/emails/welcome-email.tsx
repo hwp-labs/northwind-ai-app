@@ -29,7 +29,7 @@ export const WelcomeEmail = ({ data }: Props) => {
       <Head />
       <Preview>
         {COPY.email.welcome}
-        {contact.DisplayName}!
+        {contact.DisplayName()}!
       </Preview>
       <Tailwind>
         <Body className="bg-background text-foreground m-auto font-sans">
@@ -39,7 +39,7 @@ export const WelcomeEmail = ({ data }: Props) => {
               style={{ fontSize: 24 }}
             >
               {COPY.email.welcome}
-              <strong className="font-semibold">{contact.DisplayName}</strong>!
+              <strong className="font-semibold">{contact.DisplayName()}</strong>!
             </Heading>
             <Text
               className="text-start leading-relaxed"

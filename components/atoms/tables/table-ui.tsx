@@ -13,7 +13,8 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/components/shadcn/ui/avatar";
-import { colorUtil, ColorVariantType } from "@/utils/color-util";
+import { Indicator } from "../indicator";
+import { ColorVariantType } from "@/types";
 import { UNKNOWN, HYPHENS } from "@/constants";
 
 const Container = ({ children }: PropsWithChildren) => {
@@ -51,18 +52,31 @@ interface CellAvatarBioProps {
   src?: string;
   name?: string;
   email?: string;
+  textOnly?: boolean;
+  showBadge?: boolean;
 }
 
-const CellAvatarBio = ({ src, name, email }: CellAvatarBioProps) => {
+const CellAvatarBio = ({
+  src,
+  name,
+  email,
+  textOnly,
+  showBadge,
+}: CellAvatarBioProps) => {
   return (
     <TableCell className="flex-center-start gap-2.5">
-      <Avatar className="size-8 rounded-full">
-        <AvatarImage src={src || undefined} />
-        <AvatarFallback>
-          {(name || UNKNOWN).charAt(0).toUpperCase()}
-        </AvatarFallback>
-      </Avatar>
-      <div className="grid text-sm leading-tight">
+      <div className="relative">
+        {textOnly ? null : (
+          <Avatar className="size-8">
+            <AvatarImage src={src || undefined} />
+            <AvatarFallback>
+              {(name || UNKNOWN).charAt(0).toUpperCase()}
+            </AvatarFallback>
+          </Avatar>
+        )}
+        {showBadge && <Indicator />}
+      </div>
+      <div className="grid gap-0.5 text-sm leading-tight">
         <span className="_font-medium truncate text-sm">{name || HYPHENS}</span>
         {email ? (
           <span className="text-muted-foreground truncate text-xs">
@@ -80,7 +94,7 @@ interface CellAmountProps extends PropsWithChildren {
 
 const CellAmount = ({ children, variant }: CellAmountProps) => {
   return (
-    <TableCell className={`text-right ${colorUtil.text(variant)}`}>
+    <TableCell className={`text-right`}>
       {children}
     </TableCell>
   );
