@@ -24,7 +24,7 @@ export default async function VisitorsPage() {
   const { data, error } = await getVisitorsAction({
     sortBy: "updated_at",
   });
-
+// 
   return (
     <main className="grid gap-4">
       <TableUI.Container>

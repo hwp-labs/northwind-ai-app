@@ -5,6 +5,8 @@ export interface MenuItem {
   label: string;
   path: string;
   Icon?: LucideIcon;
+  badgeValue?: unknown;
+  badgeLabel?: unknown;
 }
 export interface OptionItem {
   label: string;

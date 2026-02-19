@@ -15,3 +15,11 @@ export async function getContactsAction(): Promise<ApiResponse<ResponseDto>> {
     
   return { data, error: error?.message };
 }
+
+export async function getContactsCountAction(): Promise<ApiResponse<number>> {
+  const { count, error } = await supabase
+    .from(TABLE)
+    .select("id", { count: "estimated" });
+
+  return { data: count, error: error?.message };
+}

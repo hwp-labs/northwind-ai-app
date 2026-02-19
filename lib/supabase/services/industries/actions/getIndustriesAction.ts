@@ -15,3 +15,12 @@ export async function getIndustriesAction(): Promise<ApiResponse<ResponseDto>> {
 
   return { data, error: error?.message };
 }
+
+
+export async function getIndustriesCountAction(): Promise<ApiResponse<number>> {
+  const { count, error } = await supabase
+    .from(TABLE)
+    .select("id", { count: "estimated" });
+
+  return { data: count, error: error?.message };
+}

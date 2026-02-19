@@ -2,8 +2,8 @@
 
 import { supabase } from "@/lib/supabase/client";
 import { ApiResponse } from "@/lib/supabase/types";
-import { TABLE, UpdateVisitorDto, VisitorEntity } from "../types";
 import { PrimaryKeyType } from "../../base/types";
+import { TABLE, UpdateVisitorDto, VisitorEntity } from "../types";
 
 type RequestDto = { id: PrimaryKeyType; body: UpdateVisitorDto };
 type ResponseDto = VisitorEntity;
