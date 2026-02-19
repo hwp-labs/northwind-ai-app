@@ -38,6 +38,7 @@ export const VisitorsTableAction = ({ id }: { id: PrimaryKeyType }) => {
     </TableCell>
   ) : (
     <TableCellAction
+      onChange={handleAction}
       menu={[
         { label: "Delete", value: "delete" },
         // { label: "Receipt", value: "Receipt", disabled: true },
@@ -48,7 +49,6 @@ export const VisitorsTableAction = ({ id }: { id: PrimaryKeyType }) => {
         //   separator: true,
         // },
       ]}
-      onChange={handleAction}
     />
   );
 };

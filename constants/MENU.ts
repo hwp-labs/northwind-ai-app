@@ -12,6 +12,7 @@ export const MENU = [
 ] as const satisfies MenuParams[];
 
 export const DASHBOARD_MENU = [
+  { label: "Home", path: PATH.home },
   { label: "Dashboard", path: PROTECTED_PATH.dashboard },
   { label: "Visitors", path: PROTECTED_PATH.visitors },
   { label: "Contacts", path: PROTECTED_PATH.contacts },

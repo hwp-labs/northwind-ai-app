@@ -9,10 +9,10 @@ import { Button } from "@/components/shadcn/ui/button";
 import { Spinner } from "@/components/shadcn/ui/spinner";
 import { Skeleton } from "@/components/shadcn/ui/skeleton";
 import { useAuthGuard } from "@/hooks/use-auth-guard";
-import { NavDashboard } from "./nav-dashboard";
 //
+import { Nav } from "./nav";
 
-export const HeaderDashboard = () => {
+export const Header = () => {
   const { user, fetching, loading, auth, ready, handleSignIn, handleSignOut } =
     useAuthGuard();
   //
@@ -36,7 +36,7 @@ export const HeaderDashboard = () => {
           ) : null}
         </figure>
       )}
-      <NavDashboard />
+      <Nav />
       <div className="flex-row-ce gap-4">
         {auth ? (
           <Button

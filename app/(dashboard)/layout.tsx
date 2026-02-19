@@ -1,4 +1,4 @@
-import { HeaderDashboard } from "@/components/organisms/header-dashboard";
+import { Header } from "@/features/dashboard/components/header";
 
 export default function DashboardLayout({
   children,
@@ -7,7 +7,7 @@ export default function DashboardLayout({
 }) {
   return (
     <>
-      <HeaderDashboard />
+      <Header />
       <div className="px-6">{children}</div>
     </>
   );

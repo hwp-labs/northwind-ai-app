@@ -36,6 +36,7 @@ export const COPY = {
       <a
         href="https://agent.ai/"
         target="_blank"
+        rel="noopener noreferrer"
         className="text-brand font-medium underline underline-offset-2"
       >
         AI agents.

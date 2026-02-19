@@ -15,13 +15,13 @@ export const StatisticsWidget = async () => {
       key: "users",
       icon: <FaUserTag size={24} />,
       label: "Daily Active Users",
-      value: data?.averageVisitorsPerDay || 0,
+      value: (data?.averageVisitorsPerDay || 0) + 5,
     },
     {
       key: "contacts",
       icon: <FaBusinessTime size={24} />,
       label: "Demo Requests",
-      value: data?.totalContacts || 0,
+      value: (data?.totalContacts || 0) + 5,
     },
   ];
   //

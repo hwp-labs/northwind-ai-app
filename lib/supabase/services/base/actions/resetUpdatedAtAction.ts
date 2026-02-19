@@ -17,7 +17,7 @@ export async function resetUpdatedAtAction({
     .select("id, created_at, updated_at")
     .gte("updated_at", updatedAtGte)
     .order("id", { ascending: false });
-  console.log("🚀 ~ resetUpdatedAtAction ~ selected:", selected);
+  // console.log("🚀 ~ resetUpdatedAtAction ~ selected:", selected);
 
   if (selected && selected.length > 0) {
     const queries = selected.map(({ id, created_at }) =>
@@ -32,7 +32,7 @@ export async function resetUpdatedAtAction({
     updated.forEach((res) => {
       if (res.data && res.data.length) updatedIds.push(res.data[0].id);
     });
-    console.log("🚀 ~ resetUpdatedAtAction ~ updatedIds:", updatedIds);
+    // console.log("🚀 ~ resetUpdatedAtAction ~ updatedIds:", updatedIds);
   }
 
   return { data: updatedIds, error: error?.message };

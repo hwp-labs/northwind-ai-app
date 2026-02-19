@@ -6,7 +6,7 @@ import clsx from "clsx";
 //
 import { DASHBOARD_MENU } from "@/constants/MENU";
 
-export const NavDashboard = () => {
+export const Nav = () => {
   const pathname = usePathname();
   //
   return (

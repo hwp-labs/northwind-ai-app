@@ -16,16 +16,20 @@ type MenuType = OptionItem & { separator?: boolean };
 
 interface Props {
   menu: MenuType[];
+  onChange: (value: string, item?: MenuType) => void;
 }
 
-export const TableCellAction = ({ menu }: Props) => {
+export const TableCellAction = ({
+  menu,
+  onChange = () => undefined,
+}: Props) => {
   return (
     <TableCell className="w-[10px]">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
             variant="ghost"
-            className="flex size-8 text-muted-foreground data-[state=open]:bg-muted"
+            className="text-muted-foreground data-[state=open]:bg-muted flex size-8"
           >
             <MoreVerticalIcon />
             <span className="sr-only">Action</span>
@@ -36,7 +40,10 @@ export const TableCellAction = ({ menu }: Props) => {
             return (
               <Fragment key={i}>
                 {item.separator && <DropdownMenuSeparator />}
-                <DropdownMenuItem disabled={item.disabled}>
+                <DropdownMenuItem
+                  disabled={item.disabled}
+                  onSelect={() => onChange(item.value, item)}
+                >
                   {item.label}
                 </DropdownMenuItem>
               </Fragment>

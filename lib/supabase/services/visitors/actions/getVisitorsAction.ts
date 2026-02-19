@@ -22,3 +22,11 @@ export async function getVisitorsAction(
 
   return { data, error: error?.message };
 }
+
+export async function getVisitorsCountAction(): Promise<ApiResponse<number>> {
+  const { count, error } = await supabase
+    .from(TABLE)
+    .select("id", { count: "estimated" });
+
+  return { data: count, error: error?.message };
+}

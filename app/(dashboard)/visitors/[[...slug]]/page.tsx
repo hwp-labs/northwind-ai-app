@@ -64,11 +64,11 @@ export default async function VisitorsPage() {
             : null}
         </TableBody>
       </TableUI.Container>
-      <PaginationUI.Container>
+      {/* <PaginationUI.Container>
         <PaginationUI.SizeSelector />
         <PaginationUI.SelectedRowsCaption />
         <PaginationPageSelector />
-      </PaginationUI.Container>
+      </PaginationUI.Container> */}
     </main>
   );
 }
