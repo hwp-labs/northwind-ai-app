@@ -10,9 +10,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/shadcn/ui/dropdown-menu";
-import { OptionType } from "@/types";
+import { OptionItem } from "@/types";
 
-type MenuType = OptionType & { separator?: boolean };
+type MenuType = OptionItem & { separator?: boolean };
 
 interface Props {
   menu: MenuType[];

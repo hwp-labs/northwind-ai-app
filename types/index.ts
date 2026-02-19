@@ -9,7 +9,7 @@ export interface MenuItem {
 export interface OptionItem {
   label: string;
   value: string;
-  disabled?: string;
+  disabled?: boolean;
   item?: unknown;
 }
 export interface BaseInput {

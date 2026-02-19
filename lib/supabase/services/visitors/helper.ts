@@ -10,10 +10,8 @@ export class VisitorHelper extends BaseHelper {
   private _?: T;
 
   constructor(visitor?: unknown) {
-    if (visitor) {
-      super(visitor);
-      this._ = visitor as T;
-    }
+    super(visitor);
+    if (visitor) this._ = visitor as T;
   }
 
   setVisitor(visitor: unknown) {

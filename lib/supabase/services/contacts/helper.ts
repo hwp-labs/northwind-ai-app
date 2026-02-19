@@ -10,10 +10,8 @@ export class ContactHelper extends BaseHelper {
   private _?: T;
 
   constructor(contact?: unknown) {
-    if (contact) {
-      super(contact);
-      this._ = contact as T;
-    }
+    super(contact);
+    if (contact) this._ = contact as T;
   }
 
   setContact(contact: unknown) {

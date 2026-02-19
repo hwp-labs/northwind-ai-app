@@ -1,8 +1,11 @@
 import { ImageResponse } from "next/og";
 
+const SIZE = true ? 42 : 512;
+const DIM = true ? 24 : "60%";
+
 export const size = {
-  width: 512,
-  height: 512,
+  width: SIZE,
+  height: SIZE,
 };
 
 export const contentType = "image/png";
@@ -23,8 +26,8 @@ export default function Icon() {
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="60%"
-        height="60%"
+        width={DIM}
+        height={DIM}
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
