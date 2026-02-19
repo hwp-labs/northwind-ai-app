@@ -11,10 +11,11 @@ export async function deleteAction({
   table,
   id,
 }: RequestDto): Promise<ApiResponse<ResponseDto>> {
-  const { count, error } = await supabase
+  const { data, count, error } = await supabase
     .from(table)
     .delete({ count: "exact" })
     .eq("id", id);
 
+  console.log("🚀 ~ deleteAction ~ table:", table, id, data, count, error)
   return { data: count, error: error?.message };
 }
