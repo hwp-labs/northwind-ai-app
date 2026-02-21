@@ -3,11 +3,12 @@
     "icon": "cart.png",
     "label": "E-Commerce & Logistics business",
     "value": [
-      "Chat/voice-enabled search & suggestions",
+      "Chat/voice-enabled product search & filters",
       "Real-time order tracking, deliveries & returns",
-      "Transaction invoice & auditing automation",
       "Product demand forecasting, real-time dynamic pricing & stock monitoring alerts",
-      "Inventory, supply-chain & fleet management",
+      "Purchase intent & checkout friction analysis",
+      "Inventory, supply chain & fleet automation",
+      "#Transaction invoice generation & auditing",
       "# emma ar, shafiyi, steady"
     ]
   },
@@ -15,12 +16,13 @@
     "icon": "real-estate.png",
     "label": "Real Estate & Realtor business",
     "value": [
-      "Chat/voice-enabled search & valuation",
+      "Chat/voice-enabled property search & filters",
       "Lease agreement & document verification",
+      "Smart home ecosystem & devices integration",
+      "Virtual Reality (VR) property inspections & tours",
+      "Augmented Reality (AR) spatial/interior design",
+      "Automated Property Valuation Models (AVMs)",
       "#Automated Property Valuation (AVMs)",
-      "Virtual Reality (VR) inspection & tour",
-      "Augmented Reality (AR) interior design",
-      "Smart home device ecosystem integration",
       "# madu, ben"
     ]
   },
@@ -58,7 +60,7 @@
       "Automated recipe sourcing & meal planning",
       "#Kitchen workflow optimization & waste management",
       "Transaction invoice & auditing automation",
-       "Automated billing, invoicing, and financial audit management",
+      "Automated billing, invoicing, and financial audit management",
       "# ntx jbagbons spa, ntx jairo pos"
     ]
   }

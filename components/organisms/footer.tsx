@@ -7,7 +7,7 @@ import { PATH } from "@/constants/PATH";
 export const Footer = () => {
   return (
     <footer id="footer" className="px-4 text-sm lg:px-12">
-      <section className="flex-col-cc gap-6 border-t py-8">
+      <section className="flex-col-cc gap-8 border-t py-8">
         <nav className="debug_ flex flex-col items-center justify-center gap-4 md:flex-row md:gap-8">
           {[
             { label: "Terms & Conditions", path: PATH.terms },

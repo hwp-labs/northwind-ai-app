@@ -25,19 +25,19 @@ export const FAQPostCard = ({ page }: Props) => {
         <div className="debug_ flex-col-cc relative z-2 size-[430px] w-full">
           <div className="grid max-w-sm gap-2 rounded-2xl bg-white pt-6 pb-6 shadow-2xl">
             <figure className="grid gap-4">
-              <div className="relative mx-auto h-[80px]">
+              <div className="mx-auto_ relative flex h-[80px] items-center justify-center">
                 <img
                   src={`/uploads/faq/${item.icon}`}
                   alt=""
-                  className="_debug size-full object-contain"
+                  className="block max-h-full max-w-full object-contain"
                 />
               </div>
-              <figcaption className="text-md text-center font-[Raleway] leading-[22px] font-bold">
-                How can {APP.name} help automate{" "}
+              <figcaption className="text-md text-center font-[Raleway] leading-[22px] font-bold tracking-wide">
+                How can AI Automation help automate{" "}
                 <span className="inline-block">{item.label}</span>?
               </figcaption>
             </figure>
-            <ul className="grid gap-2.5 px-8">
+            <ul className="grid gap-2.5 px-6">
               {item.value
                 .filter((v) => !v.startsWith("#"))
                 .map((v, i) => (
